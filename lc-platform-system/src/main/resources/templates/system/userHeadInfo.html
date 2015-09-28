@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>系统权限管理界面</title>
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+	<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+	<meta HTTP-EQUIV="expires" CONTENT="0">
+	${static_context}
+	${static_jquery}
+	${static_jquery_fileupload}
+	${static_jquery_jcrop}
+	${static_extjs4}
+	
+	<script>
+		var jcrop_api,boundx,boundy;
+		var headImageBase64;
+		function bindJcrop(){
+			$("#target").Jcrop({
+				onChange:updatePreview,
+				onSelect:updatePreview,
+				aspectRatio:1
+			},function(){
+				// Use the API to get the real image size
+				var bounds=this.getBounds();
+				boundx=bounds[0];
+				boundy=bounds[1];
+				// Store the API in the jcrop_api variable
+				jcrop_api=this;
+			});
+		}
+		
+		
+		function updatePreview(c){
+			if(parseInt(c.w)>0){
+				var rx=100/c.w;
+				var ry=100/c.h;
+				$("#preview").css({
+					width:Math.round(rx*boundx)+"px",
+					height:Math.round(ry*boundy)+"px",
+					marginLeft:"-"+Math.round(rx*c.x)+"px",
+					marginTop:"-"+Math.round(ry*c.y)+"px"
+				});
+			};
+		};
+		
+		jQuery(function($){
+			bindJcrop();
+			$('#headImage').fileupload({
+				url:contextPath+'/system/users/headImageConvert',
+		        add: function(e, data) {
+		                var uploadErrors = [];
+		                var acceptFileTypes = /^image\/(gif|jpe?g|png)$/i;
+		                if(data.originalFiles[0]['type'].length && !acceptFileTypes.test(data.originalFiles[0]['type'])) {
+		                    uploadErrors.push('不支持该文件类型');
+		                }
+		                if(data.originalFiles[0]['size'] > 1048576) {
+		                    uploadErrors.push('文件太大了,不能超过1M');
+		                }
+		                if(uploadErrors.length > 0) {
+		                    Ext.ux.Msg.error(uploadErrors.join("\n"));
+		                } else {
+		                    data.submit();
+		                }
+		        },
+				done:function(e,response){  
+					headImageBase64 = response.result;
+					jcrop_api.destroy();
+					$("#target").removeAttr("style");
+					$("#preview").removeAttr("style");
+					$("#target").attr({ src: headImageBase64});
+					$("#preview").attr({ src: headImageBase64});
+					bindJcrop();
+			    }
+			}).bind('fileuploadstart', function (e){
+				console.log('fileuploadstart');
+			});
+			
+			
+			$("#preview").attr({ src: parent.userHeadImage24});
+			
+		});
+		
+		function submitAbscutInfo(){
+			if(!headImageBase64){
+				Ext.ux.Msg.error('请先导入图片');
+				return;
+			}
+			if($("#w").val()==''){
+				Ext.ux.Msg.error("请框选要上传的图片信息");
+				return;
+			}
+			var finalWidth = $('#preview').width();
+			var finalHeight = $('#preview').height();
+			var destx = $('#preview').css('margin-left');
+			var desty = $('#preview').css('margin-top');
+			var destWidth = $('#destView').width();
+			var destHeight = $('#destView').height();
+			
+			Ext.ux.Ajax.request({
+			    url: contextPath + "/system/users/saveHeadPic",
+			    params: {
+			    	destWidth:destWidth,
+			    	destHeight:destHeight,
+			    	finalWidth:finalWidth,
+			    	finalHeight:finalHeight,
+			    	destx:destx,
+			    	desty:desty,
+			    	headImageBase64:headImageBase64
+		    	},
+			    success: function(response,opts,result){
+			        parent.userHeadImage24 = result.data;
+			        parent.userHeadlogoImage.set({'src':parent.userHeadImage24});
+			    }
+			});
+		};
+		
+	</script>
+	<style type="text/css">
+		body{
+			background-color: white !important;
+		}
+	</style>
+  </head>
+  <body>
+  	<h2 class="xs2">当前我的头像</h2>
+  	<p>如果您还没有设置自己的头像，系统会显示为默认头像，您需要自己上传一张新照片来作为自己的个人头像 </p>
+  	<table>
+		<tr>
+			<td><img src="${contextPath}/system/images/user_head_120.gif" id="target" alt="Flowers"></td>
+			<td>
+				<div id="destView" style="width:100px;height:100px;overflow:hidden;">
+					<img src="${contextPath}/system/images/user_head_120.gif" id="preview" alt="Preview">
+				</div>
+			</td>
+		</tr>
+	</table>
+	<a class="btn btn-success fileinput-button">
+		<div class="ico-input">导入图片</div>
+		<input type="file" id="headImage" name="headImage">
+	</a>
+	
+	<a class="btn btn-success fileinput-button">
+		<div class="ico-input">保存截图</div>
+		<input type="button" onclick="submitAbscutInfo();" value="保存截图">
+	</a>
+  </body>
+</html>

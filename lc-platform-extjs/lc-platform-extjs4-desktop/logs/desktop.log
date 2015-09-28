@@ -1,0 +1,1303 @@
+2015-09-28 16:09:25.498  INFO 4204 --- [main] c.lc.platform.extjs.desktop.Application  : Starting Application on forever with PID 4204 (D:\git\lc-platform\lc-platform-extjs\lc-platform-extjs4-desktop\target\test-classes started by chenjun in D:\git\lc-platform\lc-platform-extjs\lc-platform-extjs4-desktop)
+2015-09-28 16:09:25.763  INFO 4204 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@208ee9c9: startup date [Mon Sep 28 16:09:25 CST 2015]; root of context hierarchy
+2015-09-28 16:09:31.825  INFO 4204 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2015-09-28 16:09:34.959  INFO 4204 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4f947285] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-09-28 16:09:35.076  INFO 4204 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'transactionAttributeSource' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-09-28 16:09:35.123  INFO 4204 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'transactionInterceptor' of type [class org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-09-28 16:09:35.151  INFO 4204 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-09-28 16:09:38.684  INFO 4204 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 80 (http)
+2015-09-28 16:09:39.735  INFO 4204 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2015-09-28 16:09:39.740  INFO 4204 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.0.23
+2015-09-28 16:09:40.316  INFO 4204 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2015-09-28 16:09:40.317  INFO 4204 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 14562 ms
+2015-09-28 16:09:45.808  INFO 4204 --- [localhost-startStop-1] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2015-09-28 16:09:45.876  INFO 4204 --- [localhost-startStop-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2015-09-28 16:09:46.442  INFO 4204 --- [localhost-startStop-1] org.hibernate.Version                    : HHH000412: Hibernate Core {4.3.10.Final}
+2015-09-28 16:09:46.451  INFO 4204 --- [localhost-startStop-1] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2015-09-28 16:09:46.457  INFO 4204 --- [localhost-startStop-1] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2015-09-28 16:09:47.439  INFO 4204 --- [localhost-startStop-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-09-28 16:09:48.833  INFO 4204 --- [localhost-startStop-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2015-09-28 16:09:49.495  WARN 4204 --- [localhost-startStop-1] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.lc.platform.system.domain.RoleInherit
+2015-09-28 16:09:49.496  WARN 4204 --- [localhost-startStop-1] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.lc.platform.system.domain.RoleInherit
+2015-09-28 16:09:49.535  INFO 4204 --- [localhost-startStop-1] o.h.h.i.ast.ASTQueryTranslatorFactory    : HHH000397: Using ASTQueryTranslatorFactory
+2015-09-28 16:09:50.900  INFO 4204 --- [localhost-startStop-1] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2015-09-28 16:09:50.901  INFO 4204 --- [localhost-startStop-1] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000102: Fetching database metadata
+2015-09-28 16:09:50.908  INFO 4204 --- [localhost-startStop-1] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000396: Updating schema
+2015-09-28 16:09:50.976  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: platform.sys_dept
+2015-09-28 16:09:50.977  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [id, deptorder, bz, deptcode, createdate, parentid, deptname]
+2015-09-28 16:09:50.978  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: []
+2015-09-28 16:09:50.980  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [primary]
+2015-09-28 16:09:51.018  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: platform.sys_menu
+2015-09-28 16:09:51.019  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [menulevel, bz, menuorder, menuid, menuimage, createdate, permcode, parentid, menuval, image48, desktopnumber, menuname, menutype, showwidth, showheight]
+2015-09-28 16:09:51.019  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: []
+2015-09-28 16:09:51.020  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [primary]
+2015-09-28 16:09:51.070  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: platform.sys_perm
+2015-09-28 16:09:51.071  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [id, permname, permdesc, menuid, permcode]
+2015-09-28 16:09:51.071  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: []
+2015-09-28 16:09:51.072  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [primary]
+2015-09-28 16:09:51.104  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: platform.sys_role
+2015-09-28 16:09:51.104  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [id, roledesc, rolename, rolestatus]
+2015-09-28 16:09:51.105  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: []
+2015-09-28 16:09:51.106  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [primary]
+2015-09-28 16:09:51.176  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: platform.sys_role_inherit
+2015-09-28 16:09:51.176  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [childid, fartherid]
+2015-09-28 16:09:51.177  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: [fk_f8h9gjt7q7qdhg1q68cjvl4m6, fk_gatap7wrw8twh0kbklrkfgeca]
+2015-09-28 16:09:51.178  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [primary, fk_gatap7wrw8twh0kbklrkfgeca]
+2015-09-28 16:09:51.231  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: platform.sys_role_perm
+2015-09-28 16:09:51.232  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [id, roleid, permid]
+2015-09-28 16:09:51.233  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: [fk_kmo6uiuii6ofqr3va5uvyj5i, fk_is5ehgn40nl1bh82efsp5v8f]
+2015-09-28 16:09:51.234  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [primary, fk_kmo6uiuii6ofqr3va5uvyj5i, fk_is5ehgn40nl1bh82efsp5v8f]
+2015-09-28 16:09:51.284  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: platform.sys_user
+2015-09-28 16:09:51.285  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [credentialsnonexpired, enabled, accountnonexpired, roleinfo, accountlocked, xm, superadmin, userid, createdate, password, delstatus, username, deptinfo, email, jianpin, headimage24, pinyin]
+2015-09-28 16:09:51.286  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: []
+2015-09-28 16:09:51.286  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [uk_ahtq5ew3v0kt1n7hf1sgp7p8l, primary, uk_51bvuyvihefoh4kp5syh2jpi4]
+2015-09-28 16:09:51.332  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: platform.sys_user_dept
+2015-09-28 16:09:51.333  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [id, deptid, userid]
+2015-09-28 16:09:51.334  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: [fk_lhb5a3yf2po8wxcsa2nt0f3vp, fk_hqg4mnuqboiurai7malk9f30w]
+2015-09-28 16:09:51.334  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [fk_lhb5a3yf2po8wxcsa2nt0f3vp, primary, fk_hqg4mnuqboiurai7malk9f30w]
+2015-09-28 16:09:51.408  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: platform.sys_user_role
+2015-09-28 16:09:51.409  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [id, roleid, userid]
+2015-09-28 16:09:51.409  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: [fk_pvdaavr91tnlrmeg3t7o12gin, fk_8uk74b467ws5k8xi7ivekvx5e]
+2015-09-28 16:09:51.410  INFO 4204 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [fk_pvdaavr91tnlrmeg3t7o12gin, fk_8uk74b467ws5k8xi7ivekvx5e, primary]
+2015-09-28 16:09:51.412  INFO 4204 --- [localhost-startStop-1] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000232: Schema update complete
+2015-09-28 16:09:54.813  INFO 4204 --- [localhost-startStop-1] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**/*.css'], []
+2015-09-28 16:09:54.814  INFO 4204 --- [localhost-startStop-1] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**/*.js'], []
+2015-09-28 16:09:54.815  INFO 4204 --- [localhost-startStop-1] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**/images/**'], []
+2015-09-28 16:09:54.815  INFO 4204 --- [localhost-startStop-1] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**/authfailure'], []
+2015-09-28 16:09:54.815  INFO 4204 --- [localhost-startStop-1] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**/invalidsession'], []
+2015-09-28 16:09:54.981  INFO 4204 --- [localhost-startStop-1] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@556a5b6c, org.springframework.security.web.context.SecurityContextPersistenceFilter@6d3a8ef2, org.springframework.security.web.header.HeaderWriterFilter@680a6bc0, org.springframework.security.web.authentication.logout.LogoutFilter@76fedcde, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1d1137dc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@452d87e3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@30346b90, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@39983b43, org.springframework.security.web.session.SessionManagementFilter@6e685e8c, org.springframework.security.web.access.ExceptionTranslationFilter@c4565c4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6838d45]
+2015-09-28 16:09:55.315  INFO 4204 --- [localhost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2015-09-28 16:09:55.340  INFO 4204 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2015-09-28 16:09:55.341  INFO 4204 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2015-09-28 16:09:55.342  INFO 4204 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2015-09-28 16:09:57.430  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@208ee9c9: startup date [Mon Sep 28 16:09:25 CST 2015]; root of context hierarchy
+2015-09-28 16:09:57.802  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/desktop]}" onto public java.lang.String com.lc.platform.extjs.desktop.DesktopController.index()
+2015-09-28 16:09:57.805  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/404]}" onto public java.lang.String com.lc.platform.spring.SpringController._404() throws java.lang.Exception
+2015-09-28 16:09:57.806  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/500]}" onto public java.lang.String com.lc.platform.spring.SpringController._500() throws java.lang.Exception
+2015-09-28 16:09:57.807  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/400]}" onto public java.lang.String com.lc.platform.spring.SpringController._400() throws java.lang.Exception
+2015-09-28 16:09:57.812  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/depts/create],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.DeptController.create(com.lc.platform.system.domain.Dept) throws java.lang.Exception
+2015-09-28 16:09:57.813  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/depts/delete],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.DeptController.delete(java.lang.String) throws java.lang.Exception
+2015-09-28 16:09:57.817  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/depts/tree]}" onto public java.util.List<com.lc.platform.ztree.TreeNode> com.lc.platform.system.controller.DeptController.tree(java.lang.String)
+2015-09-28 16:09:57.818  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/depts/update],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.DeptController.update(com.lc.platform.system.domain.Dept) throws java.lang.Exception
+2015-09-28 16:09:57.819  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/depts/move],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.DeptController.move(java.lang.String,java.lang.String) throws java.lang.Exception
+2015-09-28 16:09:57.820  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/menus],methods=[POST || GET]}" onto public com.lc.platform.extjs.JsonReader com.lc.platform.system.controller.MenuController.readDesktopMenus(int,java.lang.String) throws java.lang.Exception
+2015-09-28 16:09:57.822  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/perms/tree]}" onto public java.util.List<com.lc.platform.ztree.TreeNode> com.lc.platform.system.controller.PermController.tree(java.lang.String[])
+2015-09-28 16:09:57.827  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/roles],methods=[GET || POST]}" onto public com.lc.platform.extjs.JsonReader com.lc.platform.system.controller.RoleController.readUsers(com.lc.platform.extjs.QueryParams,java.lang.String) throws java.lang.Exception
+2015-09-28 16:09:57.828  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/roles/batchUpdate],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.RoleController.batchUpdate(com.lc.platform.system.domain.Role[]) throws java.lang.Exception
+2015-09-28 16:09:57.829  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/roles/batchDelete],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.RoleController.batchDelete(java.lang.String[]) throws java.lang.Exception
+2015-09-28 16:09:57.830  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/roles/perms/update],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.RoleController.permsUpdate(java.lang.String[],java.lang.String[],boolean) throws java.lang.Exception
+2015-09-28 16:09:57.831  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/roles/update],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.RoleController.updateSystemRole(com.lc.platform.system.domain.Role) throws java.lang.Exception
+2015-09-28 16:09:57.834  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/authfailure]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.SystemController.authfailure() throws java.lang.Exception
+2015-09-28 16:09:57.835  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/authsuccess]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.SystemController.authsuccess() throws java.lang.Exception
+2015-09-28 16:09:57.836  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/view/{page:^[a-zA-Z0-9_]+$}],methods=[GET]}" onto public java.lang.String com.lc.platform.system.controller.SystemController.view(java.lang.String) throws java.lang.Exception
+2015-09-28 16:09:57.837  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/invalidSession]}" onto public java.lang.String com.lc.platform.system.controller.SystemController.invalidSession(java.util.Map<java.lang.String, java.lang.Object>) throws java.lang.Exception
+2015-09-28 16:09:57.843  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/users/create],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.UserController.create(com.lc.platform.system.domain.User,java.lang.String[],java.lang.String[]) throws java.lang.Exception
+2015-09-28 16:09:57.844  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/users/update],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.UserController.update(com.lc.platform.system.domain.User) throws java.lang.Exception
+2015-09-28 16:09:57.845  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/users/dept/update],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.UserController.updateDept(java.lang.String,java.lang.String,boolean) throws java.lang.Exception
+2015-09-28 16:09:57.846  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/users],methods=[GET || POST]}" onto public com.lc.platform.extjs.JsonReader com.lc.platform.system.controller.UserController.readUsers(com.lc.platform.extjs.QueryParams) throws java.lang.Exception
+2015-09-28 16:09:57.847  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/users/role/update],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.UserController.updateRole(java.lang.String,java.lang.String,boolean) throws java.lang.Exception
+2015-09-28 16:09:57.848  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/users/batchDelete],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.UserController.batchDelete(java.lang.String[]) throws java.lang.Exception
+2015-09-28 16:09:57.848  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/users/headinfo]}" onto public java.lang.String com.lc.platform.system.controller.UserController.headinfo() throws java.lang.Exception
+2015-09-28 16:09:57.849  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/users/saveHeadPic],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.UserController.headPic(int,int,int,int,java.lang.String,java.lang.String,java.lang.String) throws java.lang.Exception
+2015-09-28 16:09:57.850  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/users/checkedEmail],methods=[POST || GET]}" onto public java.lang.Object com.lc.platform.system.controller.UserController.checkedEmail(java.lang.String) throws java.lang.Exception
+2015-09-28 16:09:57.851  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/users/headImageConvert],methods=[POST]}" onto public java.lang.String com.lc.platform.system.controller.UserController.headImageConvert(org.springframework.web.multipart.MultipartFile) throws java.lang.Exception
+2015-09-28 16:09:57.851  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/users/checkedUserName],methods=[POST || GET]}" onto public java.lang.Object com.lc.platform.system.controller.UserController.checkedUserName(java.lang.String) throws java.lang.Exception
+2015-09-28 16:09:57.853  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/bootstrap/view/{page:^[a-zA-Z0-9_]+$}],methods=[GET]}" onto public java.lang.String com.lc.platform.bootstrap.controller.BootstrapController.view(java.lang.String) throws java.lang.Exception
+2015-09-28 16:09:57.860  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2015-09-28 16:09:57.861  INFO 4204 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+2015-09-28 16:09:57.995  INFO 4204 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-09-28 16:09:57.995  INFO 4204 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-09-28 16:09:58.210  INFO 4204 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-09-28 16:09:59.317  INFO 4204 --- [main] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2015-09-28 16:09:59.814  INFO 4204 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2015-09-28 16:10:00.350  INFO 4204 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 80 (http)
+2015-09-28 16:10:00.367  INFO 4204 --- [main] c.lc.platform.extjs.desktop.Application  : Started Application in 36.088 seconds (JVM running for 38.218)
+2015-09-28 16:10:20.033  INFO 4204 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2015-09-28 16:10:20.034  INFO 4204 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2015-09-28 16:10:20.138  INFO 4204 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 103 ms
+2015-09-28 16:10:25.882  INFO 4204 --- [http-nio-80-exec-7] c.l.p.s.service.impl.UserServiceImpl     : 用户 admin 没有授予任何权限
+2015-09-28 16:10:28.994  WARN 4204 --- [http-nio-80-exec-6] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 97 in HQL: [SELECT count(*) FROM com.lc.platform.system.domain.Menu p  WHERE 1=1  AND  (  p.desktopNumber = ?  AND  p.parentId = ?  ) ].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:10:28.996  WARN 4204 --- [http-nio-80-exec-6] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 118 in HQL: [SELECT count(*) FROM com.lc.platform.system.domain.Menu p  WHERE 1=1  AND  (  p.desktopNumber = ?  AND  p.parentId = ?  ) ].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:10:29.020  WARN 4204 --- [http-nio-80-exec-6] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 90 in HQL: [SELECT p FROM com.lc.platform.system.domain.Menu p  WHERE 1=1  AND  (  p.desktopNumber = ?  AND  p.parentId = ?  )  ORDER BY p.menuOrder ASC].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:10:29.021  WARN 4204 --- [http-nio-80-exec-6] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 111 in HQL: [SELECT p FROM com.lc.platform.system.domain.Menu p  WHERE 1=1  AND  (  p.desktopNumber = ?  AND  p.parentId = ?  )  ORDER BY p.menuOrder ASC].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:18:47.745  WARN 4204 --- [http-nio-80-exec-7] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 108 in HQL: [SELECT count(*) FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ? )  ) ].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:18:47.769  WARN 4204 --- [http-nio-80-exec-7] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 107 in HQL: [SELECT ud.user FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ? )  )  ORDER BY ud.user.username ASC].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:20:40.760  WARN 4204 --- [http-nio-80-exec-9] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 93 in HQL: [SELECT count(*) FROM com.lc.platform.system.domain.Role  WHERE 1=1  AND  (  ( roleName LIKE ? )  ) ].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:20:40.773  WARN 4204 --- [http-nio-80-exec-9] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 77 in HQL: [FROM com.lc.platform.system.domain.Role  WHERE 1=1  AND  (  ( roleName LIKE ? )  )  ORDER BY roleName ASC].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:03.752  WARN 4204 --- [http-nio-80-exec-2] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 108 in HQL: [SELECT count(*) FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?) )  ) ].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:03.753  WARN 4204 --- [http-nio-80-exec-2] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 131 in HQL: [SELECT count(*) FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?) )  ) ].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:03.789  WARN 4204 --- [http-nio-80-exec-2] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 107 in HQL: [SELECT ud.user FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?) )  )  ORDER BY ud.user.username ASC].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:03.791  WARN 4204 --- [http-nio-80-exec-2] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 130 in HQL: [SELECT ud.user FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?) )  )  ORDER BY ud.user.username ASC].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:05.578  WARN 4204 --- [http-nio-80-exec-8] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 108 in HQL: [SELECT count(*) FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?,?,?) )  ) ].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:05.579  WARN 4204 --- [http-nio-80-exec-8] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 131 in HQL: [SELECT count(*) FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?,?,?) )  ) ].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:05.580  WARN 4204 --- [http-nio-80-exec-8] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 133 in HQL: [SELECT count(*) FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?,?,?) )  ) ].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:05.581  WARN 4204 --- [http-nio-80-exec-8] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 135 in HQL: [SELECT count(*) FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?,?,?) )  ) ].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:05.613  WARN 4204 --- [http-nio-80-exec-8] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 107 in HQL: [SELECT ud.user FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?,?,?) )  )  ORDER BY ud.user.username ASC].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:05.614  WARN 4204 --- [http-nio-80-exec-8] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 130 in HQL: [SELECT ud.user FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?,?,?) )  )  ORDER BY ud.user.username ASC].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:05.615  WARN 4204 --- [http-nio-80-exec-8] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 132 in HQL: [SELECT ud.user FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?,?,?) )  )  ORDER BY ud.user.username ASC].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:05.616  WARN 4204 --- [http-nio-80-exec-8] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 134 in HQL: [SELECT ud.user FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?,?,?) )  )  ORDER BY ud.user.username ASC].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:06.465  WARN 4204 --- [http-nio-80-exec-4] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 108 in HQL: [SELECT count(*) FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?,?,?,?,?,?) )  ) ].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:06.468  WARN 4204 --- [http-nio-80-exec-4] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 131 in HQL: [SELECT count(*) FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?,?,?,?,?,?) )  ) ].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:06.469  WARN 4204 --- [http-nio-80-exec-4] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 133 in HQL: [SELECT count(*) FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?,?,?,?,?,?) )  ) ].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:06.471  WARN 4204 --- [http-nio-80-exec-4] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 135 in HQL: [SELECT count(*) FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?,?,?,?,?,?) )  ) ].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:06.472  WARN 4204 --- [http-nio-80-exec-4] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 137 in HQL: [SELECT count(*) FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?,?,?,?,?,?) )  ) ].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:06.473  WARN 4204 --- [http-nio-80-exec-4] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 139 in HQL: [SELECT count(*) FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?,?,?,?,?,?) )  ) ].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:06.475  WARN 4204 --- [http-nio-80-exec-4] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 141 in HQL: [SELECT count(*) FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?,?,?,?,?,?) )  ) ].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:06.509  WARN 4204 --- [http-nio-80-exec-4] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 107 in HQL: [SELECT ud.user FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?,?,?,?,?,?) )  )  ORDER BY ud.user.username ASC].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:06.510  WARN 4204 --- [http-nio-80-exec-4] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 130 in HQL: [SELECT ud.user FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?,?,?,?,?,?) )  )  ORDER BY ud.user.username ASC].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:06.511  WARN 4204 --- [http-nio-80-exec-4] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 132 in HQL: [SELECT ud.user FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?,?,?,?,?,?) )  )  ORDER BY ud.user.username ASC].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:06.512  WARN 4204 --- [http-nio-80-exec-4] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 134 in HQL: [SELECT ud.user FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?,?,?,?,?,?) )  )  ORDER BY ud.user.username ASC].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:06.512  WARN 4204 --- [http-nio-80-exec-4] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 136 in HQL: [SELECT ud.user FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?,?,?,?,?,?) )  )  ORDER BY ud.user.username ASC].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:06.513  WARN 4204 --- [http-nio-80-exec-4] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 138 in HQL: [SELECT ud.user FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?,?,?,?,?,?) )  )  ORDER BY ud.user.username ASC].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:28:06.514  WARN 4204 --- [http-nio-80-exec-4] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 140 in HQL: [SELECT ud.user FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ?  AND  ud.dept.id IN (?,?,?,?,?,?) )  )  ORDER BY ud.user.username ASC].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:31:17.254  INFO 4072 --- [main] c.lc.platform.extjs.desktop.Application  : Starting Application on forever with PID 4072 (D:\git\lc-platform\lc-platform-extjs\lc-platform-extjs4-desktop\target\test-classes started by chenjun in D:\git\lc-platform\lc-platform-extjs\lc-platform-extjs4-desktop)
+2015-09-28 16:31:17.519  INFO 4072 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6969bd2: startup date [Mon Sep 28 16:31:17 CST 2015]; root of context hierarchy
+2015-09-28 16:31:24.176  INFO 4072 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2015-09-28 16:31:27.334  INFO 4072 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a61752e5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-09-28 16:31:27.435  INFO 4072 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'transactionAttributeSource' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-09-28 16:31:27.476  INFO 4072 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'transactionInterceptor' of type [class org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-09-28 16:31:27.498  INFO 4072 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-09-28 16:31:30.413  INFO 4072 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 80 (http)
+2015-09-28 16:31:31.244  INFO 4072 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2015-09-28 16:31:31.249  INFO 4072 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.0.23
+2015-09-28 16:31:31.841  INFO 4072 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2015-09-28 16:31:31.842  INFO 4072 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 14330 ms
+2015-09-28 16:31:37.064  INFO 4072 --- [localhost-startStop-1] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2015-09-28 16:31:37.111  INFO 4072 --- [localhost-startStop-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2015-09-28 16:31:37.731  INFO 4072 --- [localhost-startStop-1] org.hibernate.Version                    : HHH000412: Hibernate Core {4.3.10.Final}
+2015-09-28 16:31:37.741  INFO 4072 --- [localhost-startStop-1] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2015-09-28 16:31:37.748  INFO 4072 --- [localhost-startStop-1] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2015-09-28 16:31:38.549  INFO 4072 --- [localhost-startStop-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-09-28 16:31:39.792  INFO 4072 --- [localhost-startStop-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2015-09-28 16:31:40.396  WARN 4072 --- [localhost-startStop-1] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.lc.platform.system.domain.RoleInherit
+2015-09-28 16:31:40.397  WARN 4072 --- [localhost-startStop-1] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.lc.platform.system.domain.RoleInherit
+2015-09-28 16:31:40.429  INFO 4072 --- [localhost-startStop-1] o.h.h.i.ast.ASTQueryTranslatorFactory    : HHH000397: Using ASTQueryTranslatorFactory
+2015-09-28 16:31:41.722  INFO 4072 --- [localhost-startStop-1] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2015-09-28 16:31:41.723  INFO 4072 --- [localhost-startStop-1] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000102: Fetching database metadata
+2015-09-28 16:31:41.731  INFO 4072 --- [localhost-startStop-1] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000396: Updating schema
+2015-09-28 16:31:41.799  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: platform.sys_dept
+2015-09-28 16:31:41.801  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [id, deptorder, bz, deptcode, createdate, parentid, deptname]
+2015-09-28 16:31:41.801  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: []
+2015-09-28 16:31:41.803  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [primary]
+2015-09-28 16:31:41.841  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: platform.sys_menu
+2015-09-28 16:31:41.842  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [menulevel, bz, menuorder, menuid, menuimage, createdate, permcode, parentid, menuval, image48, desktopnumber, menuname, menutype, showwidth, showheight]
+2015-09-28 16:31:41.843  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: []
+2015-09-28 16:31:41.843  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [primary]
+2015-09-28 16:31:41.870  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: platform.sys_perm
+2015-09-28 16:31:41.871  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [id, permname, permdesc, menuid, permcode]
+2015-09-28 16:31:41.872  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: []
+2015-09-28 16:31:41.873  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [primary]
+2015-09-28 16:31:41.897  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: platform.sys_role
+2015-09-28 16:31:41.898  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [id, roledesc, rolename, rolestatus]
+2015-09-28 16:31:41.899  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: []
+2015-09-28 16:31:41.900  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [primary]
+2015-09-28 16:31:41.939  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: platform.sys_role_inherit
+2015-09-28 16:31:41.939  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [childid, fartherid]
+2015-09-28 16:31:41.940  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: [fk_f8h9gjt7q7qdhg1q68cjvl4m6, fk_gatap7wrw8twh0kbklrkfgeca]
+2015-09-28 16:31:41.940  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [primary, fk_gatap7wrw8twh0kbklrkfgeca]
+2015-09-28 16:31:41.968  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: platform.sys_role_perm
+2015-09-28 16:31:41.969  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [id, roleid, permid]
+2015-09-28 16:31:41.969  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: [fk_kmo6uiuii6ofqr3va5uvyj5i, fk_is5ehgn40nl1bh82efsp5v8f]
+2015-09-28 16:31:41.970  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [primary, fk_kmo6uiuii6ofqr3va5uvyj5i, fk_is5ehgn40nl1bh82efsp5v8f]
+2015-09-28 16:31:42.007  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: platform.sys_user
+2015-09-28 16:31:42.007  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [credentialsnonexpired, enabled, accountnonexpired, roleinfo, accountlocked, xm, superadmin, userid, createdate, password, delstatus, username, deptinfo, email, jianpin, headimage24, pinyin]
+2015-09-28 16:31:42.008  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: []
+2015-09-28 16:31:42.008  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [uk_ahtq5ew3v0kt1n7hf1sgp7p8l, primary, uk_51bvuyvihefoh4kp5syh2jpi4]
+2015-09-28 16:31:42.035  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: platform.sys_user_dept
+2015-09-28 16:31:42.035  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [id, deptid, userid]
+2015-09-28 16:31:42.036  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: [fk_lhb5a3yf2po8wxcsa2nt0f3vp, fk_hqg4mnuqboiurai7malk9f30w]
+2015-09-28 16:31:42.036  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [fk_lhb5a3yf2po8wxcsa2nt0f3vp, primary, fk_hqg4mnuqboiurai7malk9f30w]
+2015-09-28 16:31:42.069  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000261: Table found: platform.sys_user_role
+2015-09-28 16:31:42.069  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000037: Columns: [id, roleid, userid]
+2015-09-28 16:31:42.070  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000108: Foreign keys: [fk_pvdaavr91tnlrmeg3t7o12gin, fk_8uk74b467ws5k8xi7ivekvx5e]
+2015-09-28 16:31:42.070  INFO 4072 --- [localhost-startStop-1] o.hibernate.tool.hbm2ddl.TableMetadata   : HHH000126: Indexes: [fk_pvdaavr91tnlrmeg3t7o12gin, fk_8uk74b467ws5k8xi7ivekvx5e, primary]
+2015-09-28 16:31:42.073  INFO 4072 --- [localhost-startStop-1] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000232: Schema update complete
+2015-09-28 16:31:44.979  INFO 4072 --- [localhost-startStop-1] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**/*.css'], []
+2015-09-28 16:31:44.980  INFO 4072 --- [localhost-startStop-1] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**/*.js'], []
+2015-09-28 16:31:44.981  INFO 4072 --- [localhost-startStop-1] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**/images/**'], []
+2015-09-28 16:31:44.982  INFO 4072 --- [localhost-startStop-1] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**/authfailure'], []
+2015-09-28 16:31:44.982  INFO 4072 --- [localhost-startStop-1] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**/invalidsession'], []
+2015-09-28 16:31:45.264  INFO 4072 --- [localhost-startStop-1] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@420664c6, org.springframework.security.web.context.SecurityContextPersistenceFilter@7cc4d0c6, org.springframework.security.web.header.HeaderWriterFilter@4f8efd93, org.springframework.security.web.authentication.logout.LogoutFilter@13a0821a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@369e0b85, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@282d300, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5aeaa649, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@31c22507, org.springframework.security.web.session.SessionManagementFilter@7e690cc7, org.springframework.security.web.access.ExceptionTranslationFilter@1d7b4ab6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@45364492]
+2015-09-28 16:31:45.642  INFO 4072 --- [localhost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2015-09-28 16:31:45.664  INFO 4072 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2015-09-28 16:31:45.665  INFO 4072 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2015-09-28 16:31:45.666  INFO 4072 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2015-09-28 16:31:47.719  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6969bd2: startup date [Mon Sep 28 16:31:17 CST 2015]; root of context hierarchy
+2015-09-28 16:31:48.146  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/desktop]}" onto public java.lang.String com.lc.platform.extjs.desktop.DesktopController.index()
+2015-09-28 16:31:48.152  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/404]}" onto public java.lang.String com.lc.platform.spring.SpringController._404() throws java.lang.Exception
+2015-09-28 16:31:48.153  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/500]}" onto public java.lang.String com.lc.platform.spring.SpringController._500() throws java.lang.Exception
+2015-09-28 16:31:48.154  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/400]}" onto public java.lang.String com.lc.platform.spring.SpringController._400() throws java.lang.Exception
+2015-09-28 16:31:48.159  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/depts/create],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.DeptController.create(com.lc.platform.system.domain.Dept) throws java.lang.Exception
+2015-09-28 16:31:48.160  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/depts/delete],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.DeptController.delete(java.lang.String) throws java.lang.Exception
+2015-09-28 16:31:48.164  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/depts/tree]}" onto public java.util.List<com.lc.platform.ztree.TreeNode> com.lc.platform.system.controller.DeptController.tree(java.lang.String)
+2015-09-28 16:31:48.165  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/depts/update],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.DeptController.update(com.lc.platform.system.domain.Dept) throws java.lang.Exception
+2015-09-28 16:31:48.167  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/depts/move],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.DeptController.move(java.lang.String,java.lang.String) throws java.lang.Exception
+2015-09-28 16:31:48.184  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/menus],methods=[POST || GET]}" onto public com.lc.platform.extjs.JsonReader com.lc.platform.system.controller.MenuController.readDesktopMenus(int,java.lang.String) throws java.lang.Exception
+2015-09-28 16:31:48.187  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/perms/tree]}" onto public java.util.List<com.lc.platform.ztree.TreeNode> com.lc.platform.system.controller.PermController.tree(java.lang.String[])
+2015-09-28 16:31:48.190  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/roles],methods=[GET || POST]}" onto public com.lc.platform.extjs.JsonReader com.lc.platform.system.controller.RoleController.readUsers(com.lc.platform.extjs.QueryParams,java.lang.String) throws java.lang.Exception
+2015-09-28 16:31:48.191  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/roles/batchUpdate],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.RoleController.batchUpdate(com.lc.platform.system.domain.Role[]) throws java.lang.Exception
+2015-09-28 16:31:48.192  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/roles/batchDelete],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.RoleController.batchDelete(java.lang.String[]) throws java.lang.Exception
+2015-09-28 16:31:48.192  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/roles/perms/update],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.RoleController.permsUpdate(java.lang.String[],java.lang.String[],boolean) throws java.lang.Exception
+2015-09-28 16:31:48.193  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/roles/update],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.RoleController.updateSystemRole(com.lc.platform.system.domain.Role) throws java.lang.Exception
+2015-09-28 16:31:48.197  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/authfailure]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.SystemController.authfailure() throws java.lang.Exception
+2015-09-28 16:31:48.198  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/authsuccess]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.SystemController.authsuccess() throws java.lang.Exception
+2015-09-28 16:31:48.199  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/view/{page:^[a-zA-Z0-9_]+$}],methods=[GET]}" onto public java.lang.String com.lc.platform.system.controller.SystemController.view(java.lang.String) throws java.lang.Exception
+2015-09-28 16:31:48.200  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/invalidSession]}" onto public java.lang.String com.lc.platform.system.controller.SystemController.invalidSession(java.util.Map<java.lang.String, java.lang.Object>) throws java.lang.Exception
+2015-09-28 16:31:48.206  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/users/create],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.UserController.create(com.lc.platform.system.domain.User,java.lang.String[],java.lang.String[]) throws java.lang.Exception
+2015-09-28 16:31:48.207  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/users/update],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.UserController.update(com.lc.platform.system.domain.User) throws java.lang.Exception
+2015-09-28 16:31:48.207  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/users/dept/update],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.UserController.updateDept(java.lang.String,java.lang.String,boolean) throws java.lang.Exception
+2015-09-28 16:31:48.208  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/users],methods=[GET || POST]}" onto public com.lc.platform.extjs.JsonReader com.lc.platform.system.controller.UserController.readUsers(com.lc.platform.extjs.QueryParams) throws java.lang.Exception
+2015-09-28 16:31:48.209  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/users/role/update],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.UserController.updateRole(java.lang.String,java.lang.String,boolean) throws java.lang.Exception
+2015-09-28 16:31:48.210  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/users/batchDelete],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.UserController.batchDelete(java.lang.String[]) throws java.lang.Exception
+2015-09-28 16:31:48.210  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/users/headinfo]}" onto public java.lang.String com.lc.platform.system.controller.UserController.headinfo() throws java.lang.Exception
+2015-09-28 16:31:48.211  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/users/saveHeadPic],methods=[POST]}" onto public com.lc.platform.commons.spring.Message com.lc.platform.system.controller.UserController.headPic(int,int,int,int,java.lang.String,java.lang.String,java.lang.String) throws java.lang.Exception
+2015-09-28 16:31:48.212  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/users/checkedEmail],methods=[POST || GET]}" onto public java.lang.Object com.lc.platform.system.controller.UserController.checkedEmail(java.lang.String) throws java.lang.Exception
+2015-09-28 16:31:48.212  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/users/headImageConvert],methods=[POST]}" onto public java.lang.String com.lc.platform.system.controller.UserController.headImageConvert(org.springframework.web.multipart.MultipartFile) throws java.lang.Exception
+2015-09-28 16:31:48.213  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/system/users/checkedUserName],methods=[POST || GET]}" onto public java.lang.Object com.lc.platform.system.controller.UserController.checkedUserName(java.lang.String) throws java.lang.Exception
+2015-09-28 16:31:48.218  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/bootstrap/view/{page:^[a-zA-Z0-9_]+$}],methods=[GET]}" onto public java.lang.String com.lc.platform.bootstrap.controller.BootstrapController.view(java.lang.String) throws java.lang.Exception
+2015-09-28 16:31:48.226  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2015-09-28 16:31:48.228  INFO 4072 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+2015-09-28 16:31:48.386  INFO 4072 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-09-28 16:31:48.387  INFO 4072 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-09-28 16:31:48.599  INFO 4072 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-09-28 16:31:49.605  INFO 4072 --- [main] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2015-09-28 16:31:50.012  INFO 4072 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2015-09-28 16:31:50.284  INFO 4072 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 80 (http)
+2015-09-28 16:31:50.292  INFO 4072 --- [main] c.lc.platform.extjs.desktop.Application  : Started Application in 34.406 seconds (JVM running for 36.393)
+2015-09-28 16:32:21.918  INFO 4072 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2015-09-28 16:32:21.920  INFO 4072 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2015-09-28 16:32:22.010  INFO 4072 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 90 ms
+2015-09-28 16:32:27.169  INFO 4072 --- [http-nio-80-exec-10] c.l.p.s.service.impl.UserServiceImpl     : 用户 admin 没有授予任何权限
+2015-09-28 16:32:32.328  WARN 4072 --- [http-nio-80-exec-10] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 97 in HQL: [SELECT count(*) FROM com.lc.platform.system.domain.Menu p  WHERE 1=1  AND  (  p.desktopNumber = ?  AND  p.parentId = ?  ) ].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:32:32.331  WARN 4072 --- [http-nio-80-exec-10] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 118 in HQL: [SELECT count(*) FROM com.lc.platform.system.domain.Menu p  WHERE 1=1  AND  (  p.desktopNumber = ?  AND  p.parentId = ?  ) ].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:32:32.362  WARN 4072 --- [http-nio-80-exec-10] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 90 in HQL: [SELECT p FROM com.lc.platform.system.domain.Menu p  WHERE 1=1  AND  (  p.desktopNumber = ?  AND  p.parentId = ?  )  ORDER BY p.menuOrder ASC].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:32:32.363  WARN 4072 --- [http-nio-80-exec-10] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 111 in HQL: [SELECT p FROM com.lc.platform.system.domain.Menu p  WHERE 1=1  AND  (  p.desktopNumber = ?  AND  p.parentId = ?  )  ORDER BY p.menuOrder ASC].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:36:46.241  WARN 4072 --- [http-nio-80-exec-1] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 108 in HQL: [SELECT count(*) FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ? )  ) ].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:36:46.274  WARN 4072 --- [http-nio-80-exec-1] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 107 in HQL: [SELECT ud.user FROM com.lc.platform.system.domain.UserDept ud  WHERE 1=1  AND  (  ( ud.user.username LIKE ? )  )  ORDER BY ud.user.username ASC].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:37:02.018  WARN 4072 --- [http-nio-80-exec-6] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 93 in HQL: [SELECT count(*) FROM com.lc.platform.system.domain.Role  WHERE 1=1  AND  (  ( roleName LIKE ? )  ) ].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:37:02.033  WARN 4072 --- [http-nio-80-exec-6] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 77 in HQL: [FROM com.lc.platform.system.domain.Role  WHERE 1=1  AND  (  ( roleName LIKE ? )  )  ORDER BY roleName ASC].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:39:08.071 ERROR 4072 --- [http-nio-80-exec-4] freemarker.runtime                       : Error executing FreeMarker template
+
+freemarker.core._MiscTemplateException: Template inclusion failed (for parameter value "/head.html"):
+Template not found for name "head.html".
+The name was interpreted by this TemplateLoader: MultiTemplateLoader(loader1 = FileTemplateLoader(baseDir="D:\git\lc-platform\lc-platform-extjs\lc-platform-extjs4-desktop\target\classes\templates", canonicalPath="D:\git\lc-platform\lc-platform-extjs\lc-platform-extjs4-desktop\target\classes\templates\"), loader2 = FileTemplateLoader(baseDir="D:\git\lc-platform\lc-platform-spring\target\classes\templates", canonicalPath="D:\git\lc-platform\lc-platform-spring\target\classes\templates\"), loader3 = FileTemplateLoader(baseDir="D:\git\lc-platform\lc-platform-system\target\classes\templates", canonicalPath="D:\git\lc-platform\lc-platform-system\target\classes\templates\"), loader4 = FileTemplateLoader(baseDir="D:\git\lc-platform\lc-platform-bootstrap\target\classes\templates", canonicalPath="D:\git\lc-platform\lc-platform-bootstrap\target\classes\templates\"), loader5 = FileTemplateLoader(baseDir="D:\git\lc-platform\lc-platform-extjs\lc-platform-extjs4-desktop\target\classes\templates", canonicalPath="D:\git\lc-platform\lc-platform-extjs\lc-platform-extjs4-desktop\target\classes\templates\"), loader6 = ClassTemplateLoader(resourceLoaderClass=org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer, basePackagePath="" /* relatively to resourceLoaderClass pkg */)).
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #include "/head.html"  [in template "system/userHeadInfo.html" at line 9, column 9]
+----
+	at freemarker.core.Include.accept(Include.java:159)
+	at freemarker.core.Environment.visit(Environment.java:312)
+	at freemarker.core.MixedContent.accept(MixedContent.java:62)
+	at freemarker.core.Environment.visit(Environment.java:312)
+	at freemarker.core.Environment.process(Environment.java:290)
+	at freemarker.template.Template.process(Template.java:312)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:367)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:284)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:234)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:118)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:84)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:103)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:154)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:45)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:199)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:57)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:87)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:50)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:192)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:160)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1521)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1478)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: freemarker.template.TemplateNotFoundException: Template not found for name "head.html".
+The name was interpreted by this TemplateLoader: MultiTemplateLoader(loader1 = FileTemplateLoader(baseDir="D:\git\lc-platform\lc-platform-extjs\lc-platform-extjs4-desktop\target\classes\templates", canonicalPath="D:\git\lc-platform\lc-platform-extjs\lc-platform-extjs4-desktop\target\classes\templates\"), loader2 = FileTemplateLoader(baseDir="D:\git\lc-platform\lc-platform-spring\target\classes\templates", canonicalPath="D:\git\lc-platform\lc-platform-spring\target\classes\templates\"), loader3 = FileTemplateLoader(baseDir="D:\git\lc-platform\lc-platform-system\target\classes\templates", canonicalPath="D:\git\lc-platform\lc-platform-system\target\classes\templates\"), loader4 = FileTemplateLoader(baseDir="D:\git\lc-platform\lc-platform-bootstrap\target\classes\templates", canonicalPath="D:\git\lc-platform\lc-platform-bootstrap\target\classes\templates\"), loader5 = FileTemplateLoader(baseDir="D:\git\lc-platform\lc-platform-extjs\lc-platform-extjs4-desktop\target\classes\templates", canonicalPath="D:\git\lc-platform\lc-platform-extjs\lc-platform-extjs4-desktop\target\classes\templates\"), loader6 = ClassTemplateLoader(resourceLoaderClass=org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer, basePackagePath="" /* relatively to resourceLoaderClass pkg */)).
+	at freemarker.template.Configuration.getTemplate(Configuration.java:1584)
+	at freemarker.core.Environment.getTemplateForInclusion(Environment.java:2046)
+	at freemarker.core.Include.accept(Include.java:157)
+	... 77 common frames omitted
+
+2015-09-28 16:39:08.097 ERROR 4072 --- [http-nio-80-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is freemarker.core._MiscTemplateException: Template inclusion failed (for parameter value "/head.html"):
+Template not found for name "head.html".
+The name was interpreted by this TemplateLoader: MultiTemplateLoader(loader1 = FileTemplateLoader(baseDir="D:\git\lc-platform\lc-platform-extjs\lc-platform-extjs4-desktop\target\classes\templates", canonicalPath="D:\git\lc-platform\lc-platform-extjs\lc-platform-extjs4-desktop\target\classes\templates\"), loader2 = FileTemplateLoader(baseDir="D:\git\lc-platform\lc-platform-spring\target\classes\templates", canonicalPath="D:\git\lc-platform\lc-platform-spring\target\classes\templates\"), loader3 = FileTemplateLoader(baseDir="D:\git\lc-platform\lc-platform-system\target\classes\templates", canonicalPath="D:\git\lc-platform\lc-platform-system\target\classes\templates\"), loader4 = FileTemplateLoader(baseDir="D:\git\lc-platform\lc-platform-bootstrap\target\classes\templates", canonicalPath="D:\git\lc-platform\lc-platform-bootstrap\target\classes\templates\"), loader5 = FileTemplateLoader(baseDir="D:\git\lc-platform\lc-platform-extjs\lc-platform-extjs4-desktop\target\classes\templates", canonicalPath="D:\git\lc-platform\lc-platform-extjs\lc-platform-extjs4-desktop\target\classes\templates\"), loader6 = ClassTemplateLoader(resourceLoaderClass=org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer, basePackagePath="" /* relatively to resourceLoaderClass pkg */)).
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #include "/head.html"  [in template "system/userHeadInfo.html" at line 9, column 9]
+----] with root cause
+
+freemarker.template.TemplateNotFoundException: Template not found for name "head.html".
+The name was interpreted by this TemplateLoader: MultiTemplateLoader(loader1 = FileTemplateLoader(baseDir="D:\git\lc-platform\lc-platform-extjs\lc-platform-extjs4-desktop\target\classes\templates", canonicalPath="D:\git\lc-platform\lc-platform-extjs\lc-platform-extjs4-desktop\target\classes\templates\"), loader2 = FileTemplateLoader(baseDir="D:\git\lc-platform\lc-platform-spring\target\classes\templates", canonicalPath="D:\git\lc-platform\lc-platform-spring\target\classes\templates\"), loader3 = FileTemplateLoader(baseDir="D:\git\lc-platform\lc-platform-system\target\classes\templates", canonicalPath="D:\git\lc-platform\lc-platform-system\target\classes\templates\"), loader4 = FileTemplateLoader(baseDir="D:\git\lc-platform\lc-platform-bootstrap\target\classes\templates", canonicalPath="D:\git\lc-platform\lc-platform-bootstrap\target\classes\templates\"), loader5 = FileTemplateLoader(baseDir="D:\git\lc-platform\lc-platform-extjs\lc-platform-extjs4-desktop\target\classes\templates", canonicalPath="D:\git\lc-platform\lc-platform-extjs\lc-platform-extjs4-desktop\target\classes\templates\"), loader6 = ClassTemplateLoader(resourceLoaderClass=org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer, basePackagePath="" /* relatively to resourceLoaderClass pkg */)).
+	at freemarker.template.Configuration.getTemplate(Configuration.java:1584)
+	at freemarker.core.Environment.getTemplateForInclusion(Environment.java:2046)
+	at freemarker.core.Include.accept(Include.java:157)
+	at freemarker.core.Environment.visit(Environment.java:312)
+	at freemarker.core.MixedContent.accept(MixedContent.java:62)
+	at freemarker.core.Environment.visit(Environment.java:312)
+	at freemarker.core.Environment.process(Environment.java:290)
+	at freemarker.template.Template.process(Template.java:312)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:367)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:284)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:234)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:118)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:84)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:103)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:154)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:45)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:199)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:57)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:87)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:50)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:192)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:160)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1521)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1478)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2015-09-28 16:43:07.726 ERROR 4072 --- [http-nio-80-exec-4] freemarker.runtime                       : Error executing FreeMarker template
+
+freemarker.core.InvalidReferenceException: The following has evaluated to null or missing:
+==> request  [in template "system/userHeadInfo.html" at line 127, column 41]
+
+----
+Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${request.contextPath}  [in template "system/userHeadInfo.html" at line 127, column 39]
+----
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:116)
+	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:60)
+	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
+	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
+	at freemarker.core.Dot._eval(Dot.java:45)
+	at freemarker.core.Expression.eval(Expression.java:78)
+	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:82)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:40)
+	at freemarker.core.Environment.visit(Environment.java:312)
+	at freemarker.core.MixedContent.accept(MixedContent.java:62)
+	at freemarker.core.Environment.visit(Environment.java:312)
+	at freemarker.core.Environment.process(Environment.java:290)
+	at freemarker.template.Template.process(Template.java:312)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:367)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:284)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:234)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:118)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:84)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:103)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:154)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:45)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:199)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:57)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:87)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:50)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:192)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:160)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1521)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1478)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2015-09-28 16:43:07.738 ERROR 4072 --- [http-nio-80-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is freemarker.core.InvalidReferenceException: The following has evaluated to null or missing:
+==> request  [in template "system/userHeadInfo.html" at line 127, column 41]
+
+----
+Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${request.contextPath}  [in template "system/userHeadInfo.html" at line 127, column 39]
+----] with root cause
+
+freemarker.core.InvalidReferenceException: The following has evaluated to null or missing:
+==> request  [in template "system/userHeadInfo.html" at line 127, column 41]
+
+----
+Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${request.contextPath}  [in template "system/userHeadInfo.html" at line 127, column 39]
+----
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:116)
+	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:60)
+	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
+	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
+	at freemarker.core.Dot._eval(Dot.java:45)
+	at freemarker.core.Expression.eval(Expression.java:78)
+	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:82)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:40)
+	at freemarker.core.Environment.visit(Environment.java:312)
+	at freemarker.core.MixedContent.accept(MixedContent.java:62)
+	at freemarker.core.Environment.visit(Environment.java:312)
+	at freemarker.core.Environment.process(Environment.java:290)
+	at freemarker.template.Template.process(Template.java:312)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:367)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:284)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:234)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:118)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:84)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:103)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:154)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:45)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:199)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:57)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:87)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:50)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:192)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:160)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1521)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1478)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2015-09-28 16:44:04.563 ERROR 4072 --- [http-nio-80-exec-2] freemarker.runtime                       : Error executing FreeMarker template
+
+freemarker.core.InvalidReferenceException: The following has evaluated to null or missing:
+==> request  [in template "system/userHeadInfo.html" at line 127, column 41]
+
+----
+Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${request.contextPath}  [in template "system/userHeadInfo.html" at line 127, column 39]
+----
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:116)
+	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:60)
+	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
+	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
+	at freemarker.core.Dot._eval(Dot.java:45)
+	at freemarker.core.Expression.eval(Expression.java:78)
+	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:82)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:40)
+	at freemarker.core.Environment.visit(Environment.java:312)
+	at freemarker.core.MixedContent.accept(MixedContent.java:62)
+	at freemarker.core.Environment.visit(Environment.java:312)
+	at freemarker.core.Environment.process(Environment.java:290)
+	at freemarker.template.Template.process(Template.java:312)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:367)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:284)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:234)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:118)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:84)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:103)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:154)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:45)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:199)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:57)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:87)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:50)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:192)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:160)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1521)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1478)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2015-09-28 16:44:04.574 ERROR 4072 --- [http-nio-80-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is freemarker.core.InvalidReferenceException: The following has evaluated to null or missing:
+==> request  [in template "system/userHeadInfo.html" at line 127, column 41]
+
+----
+Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${request.contextPath}  [in template "system/userHeadInfo.html" at line 127, column 39]
+----] with root cause
+
+freemarker.core.InvalidReferenceException: The following has evaluated to null or missing:
+==> request  [in template "system/userHeadInfo.html" at line 127, column 41]
+
+----
+Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${request.contextPath}  [in template "system/userHeadInfo.html" at line 127, column 39]
+----
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:116)
+	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:60)
+	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
+	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
+	at freemarker.core.Dot._eval(Dot.java:45)
+	at freemarker.core.Expression.eval(Expression.java:78)
+	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:82)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:40)
+	at freemarker.core.Environment.visit(Environment.java:312)
+	at freemarker.core.MixedContent.accept(MixedContent.java:62)
+	at freemarker.core.Environment.visit(Environment.java:312)
+	at freemarker.core.Environment.process(Environment.java:290)
+	at freemarker.template.Template.process(Template.java:312)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:367)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:284)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:234)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:118)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:84)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:103)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:154)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:45)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:199)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:57)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:87)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:50)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:192)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:160)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1521)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1478)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2015-09-28 16:45:01.533 ERROR 4072 --- [http-nio-80-exec-1] freemarker.runtime                       : Error executing FreeMarker template
+
+freemarker.core.InvalidReferenceException: The following has evaluated to null or missing:
+==> request  [in template "system/userHeadInfo.html" at line 127, column 41]
+
+----
+Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${request.contextPath}  [in template "system/userHeadInfo.html" at line 127, column 39]
+----
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:116)
+	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:60)
+	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
+	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
+	at freemarker.core.Dot._eval(Dot.java:45)
+	at freemarker.core.Expression.eval(Expression.java:78)
+	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:82)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:40)
+	at freemarker.core.Environment.visit(Environment.java:312)
+	at freemarker.core.MixedContent.accept(MixedContent.java:62)
+	at freemarker.core.Environment.visit(Environment.java:312)
+	at freemarker.core.Environment.process(Environment.java:290)
+	at freemarker.template.Template.process(Template.java:312)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:367)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:284)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:234)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:118)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:84)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:103)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:154)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:45)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:199)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:57)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:87)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:50)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:192)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:160)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1521)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1478)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2015-09-28 16:45:01.551 ERROR 4072 --- [http-nio-80-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is freemarker.core.InvalidReferenceException: The following has evaluated to null or missing:
+==> request  [in template "system/userHeadInfo.html" at line 127, column 41]
+
+----
+Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${request.contextPath}  [in template "system/userHeadInfo.html" at line 127, column 39]
+----] with root cause
+
+freemarker.core.InvalidReferenceException: The following has evaluated to null or missing:
+==> request  [in template "system/userHeadInfo.html" at line 127, column 41]
+
+----
+Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${request.contextPath}  [in template "system/userHeadInfo.html" at line 127, column 39]
+----
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:116)
+	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:60)
+	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
+	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
+	at freemarker.core.Dot._eval(Dot.java:45)
+	at freemarker.core.Expression.eval(Expression.java:78)
+	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:82)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:40)
+	at freemarker.core.Environment.visit(Environment.java:312)
+	at freemarker.core.MixedContent.accept(MixedContent.java:62)
+	at freemarker.core.Environment.visit(Environment.java:312)
+	at freemarker.core.Environment.process(Environment.java:290)
+	at freemarker.template.Template.process(Template.java:312)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:367)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:284)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:234)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:118)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:84)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:103)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:154)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:45)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:199)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:57)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:87)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:50)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:192)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:160)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1521)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1478)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2015-09-28 16:45:35.942 ERROR 4072 --- [http-nio-80-exec-6] freemarker.runtime                       : Error executing FreeMarker template
+
+freemarker.core.InvalidReferenceException: The following has evaluated to null or missing:
+==> request  [in template "system/userHeadInfo.html" at line 131, column 41]
+
+----
+Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${request.contextPath}  [in template "system/userHeadInfo.html" at line 131, column 39]
+----
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:116)
+	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:60)
+	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
+	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
+	at freemarker.core.Dot._eval(Dot.java:45)
+	at freemarker.core.Expression.eval(Expression.java:78)
+	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:82)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:40)
+	at freemarker.core.Environment.visit(Environment.java:312)
+	at freemarker.core.MixedContent.accept(MixedContent.java:62)
+	at freemarker.core.Environment.visit(Environment.java:312)
+	at freemarker.core.Environment.process(Environment.java:290)
+	at freemarker.template.Template.process(Template.java:312)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:367)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:284)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:234)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:118)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:84)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:103)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:154)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:45)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:199)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:57)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:87)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:50)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:192)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:160)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1521)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1478)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2015-09-28 16:45:35.957 ERROR 4072 --- [http-nio-80-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is freemarker.core.InvalidReferenceException: The following has evaluated to null or missing:
+==> request  [in template "system/userHeadInfo.html" at line 131, column 41]
+
+----
+Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${request.contextPath}  [in template "system/userHeadInfo.html" at line 131, column 39]
+----] with root cause
+
+freemarker.core.InvalidReferenceException: The following has evaluated to null or missing:
+==> request  [in template "system/userHeadInfo.html" at line 131, column 41]
+
+----
+Tip: If the failing expression is known to be legally refer to something that's null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${request.contextPath}  [in template "system/userHeadInfo.html" at line 131, column 39]
+----
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:116)
+	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:60)
+	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
+	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
+	at freemarker.core.Dot._eval(Dot.java:45)
+	at freemarker.core.Expression.eval(Expression.java:78)
+	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:82)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:40)
+	at freemarker.core.Environment.visit(Environment.java:312)
+	at freemarker.core.MixedContent.accept(MixedContent.java:62)
+	at freemarker.core.Environment.visit(Environment.java:312)
+	at freemarker.core.Environment.process(Environment.java:290)
+	at freemarker.template.Template.process(Template.java:312)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.processTemplate(FreeMarkerView.java:367)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.doRender(FreeMarkerView.java:284)
+	at org.springframework.web.servlet.view.freemarker.FreeMarkerView.renderMergedTemplateModel(FreeMarkerView.java:234)
+	at org.springframework.web.servlet.view.AbstractTemplateView.renderMergedOutputModel(AbstractTemplateView.java:167)
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:303)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1244)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1027)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:971)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:967)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:858)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:843)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:330)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:118)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:84)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:103)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:154)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:45)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:199)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:57)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:87)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:50)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:192)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:160)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1521)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1478)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2015-09-28 16:47:57.492  WARN 4072 --- [http-nio-80-exec-3] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 93 in HQL: [SELECT count(*) FROM com.lc.platform.system.domain.Menu p  WHERE 1=1  AND  (  p.menuType != ?  ) ].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2015-09-28 16:47:57.516  WARN 4072 --- [http-nio-80-exec-3] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 86 in HQL: [SELECT p FROM com.lc.platform.system.domain.Menu p  WHERE 1=1  AND  (  p.menuType != ?  )  ORDER BY p.menuOrder ASC].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.

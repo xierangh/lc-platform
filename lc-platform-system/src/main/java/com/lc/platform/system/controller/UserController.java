@@ -43,7 +43,7 @@ public class UserController {
 	
 	@RequestMapping(value="headinfo")
 	public String headinfo()throws Exception{
-		return "system/UserHeadInfo";
+		return "system/userHeadInfo";
 	}
 	
 	/**
