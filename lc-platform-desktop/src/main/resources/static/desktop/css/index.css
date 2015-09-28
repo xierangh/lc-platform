@@ -1,0 +1,31 @@
+@CHARSET "UTF-8";
+img{
+	width: 48px;
+	height: 48px;
+}
+.desktop-shortcut:hover {
+	background-color: transparent;
+	background-image: url(../images/appbutton_mouseover_bg3.png) !important;
+	text-decoration: none;
+	background-repeat: no-repeat;
+}
+.desktop-shortcut{
+	cursor: pointer;
+	font-size: 11px;
+	width: 86px;
+	height: 88px;
+}
+
+.desktop-shortcut{
+	padding-top:10px;
+	float: left;
+	text-align: center;
+}
+.desktop-shortcut-text{
+	color: white;
+	line-height:20px;
+	text-align: center;
+}
+body {
+	background-image: url("../images/swwh.jpg");
+}

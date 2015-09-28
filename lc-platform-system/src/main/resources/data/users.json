@@ -1,0 +1,9 @@
+[
+ {
+	"username":"admin",
+	"password":"admin123",
+	"email":"85309651@qq.com",
+	"xm":"超级管理员",
+	"superAdmin":true
+ }
+]

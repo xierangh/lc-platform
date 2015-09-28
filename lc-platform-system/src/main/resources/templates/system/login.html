@@ -1,0 +1,54 @@
+<!doctype html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> 	<html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- General Metas -->
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">	<!-- Force Latest IE rendering engine -->
+	<title>登陆页面</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="${contextPath}/system/css/base.css">
+	<link rel="stylesheet" href="${contextPath}/system/css/skeleton.css">
+	<link rel="stylesheet" href="${contextPath}/system/css/layout.css">
+	<!-- JS  -->
+	${static_context}
+	${static_jquery}
+	${static_validation_engine}
+	<script type="text/javascript">
+		$(function(){
+			$('#loginForm').validationEngine();
+			$('#username').focus();
+		});
+	</script>
+	<style type="text/css">
+		.login_error{ margin-left:24px; color:red;}
+	</style>
+</head>
+<body>
+	<!-- Primary Page Layout -->
+	<div class="container">
+		<div class="form-bg">
+			<form action="${contextPath}/j_spring_security_check" method="post" id="loginForm">
+				<h2>Desktop System</h2>
+				<p><input type="text" id="username" name="username" placeholder="Username" class="validate[required]"></p>
+				<p><input type="password" id="password" name="password" placeholder="Password" class="validate[required]"></p>
+				<label for="remember">
+				  <input type="checkbox" id="remember" value="remember" />
+				  <span>Remember me on this computer</span>
+				</label>
+				<button type="submit"></button>
+				<div class="login_error">${(SPRING_SECURITY_LAST_EXCEPTION.message)!''}</div>
+			<form>
+		</div>
+		<p class="forgot">Forgot your password? <a href="">Click here to reset it.</a></p>
+	</div><!-- container -->
+<!-- End Document -->
+</body>
+</html>

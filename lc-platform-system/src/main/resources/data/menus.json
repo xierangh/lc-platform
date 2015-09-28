@@ -1,0 +1,68 @@
+[
+	{
+		"menuId" : "01",
+		"menuName" : "系统管理",
+		"image48" : "system/images/system.png",
+		"menuType" : "dir",
+		"desktopNumber" : 1,
+		"menuOrder" : 1,
+		"parentId" : "0",
+		"permCode" : "ROLE_SYSTEM_MENU"
+	},
+	{
+		"menuId" : "01-04",
+		"menuName" : "部门管理",
+		"image48" : "system/images/dept.png",
+		"menuType" : "viewClass",
+		"menuVal" : "system.view.DeptManager",
+		"desktopNumber" : 1,
+		"menuOrder" : 4,
+		"bz" : "部门管理",
+		"showWidth" : 600,
+		"showHeight" : 460,
+		"parentId" : "01",
+		"permCode" : "ROLE_DEPT_MENU"
+	},
+	{
+		"menuId" : "01-03",
+		"menuName" : "数据词典",
+		"image48" : "system/images/dict.png",
+		"menuType" : "viewClass",
+		"menuVal" : "system.view.DicManager",
+		"desktopNumber" : 1,
+		"menuOrder" : 3,
+		"bz" : "数据词典",
+		"showWidth" : 1120,
+		"showHeight" : 600,
+		"parentId" : "01",
+		"permCode" : "ROLE_DIC_MENU"
+	},
+	{
+		"menuId" : "01-02",
+		"menuName" : "角色管理",
+		"image48" : "system/images/role.png",
+		"menuType" : "viewClass",
+		"menuVal" : "system.view.RoleManager",
+		"desktopNumber" : 1,
+		"menuOrder" : 2,
+		"bz" : "角色管理",
+		"showWidth" : 920,
+		"showHeight" : 600,
+		"parentId" : "01",
+		"permCode" : "ROLE_ROLE_MENU"
+	},
+	{
+		"menuId" : "01-01",
+		"menuName" : "用户管理",
+		"image48" : "system/images/user.png",
+		"menuType" : "viewClass",
+		"menuVal" : "system.view.UserManager",
+		"desktopNumber" : 1,
+		"menuOrder" : 1,
+		"bz" : "用户管理",
+		"showWidth" : 1008,
+		"showHeight" : 600,
+		"parentId" : "01",
+		"permCode" : "ROLE_USER_MENU"
+	}
+]

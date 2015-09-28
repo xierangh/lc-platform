@@ -1,0 +1,386 @@
+@CHARSET "UTF-8";
+
+.ux-desktop-body{
+	border-color:white !important;
+}
+
+.pagelet_search_bar, .pagelet_search_button, .pagelet_search_pointer {
+background-image: url('../images/sprite_main_png.png') !important;
+}
+
+.pagelet_search_bar {
+background: none no-repeat scroll -140px -200px transparent;
+height: 33px;
+position: absolute;
+width: 166px;
+}
+
+.pagelet_search_input {
+background: none repeat scroll 0 0 transparent;
+border: 0 none;
+color: white;
+float: left;
+height: 18px;
+line-height: 18px;
+margin: 4px 0 0 12px;
+padding: 0;
+width: 116px!important;
+}
+
+.pagelet_search_button {
+background: none repeat scroll -458px -157px transparent;
+border: 0 none;
+cursor: pointer;
+float: right;
+height: 23px;
+margin: 2px 5px 0 0;
+padding: 0;
+width: 27px!important;
+}
+
+.pagelet_search_button:hover {
+background-position: -538px -157px;
+}
+
+/**********************************/
+
+
+.about {
+    background-image: url(../images/about_16.png);
+}
+
+.ux-desktop-Settings .x-splitter-vertical{
+	background:white !important;
+}
+
+.x-dd-drag-ghost .ux-desktop-shortcut{
+	left: 0px !important;
+	top: 0px !important;
+	background:none !important;
+}
+
+.x-dd-drag-ghost .ux-desktop-shortcut-text {
+    color: #666666 !important;
+}
+
+.x-view-over {
+	background-color: transparent;
+	background-image: url(../images/appbutton_mouseover_bg3.png) !important;
+	padding: 8px;
+	margin: 8px;
+	width: 86px;
+	text-decoration: none;
+	background-repeat: no-repeat;
+}
+
+
+.ux-desktop-shortcut-text {
+	width: auto;
+	display: inline-block;
+	background: url(../images/appButton_appName_bg.png);
+	padding: 0px 10px 0px 10px;
+	margin: 4px 0px 0px 0px;
+	height: 20px;
+	line-height: 18px;
+	overflow: hidden;
+	position: relative;
+	vertical-align: middle;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	font-size:12px;
+}
+
+/*************************************/
+#navbar {
+	position: absolute;
+	text-align: center;
+	top: 10px;
+	width: 265px;
+	height: 40px;
+	cursor: pointer;
+	z-index: 3503;
+}
+
+.indicator_wrapper {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 25px;
+}
+
+.indicator_container {
+	height: 100%;
+}
+
+.indicator {
+	background-position: 10000px 10000px;
+	color: #0DBBF1;
+	cursor: pointer;
+	display: inline-block;
+	float: left;
+	font-size: 18px;
+	font-weight: bold;
+	height: 20px;
+	line-height: 1.5;
+	margin: 4px 2px 0;
+	outline: 0 none;
+	position: relative;
+	text-indent: -999em;
+	width: 20px;
+}
+
+.indicator_icon {
+	float: left;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	z-index: 1;
+}
+
+.indicator_header {
+	background-position: -418px -158px;
+	display: inline;
+	height: 32px;
+	margin: -10px 0 0 6px;
+	position: relative;
+	width: 32px;
+}
+
+.indicator_header_img {
+	display: inline;
+	float: left;
+	height: 24px;
+	margin: 4px 0 0 4px;
+	width: 24px;
+}
+
+.indicator_manage,.indicator_search {
+	float: right;
+	height: 24px;
+	width: 24px;
+}
+
+.indicator_search {
+	background-position: -240px -157px;
+	margin: 2px 30px 2px 0;
+}
+
+.indicator_search:hover {
+	background-position: -322px -157px;
+}
+
+.indicator_manage {
+	background-position: -132px -157px;
+	margin: 2px 5px;
+}
+
+.indicator_manage:hover {
+	background-position: -207px -157px;
+}
+
+#navbar .left_nav,#navbar .right_nav {
+	margin: 2px 0;
+	overflow: hidden;
+	text-indent: -2000px;
+	width: 20px;
+}
+
+#navbar .leftbg {
+	left: 0;
+}
+
+#navbar .rightbg {
+	right: 0;
+}
+
+#navbar .system_button {
+	height: 27px;
+	margin: 0 3px;
+	width: 27px;
+}
+
+#navbar .system_button:hover {
+	background-position: -156px -98px;
+}
+
+.mac #navbar .system_button {
+	background-position: -186px -98px;
+}
+
+.mac #navbar .system_button:hover {
+	background-position: -216px -98px;
+}
+
+.linux #navbar .system_button {
+	background-position: -246px -98px;
+}
+
+.linux #navbar .system_button:hover {
+	background-position: -276px -98px;
+}
+
+.indicator_bg_corner {
+	height: 26px;
+	position: absolute;
+	width: 11px;
+}
+
+.indicator_icon_1 {
+	background-position: -336px -132px;
+}
+
+.indicator_icon_2 {
+	background-position: -366px -132px;
+}
+
+.indicator_icon_3 {
+	background-position: -396px -132px;
+}
+
+.indicator_icon_4 {
+	background-position: -426px -132px;
+}
+
+.indicator_icon_5 {
+	background-position: -456px -132px;
+}
+
+.indicator_icon_1:hover {
+	background-position: -140px -132px;
+}
+
+.indicator_icon_2:hover {
+	background-position: -180px -132px;
+}
+
+.indicator_icon_3:hover {
+	background-position: -220px -132px;
+}
+
+.indicator_icon_4:hover {
+	background-position: -260px -132px;
+}
+
+.indicator_icon_5:hover {
+	background-position: -300px -132px;
+}
+
+#navbar .nav_current_1 .indicator_icon_1 {
+	background-position: -140px -132px;
+}
+
+#navbar .nav_current_2 .indicator_icon_2 {
+	background-position: -180px -132px;
+}
+
+#navbar .nav_current_3 .indicator_icon_3 {
+	background-position: -220px -132px;
+}
+
+#navbar .nav_current_4 .indicator_icon_4 {
+	background-position: -260px -132px;
+}
+
+#navbar .nav_current_5 .indicator_icon_5 {
+	background-position: -300px -132px;
+}
+
+#navbar .nav_current_6 .indicator_icon_6 {
+	background-position: -207px -157px;
+}
+
+
+.indicator_icon_bg {
+	display: none;
+	height: 26px;
+	left: -6px;
+	position: absolute;
+	top: -6px;
+	width: 26px;
+	z-index: 1;
+}
+
+#navbar .nav_current_1 .indicator_1 .indicator_icon_bg
+,#navbar .nav_current_2 .indicator_2 .indicator_icon_bg
+,#navbar .nav_current_3 .indicator_3 .indicator_icon_bg
+,#navbar .nav_current_4 .indicator_4 .indicator_icon_bg
+,#navbar .nav_current_5 .indicator_5 .indicator_icon_bg
+	{
+	background-position: -354px -154px;
+	display: block;
+}
+
+#navbar .nav_current_6 .indicator_manage{
+	background-position: -207px -157px;
+}
+
+.ie6_0 #navbar .indicator_icon_bg {
+	display: none !important;
+}
+
+.ie6_0 #navbar .nav_current_1 .indicator_1,.ie6_0 #navbar .nav_current_2 .indicator_2,.ie6_0 #navbar .nav_current_3 .indicator_3,.ie6_0 #navbar .nav_current_4 .indicator_4,.ie6_0 #navbar .nav_current_5 .indicator_5
+	{
+	background-position: -360px -160px;
+}
+
+.indicator_wrapper {
+	background: url("../images/sprite_main_png.png") no-repeat scroll -140px
+		-5px transparent;
+	position: static;
+	top: 0;
+}
+
+.indicator,.indicator_icon_bg,.indicator_icon {
+	background-image: url("../images/sprite_main_png.png");
+}
+
+.no_sysbtn .indicator_wrapper {
+	background-position: -140px -45px;
+}
+
+.no_sysbtn .indicator_header {
+	margin-right: 6px;
+}
+
+#navbar .system_button {
+	background: url("../images/sprite_main_png.png") no-repeat scroll 134px
+		-98px transparent;
+}
+
+/***********icon****************/
+.icon-search{background:url("../images/ico.png") no-repeat 2px -330px !important;}
+.icon-add{background:url("../images/ico.png") no-repeat 2px -357px !important;}
+.icon-update{background:url("../images/ico.png") no-repeat 2px -384px !important;}
+.icon-remove{background:url("../images/ico.png") no-repeat 2px -412px !important;}
+.icon-reset{background:url("../images/ico.png") no-repeat 2px -506px !important;}
+.icon-previous{background:url("../images/ico.png") no-repeat 2px -562px !important;}
+.icon-next{background:url("../images/ico.png") no-repeat 2px -535px !important;}
+.icon-download{background:url("../images/ico.png") no-repeat 1px -590px !important;}
+.icon-export{background:url("../images/ico.png") no-repeat 1px -610px !important;}
+.icon-view{background:url("../images/ico.png") no-repeat 1px -636px !important;}
+.icon-print{background:url("../images/ico.png") no-repeat 1px -658px !important;}
+.icon-reset{background:url("../images/ico.png") no-repeat 1px -684px !important;}
+.icon-examine{background:url("../images/ico.png") no-repeat 1px -710px !important;}
+.icon-save{background:url("../images/ico.png") no-repeat 1px -736px !important;}
+.icon-sign{background:url("../images/ico.png") no-repeat 1px -762px !important;}
+.icon-serch-blue{background:url("../images/ico.png") no-repeat 1px -788px !important;}
+.icon-icon-base{background:url("../images/ico.png") no-repeat 1px -814px !important;}
+.icon-opinion{background:url("../images/ico.png") no-repeat 1px -840px !important;}
+.icon-step{background:url("../images/ico.png") no-repeat 1px -866px !important;}
+.icon-upload{background:url("../images/ico.png") no-repeat 1px -892px !important;}
+.icon-ok{background:url("../images/ico.png") no-repeat 1px -918px !important;}
+.icon-do{background:url("../images/ico.png") no-repeat 1px -944px !important;}
+.icon-back{background:url("../images/ico.png") no-repeat 1px -970px !important;}
+.icon-receipt{background:url("../images/ico.png") no-repeat 1px -996px !important;}
+.icon-do_1{background:url("../images/ico.png") no-repeat 1px -1022px !important;}
+.icon-save_1{background:url("../images/ico.png") no-repeat 1px -1048px !important;}
+.icon-down{background:url("../images/ico.png") no-repeat 1px -1074px !important;}
+.icon-assess{background:url("../images/ico.png") no-repeat 1px -1100px !important;}
+.icon-input{background:url("../images/ico.png") no-repeat 1px -1126px !important;}
+.icon-run{background:url("../images/ico.png") no-repeat 1px -1152px !important;}
+.icon-revert{background:url("../images/ico.png") no-repeat 1px -1178px !important;}
+.icon-link{background:url("../images/ico.png") no-repeat 1px -1204px !important;}
+.icon-set{background:url("../images/ico.png") no-repeat 1px -1230px !important;}
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="com.lc.platform.xzqh">
+<head>
+<meta charset="UTF-8">
+<title>行政区划管理</title>
+${static_context}
+${static_jquery}
+${static_jquery_loading}
+${static_ztree}
+${static_bootstrap}
+${static_angular}
+<script type="text/javascript" src="${contextPath}/xzqh/js/controllers.js"></script>
+<link rel="stylesheet" href="${contextPath}/xzqh/css/manager.css"/>
+</head>
+<body ng-controller="XzqhController">
+	<div class="panel panel-primary">
+	  <div class="panel-heading">
+	  	<div class="panel-title">行政区划基本信息</div>
+	  </div>
+	  <div class="panel-body">
+    	<div class="dataShow">
+			<div>
+				<label for="name">名称</label>
+		    	<input type="text" class="form-control" ng-model="content"
+		    	placeholder="中文、简拼、全拼，2个字以上" ng-keyup="loadTreeDataHandler($event)">
+				<div class="btnTools">
+					<button id="btnSearch" class="btn btn-primary" ng-click="loadTreeData()">检索</button>
+					<button class="btn btn-primary">新增</button>
+					<button class="btn btn-primary">删除</button>
+				</div>
+			</div>
+			<div class="ztree" id="xzqhTree" ng-init="loadTreeData()"></div>
+		</div>
+		<div class="dataModify">
+			<div>
+				<ol class="breadcrumb">
+				  <li><a href="#">四川省</a></li>
+				  <li><a href="#">成都市</a></li>
+				  <li class="active">金牛区</li>
+				</ol>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label for="codeName" class="col-md-2 control-label">名称</label>
+						    <div class="col-md-4">
+						      <input type="text" class="form-control" id="codeName" ng-model="xzqh.codeName">
+						    </div>
+						    <label for="shortName" class="col-md-2 control-label">简称</label>
+						    <div class="col-md-4">
+						      <input type="text" class="form-control" id="shortName" ng-model="xzqh.shortName">
+						    </div>
+						</div>
+						<div class="form-group">
+							<label for="jianpin" class="col-md-2 control-label">简拼</label>
+						    <div class="col-md-4">
+						      <input type="text" class="form-control" id="jianpin" ng-model="xzqh.jianpin">
+						    </div>
+						    <label for="pinyin" class="col-md-2 control-label">全拼</label>
+						    <div class="col-md-4">
+						      <input type="text" class="form-control" id="pinyin" ng-model="xzqh.pinyin">
+						    </div>
+						</div>
+						<div class="form-group">
+							<label for="numberCode" class="col-md-2 control-label">编码</label>
+						    <div class="col-md-4">
+						      <input type="text" class="form-control" id="numberCode" ng-model="xzqh.numberCode">
+						    </div>
+						</div>
+						<div class="form-group">
+						    <div class="col-sm-offset-2 col-md-10">
+						      <button type="button" class="btn btn-primary">保存信息</button>
+						      <button type="button" class="btn btn-primary" ng-click="resetForm()">重置信息</button>
+						    </div>
+						  </div>
+					</form>
+				</div>
+			</div>
+		</div>
+	  </div>
+	</div>
+</body>
+</html>
