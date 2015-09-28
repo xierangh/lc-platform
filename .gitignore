@@ -1,3 +1,12 @@
 .project
 .settings
 /lc-platform-jqgrid/.classpath
+/lc-platform-bootstrap/.classpath
+/lc-platform-commons/.classpath
+/lc-platform-dao/.classpath
+/lc-platform-extjs/lc-platform-extjs4/.classpath
+/lc-platform-extjs/lc-platform-extjs4-desktop/.classpath
+/lc-platform-jquery/.classpath
+/lc-platform-spring/.classpath
+/lc-platform-system/.classpath
+/lc-platform-ztree/.classpath
