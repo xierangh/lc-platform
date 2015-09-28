@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.lc.platform.commons.spring.Message;
 import com.lc.platform.commons.spring.MessageUtil;
 import com.lc.platform.spring.SpringUtil;
+import com.lc.platform.system.exception.InvalidSessionException;
 
 @Controller
 @RequestMapping("/system")
@@ -56,8 +57,7 @@ public class SystemController {
 			SpringUtil.setSessionAttribute(WebAttributes.AUTHENTICATION_EXCEPTION, new AuthenticationException(MessageUtil.getMessage("14013")));
 			return loginUrl;
 		}else{
-			//throw new InvalidSessionException();
-			return null;
+			throw new InvalidSessionException();
 		}
 	}
 	
