@@ -13,7 +13,8 @@ Ext.define('system.view.RoleSelectIndex',{
 		};
 		
 		var list = Ext.create('system.view.RoleList',{
-			height:350,
+			height:320,
+			margin:"0 0 0 1",
 			getExtraParams:getExtraParams
 		});
 		
