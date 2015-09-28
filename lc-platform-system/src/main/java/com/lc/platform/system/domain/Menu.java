@@ -93,7 +93,7 @@ public class Menu implements Serializable {
 	protected String permCode;
 
 	/**
-	 * 菜单级别(1:系统级别的菜单)
+	 * 菜单级别(1:系统级别菜单,2:用户级别菜单)
 	 */
 	protected int menuLevel;
 

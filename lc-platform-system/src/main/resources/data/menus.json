@@ -28,7 +28,7 @@
 		"menuName" : "数据词典",
 		"image48" : "system/images/dict.png",
 		"menuType" : "viewClass",
-		"menuVal" : "system.view.DicManager",
+		"menuVal" : "system.view.DictManager",
 		"desktopNumber" : 1,
 		"menuOrder" : 3,
 		"bz" : "数据词典",
