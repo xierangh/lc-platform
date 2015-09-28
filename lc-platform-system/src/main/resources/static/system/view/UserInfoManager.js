@@ -4,7 +4,7 @@ Ext.define('system.view.UserInfoManager',{
     	autoScroll:true
     }, 
     plain:true,
-    margin:"5 0 0 0",
+    margin:"5 1 0 1",
   	activeTab: 0,
 	initComponent:function(){
 		var me = this;
