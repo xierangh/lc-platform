@@ -19,6 +19,24 @@ public class DictNode extends NodeInterface {
 	 */
 	protected String codeName;
 
+	/**
+	 * 代码类型
+	 */
+	protected Object codeType;
+
+	/**
+	 * 代码排序
+	 */
+	protected Integer dictOrder;
+
+	public Integer getDictOrder() {
+		return dictOrder;
+	}
+
+	public void setDictOrder(Integer dictOrder) {
+		this.dictOrder = dictOrder;
+	}
+
 	public String getId() {
 		return id;
 	}
@@ -41,6 +59,14 @@ public class DictNode extends NodeInterface {
 
 	public void setCodeName(String codeName) {
 		this.codeName = codeName;
+	}
+
+	public Object getCodeType() {
+		return codeType;
+	}
+
+	public void setCodeType(Object codeType) {
+		this.codeType = codeType;
 	}
 
 }
