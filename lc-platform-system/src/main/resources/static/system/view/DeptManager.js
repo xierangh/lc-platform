@@ -77,7 +77,6 @@ Ext.define('system.view.DeptManager',{
 		
 		var deptTreePanel = Ext.create('Ext.panel.Panel', {
 			width: 230,
-		    margin:5,
 			bodyStyle: {
 				'overflow': 'auto',
 				 'border-color': '#c5c5c5 !important;'
@@ -140,6 +139,7 @@ Ext.define('system.view.DeptManager',{
 		
 		var addDeptBtn = Ext.create("Ext.button.Button",{
 			text:"添加子部门",
+			iconCls:'icon-add',
 			disabled:true,
 			handler:function(){
 				editForm.getForm().reset(true);
@@ -155,6 +155,7 @@ Ext.define('system.view.DeptManager',{
 		var delDeptBtn = Ext.create("Ext.button.Button",{
 			text:"删除部门",
 			disabled:true,
+			iconCls:'icon-remove',
 			handler:function(){
 				var zTree = $.fn.zTree.getZTreeObj(treeid);
 				var nodes = zTree.getSelectedNodes();
@@ -177,49 +178,13 @@ Ext.define('system.view.DeptManager',{
 		
 		var editForm = Ext.create('Ext.ux.form.Panel',{
 			width: 350,
-			bodyStyle: {
-			    'border-color': '#c5c5c5 !important;'
-			},
+			border:false,
 			layout: 'anchor',
 			bodyPadding: 10,
-			margin:'5 2 5 0',
 			fieldDefaults: {
 				labelWidth: 60,
 				anchor: '100%'
 			},
-			buttons:[delDeptBtn,addDeptBtn,{
-				text:"保存信息",
-				submit:true,
-				handler:function(){
-					if(editForm.isValid()){
-						var item = editForm.getValues();
-						if(item.id ==""){
-							var record = Ext.create('system.model.Dept',item);
-							store.add(record);
-						}else{
-							editForm.updateRecord();
-						}
-						store.sync({
-							success:function(batch,options,result){
-								var operation = batch.operations[0];
-								var action = operation.action;
-								initDeptTreeView();
-								var zTree = $.fn.zTree.getZTreeObj(treeid);
-								if(action == 'create'){
-					    			clearEditForm();
-					    			if(item.parentId!="0"){
-					    				var node = zTree.getNodeByParam("id", item.parentId);
-						    			zTree.selectNode(node);
-					    			}
-					    		}else{
-					    			var node = zTree.getNodeByParam("id", item.id);
-					    			zTree.selectNode(node);
-					    		}
-							}
-						});
-					}
-				}
-			}],
 			defaultType: 'textfield',
 			items: [idField,parentIdField,
 			        parentNameField,deptNameField,
@@ -227,12 +192,58 @@ Ext.define('system.view.DeptManager',{
 			]
 		 });
 		
-		me.items = [deptTreePanel,editForm];
+		var actionBar = Ext.create('Ext.toolbar.Toolbar', {
+			border:0,
+			width: 350,
+			margin:"5 0 0 0",
+			items: [
+			        "->",
+				delDeptBtn,addDeptBtn,{
+					text:"保存信息",
+					iconCls:'icon-save',
+					handler:function(){
+						if(editForm.isValid()){
+							var item = editForm.getValues();
+							if(item.id ==""){
+								var record = Ext.create('system.model.Dept',item);
+								store.add(record);
+							}else{
+								editForm.updateRecord();
+							}
+							store.sync({
+								success:function(batch,options,result){
+									var operation = batch.operations[0];
+									var action = operation.action;
+									initDeptTreeView();
+									var zTree = $.fn.zTree.getZTreeObj(treeid);
+									if(action == 'create'){
+						    			clearEditForm();
+						    			if(item.parentId!="0"){
+						    				var node = zTree.getNodeByParam("id", item.parentId);
+							    			zTree.selectNode(node);
+						    			}
+						    		}else{
+						    			var node = zTree.getNodeByParam("id", item.id);
+						    			zTree.selectNode(node);
+						    		}
+								}
+							});
+						}
+					}
+				}
+			]
+		});
+		
+		var editPanel = Ext.create("Ext.panel.Panel",{
+			border:false,
+			items:[editForm,actionBar]
+		});
+		
+		me.items = [deptTreePanel,editPanel];
 		
 		me.listeners = {
 			resize:function(panel, width, height, oldWidth, oldHeight, eOpts ){
-				deptTreePanel.setHeight(height-10);
-				editForm.setHeight(height-10);
+				deptTreePanel.setHeight(height);
 			}
 		};
 		

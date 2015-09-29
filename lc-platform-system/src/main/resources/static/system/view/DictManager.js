@@ -75,45 +75,15 @@ Ext.define('system.view.DictManager',{
 			 name:'dictDesc'
 		});
 		
-		var initDictBtn = Ext.create("Ext.button.Button",{
-			text:"重置字典",
-			handler:function(){
-				
-			}
-		});
-		
-		var addDictBtn = Ext.create("Ext.button.Button",{
-			text:"添加字典",
-			handler:function(){
-				
-			}
-		});
-		
-		var delDictBtn = Ext.create("Ext.button.Button",{
-			text:"删除字典",
-			handler:function(){
-				
-			}
-		});
-		
 		var editForm = Ext.create('Ext.ux.form.Panel',{
-			width: 350,
 			border:false,
+			width:370,
 			layout: 'anchor',
 			bodyPadding: 10,
 			fieldDefaults: {
 				labelWidth: 60,
 				anchor: '100%'
 			},
-			buttons:[initDictBtn,delDictBtn,addDictBtn,{
-				text:"保存信息",
-				submit:true,
-				handler:function(){
-					if(editForm.isValid()){
-						var item = editForm.getValues();
-					}
-				}
-			}],
 			defaultType: 'textfield',
 			items: [idField,parentIdField,
 			        parentNameField,codeNameField,
@@ -121,7 +91,39 @@ Ext.define('system.view.DictManager',{
 			]
 		 });
 		
-		me.items = [dictPanel,editForm];
+		
+		var actionBar = Ext.create('Ext.toolbar.Toolbar', {
+			border:0,
+			margin:"5 0 0 0",
+			items: [
+				{
+					text: '重置字典',iconCls:'icon-reset',
+					handler:function(button){
+						
+					}
+				},{
+					text:"删除字典",iconCls:'icon-remove',
+					handler:function(button){
+						
+					}
+				},{
+					text:"添加字典",iconCls:'icon-add',
+					handler:function(button){
+						
+					}
+				},
+				{text:'保存信息',iconCls:'icon-save',
+					
+				}
+			]
+		});
+		
+		var editPanel = Ext.create("Ext.panel.Panel",{
+			border:false,
+			items:[editForm,actionBar]
+		});
+		
+		me.items = [dictPanel,editPanel];
 		
 		me.listeners = {
 			resize:function(panel, width, height, oldWidth, oldHeight, eOpts ){
