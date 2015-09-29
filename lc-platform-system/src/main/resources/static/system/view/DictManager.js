@@ -32,10 +32,25 @@ Ext.define('system.view.DictManager',{
 	            text: '字典排序',
 	            width:80,
 	            dataIndex: 'dictOrder'
-	        }]
+	        }],
+	        listeners:{
+	        	itemclick:function( view, record, item, index, e, eOpts ){
+	        		addDictBtn.enable();
+	        		if(record.get("parentId")=='0'){
+	        			resetDictBtn.enable();
+	        		}else{
+	        			resetDictBtn.disable();
+	        		}
+	        		if(record.get("codeType")==2){
+	        			delDictBtn.enable();
+	        		}else{
+	        			delDictBtn.disable();
+	        		}
+	        	}
+	        }
 	    });
 		
-/////////////////////////表单信息////////////////////////////
+		/////////////////////////表单信息////////////////////////////
 		var idField = Ext.create('Ext.form.field.Hidden',{
 			xtype:'hiddenfield',
 			name:'id'
@@ -75,6 +90,13 @@ Ext.define('system.view.DictManager',{
 			 name:'dictDesc'
 		});
 		
+		var defaultValField = Ext.create('Ext.form.field.Checkbox',{
+			name:'defaultVal',
+			boxLabel  : '默认值',
+			inputValue:'true',
+			xtype:'checkbox'
+		});
+		
 		var editForm = Ext.create('Ext.ux.form.Panel',{
 			border:false,
 			width:370,
@@ -87,31 +109,41 @@ Ext.define('system.view.DictManager',{
 			defaultType: 'textfield',
 			items: [idField,parentIdField,
 			        parentNameField,codeNameField,
-			        numberCodeField,dictOrderField,dictDescField
+			        numberCodeField,dictOrderField,dictDescField,
+			        defaultValField
 			]
 		 });
 		
+		var addDictBtn = Ext.create("Ext.button.Button",{
+			text:"添加字典",
+			iconCls:'icon-add',
+			disabled:true,
+			handler:function(){
+				
+			}
+		});
+		
+		var delDictBtn = Ext.create("Ext.button.Button",{
+			text:"删除字典",
+			disabled:true,
+			iconCls:'icon-remove',
+			handler:function(){
+				
+			}
+		});
+		
+		var resetDictBtn = Ext.create("Ext.button.Button",{
+			text: '重置字典',iconCls:'icon-reset',disabled:true,
+			handler:function(button){
+				
+			}
+		});
 		
 		var actionBar = Ext.create('Ext.toolbar.Toolbar', {
 			border:0,
 			margin:"5 0 0 0",
 			items: [
-				{
-					text: '重置字典',iconCls:'icon-reset',
-					handler:function(button){
-						
-					}
-				},{
-					text:"删除字典",iconCls:'icon-remove',
-					handler:function(button){
-						
-					}
-				},{
-					text:"添加字典",iconCls:'icon-add',
-					handler:function(button){
-						
-					}
-				},
+				resetDictBtn,delDictBtn,addDictBtn,
 				{text:'保存信息',iconCls:'icon-save',
 					
 				}

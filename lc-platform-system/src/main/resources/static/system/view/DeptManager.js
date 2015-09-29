@@ -138,7 +138,7 @@ Ext.define('system.view.DeptManager',{
 		};
 		
 		var addDeptBtn = Ext.create("Ext.button.Button",{
-			text:"添加子部门",
+			text:"添加部门",
 			iconCls:'icon-add',
 			disabled:true,
 			handler:function(){

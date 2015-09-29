@@ -29,6 +29,11 @@ public class DictNode extends NodeInterface {
 	 */
 	protected Integer dictOrder;
 
+	/**
+	 * 是否是默认值
+	 */
+	protected Boolean defaultVal;
+
 	public Integer getDictOrder() {
 		return dictOrder;
 	}
@@ -67,6 +72,14 @@ public class DictNode extends NodeInterface {
 
 	public void setCodeType(Object codeType) {
 		this.codeType = codeType;
+	}
+
+	public Boolean getDefaultVal() {
+		return defaultVal;
+	}
+
+	public void setDefaultVal(Boolean defaultVal) {
+		this.defaultVal = defaultVal;
 	}
 
 }
