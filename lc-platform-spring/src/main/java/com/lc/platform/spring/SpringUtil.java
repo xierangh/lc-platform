@@ -50,7 +50,7 @@ public class SpringUtil implements ApplicationContextAware{
 	public static HttpSession getSession(){
 		HttpServletRequest request = getRequest();
 		if(request!=null){
-			return request.getSession(false);
+			return request.getSession();
 		}
 		return null;
 	}

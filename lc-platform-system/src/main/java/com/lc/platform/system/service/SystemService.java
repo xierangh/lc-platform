@@ -96,6 +96,9 @@ public class SystemService implements InitializingBean {
 					dict.setNumberCode(letterCode);
 					dict.setParentId("0");
 					buildChildDict(item);
+					Boolean leaf = (Boolean) item.get("leaf");
+					dict.setLeaf(leaf);
+					
 					dictDao.save(dict);
 				}
 			}
@@ -106,6 +109,7 @@ public class SystemService implements InitializingBean {
 	protected void buildChildDict(Map<String, Object> parent){
 		Object children = parent.get("children");
 		if(children instanceof List){
+			parent.put("leaf", false);
 			List<Map<String, Object>> childrenList = (List<Map<String, Object>>)children;
 			for (int i = 0; i < childrenList.size(); i++) {
 				Map<String, Object> item = childrenList.get(i);
@@ -125,10 +129,12 @@ public class SystemService implements InitializingBean {
 				dict.setNumberCode(numberCode);
 				dict.setParentId(parentId);
 				buildChildDict(item);
+				Boolean leaf = (Boolean) item.get("leaf");
+				dict.setLeaf(leaf);
 				dictDao.save(dict);
 			}
-			
-			
+		}else{
+			parent.put("leaf", true);
 		}
 	}
 	

@@ -1,5 +1,7 @@
 package com.lc.platform.system.dao;
 
+import java.util.List;
+
 import com.lc.platform.dao.jpa.GenericRepository;
 import com.lc.platform.system.domain.Dict;
 
@@ -9,5 +11,7 @@ import com.lc.platform.system.domain.Dict;
  *
  */
 public interface DictDao extends GenericRepository<Dict, String>{
+
+	List<Dict> findDictByParentId(String parentId);
 
 }

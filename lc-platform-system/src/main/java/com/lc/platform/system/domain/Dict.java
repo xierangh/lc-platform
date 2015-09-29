@@ -81,6 +81,19 @@ public class Dict implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date createDate;
 
+	/**
+	 * 是否是叶子节点
+	 */
+	protected Boolean leaf;
+
+	public Boolean getLeaf() {
+		return leaf;
+	}
+
+	public void setLeaf(Boolean leaf) {
+		this.leaf = leaf;
+	}
+
 	public String getId() {
 		return id;
 	}

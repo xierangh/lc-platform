@@ -7,14 +7,11 @@ Ext.define('system.view.DictManager',{
 	initComponent:function(){
 		var me = this;
 		
-		 var store = Ext.create('system.store.Dicts', {
-	        lazyFill: true
-	    });
+		 var store = Ext.create('system.store.Dicts');
 		
 		var dictPanel = Ext.create('Ext.tree.Panel', {
 	        width: 600,
 	        height: 400,
-	        collapsible: true,
 	        loadMask: true,
 	        useArrows: true,
 	        rootVisible: false,
@@ -24,7 +21,7 @@ Ext.define('system.view.DictManager',{
 	            ptype: 'bufferedrenderer'
 	        }],
 	        columns: [{
-	            xtype: 'treecolumn', //this is so we know which column will show the tree
+	            xtype: 'treecolumn',
 	            text: 'codeName',
 	            flex: 2.5,
 	            sortable: true,
