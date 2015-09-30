@@ -12,7 +12,6 @@ Ext.define('system.view.DictManager',{
 		var parentNode;
 		var dictPanel = Ext.create('Ext.tree.Panel', {
 	        flex:1,
-	        loadMask: true,
 	        useArrows: true,
 	        rootVisible: false,
 	        store: store,
@@ -160,7 +159,19 @@ Ext.define('system.view.DictManager',{
 		var resetDictBtn = Ext.create("Ext.button.Button",{
 			text: '重置字典',iconCls:'icon-reset',disabled:true,
 			handler:function(button){
-				
+				Ext.Msg.confirm('初始化字典', '你确定要将('+currNode.get("codeName")+')初始化成最初状态?', function(op){
+		        	if(op == "yes"){
+		        		Ext.ux.Ajax.request({
+						    url:contextPath+'/system/dicts/reset',
+						    params: {
+						    	id:currNode.getId()
+						    },
+						    success: function(response,opt,result){
+						    	store.reload({node:currNode});
+						    }
+						});
+		        	}
+		        });
 			}
 		});
 		
@@ -183,6 +194,8 @@ Ext.define('system.view.DictManager',{
 					    success: function(response,opt,result){
 					    	idField.setValue(result.data);
 					    	if(item.id==""){
+					    		currNode.set("leaf",false);
+					    		currNode.set("icon","");
 					    		store.reload({node:currNode});
 					    	}else{
 					    		store.reload({node:parentNode});

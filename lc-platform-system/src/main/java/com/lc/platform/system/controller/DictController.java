@@ -54,7 +54,13 @@ public class DictController {
 	@RequestMapping(value="delete",method={RequestMethod.POST})
 	public @ResponseBody Message delete(String id){
 		dictService.deleteDict(id);
-		return MessageUtil.message(13001);
+		return MessageUtil.message(13002);
 	}
 	
+	
+	@RequestMapping(value="reset",method={RequestMethod.POST})
+	public @ResponseBody Message reset(String id) throws Exception{
+		dictService.resetDict(id);
+		return MessageUtil.message(13004);
+	}
 }

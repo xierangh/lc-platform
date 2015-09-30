@@ -36,7 +36,7 @@ public class DeptController {
 			treeNode.setId(dept.getId());
 			treeNode.setpId(dept.getParentId());
 			treeNode.setName(dept.getDeptName());
-			treeNode.setIsParent(true);
+			treeNode.setIsParent(!dept.getLeaf());
 			treeNode.setOpen(true);
 			treeNode.setChecked(deptGrantList.contains(dept.getId()));
 			treeNode.setData(dept);

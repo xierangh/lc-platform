@@ -8,8 +8,21 @@ public interface DictService {
 
 	List<Dict> findDictByParentId(String parentId);
 
+	/**
+	 * 保存用户数据字典
+	 * @param dict
+	 */
 	void saveDict(Dict dict);
 
+	/**
+	 * 删除用户的数据字典
+	 * @param id
+	 */
 	void deleteDict(String id);
+	/**
+	 * 重置指定的系统数据字典信息
+	 * @param id
+	 */
+	void resetDict(String id)throws Exception;
 
 }
