@@ -9,6 +9,7 @@ Ext.define('system.view.DictManager',{
 		
 		var store = Ext.create('system.store.Dicts');
 		var currNode;
+		var parentNode;
 		var dictPanel = Ext.create('Ext.tree.Panel', {
 	        flex:1,
 	        loadMask: true,
@@ -36,6 +37,7 @@ Ext.define('system.view.DictManager',{
 	        listeners:{
 	        	itemclick:function( view, record, item, index, e, eOpts ){
 	        		currNode = record;
+	        		parentNode = currNode.parentNode;
 	        		currNode.expand();
 	        		addDictBtn.enable();
 	        		if(record.get("parentId")=='0'){
@@ -149,7 +151,7 @@ Ext.define('system.view.DictManager',{
 				    	saveDictBtn.disable();
 				    	delDictBtn.disable();
 				    	addDictBtn.disable();
-				    	store.reload(currNode.parentNode);
+				    	store.reload({node:parentNode});
 				    }
 				});
 			}
@@ -180,7 +182,11 @@ Ext.define('system.view.DictManager',{
 					    },
 					    success: function(response,opt,result){
 					    	idField.setValue(result.data);
-					    	store.reload(currNode);
+					    	if(item.id==""){
+					    		store.reload({node:currNode});
+					    	}else{
+					    		store.reload({node:parentNode});
+					    	}
 					    }
 					});
 				}

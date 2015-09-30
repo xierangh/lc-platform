@@ -2,6 +2,7 @@ package com.lc.platform.system.service;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -78,6 +79,9 @@ public class SystemService implements InitializingBean {
 				URL url = resources[i].getURL();
 				String dicts = IOUtils.toString(url);
 				List<Map<String, Object>> list = mapper.readValue(dicts, List.class);
+				Date createDate = new Date();
+				Calendar calendar = Calendar.getInstance();
+				calendar.setTime(createDate);
 				for (int j = 0; j < list.size(); j++) {
 					Map<String, Object> item = list.get(j);
 					Dict dict = new Dict();
@@ -89,7 +93,8 @@ public class SystemService implements InitializingBean {
 					dict.setLetterCode(letterCode);
 					dict.setCodeName(codeName);
 					dict.setCodeType(1);
-					dict.setCreateDate(new Date());
+					dict.setCreateDate(calendar.getTime());
+					calendar.add(Calendar.SECOND, 1);
 					dict.setDefaultVal(false);
 					dict.setDictOrder(j);
 					dict.setDictDesc(dictDesc);
@@ -111,6 +116,9 @@ public class SystemService implements InitializingBean {
 		if(children instanceof List){
 			parent.put("leaf", false);
 			List<Map<String, Object>> childrenList = (List<Map<String, Object>>)children;
+			Date createDate = new Date();
+			Calendar calendar = Calendar.getInstance();
+			calendar.setTime(createDate);
 			for (int i = 0; i < childrenList.size(); i++) {
 				Map<String, Object> item = childrenList.get(i);
 				String codeName = item.get("codeName").toString();
@@ -122,7 +130,8 @@ public class SystemService implements InitializingBean {
 				dict.setId(id);
 				dict.setCodeName(codeName);
 				dict.setCodeType(1);
-				dict.setCreateDate(new Date());
+				dict.setCreateDate(calendar.getTime());
+				calendar.add(Calendar.SECOND, 1);
 				dict.setDefaultVal(false);
 				dict.setDictOrder(i);
 				dict.setDictDesc(codeName);

@@ -44,6 +44,11 @@ public class NodeInterface {
 	 */
 	protected String parentId;
 
+	/**
+	 * URL for this node's icon.
+	 */
+	protected String icon;
+
 	public boolean isAllowDrag() {
 		return allowDrag;
 	}
@@ -98,6 +103,14 @@ public class NodeInterface {
 
 	public void setParentId(String parentId) {
 		this.parentId = parentId;
+	}
+
+	public String getIcon() {
+		return icon;
+	}
+
+	public void setIcon(String icon) {
+		this.icon = icon;
 	}
 
 }

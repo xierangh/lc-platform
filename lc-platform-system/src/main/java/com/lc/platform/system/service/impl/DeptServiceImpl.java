@@ -3,6 +3,7 @@ package com.lc.platform.system.service.impl;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,21 +36,36 @@ public class DeptServiceImpl implements DeptService{
 	@Override
 	public void saveDept(Dept dept) {
 		if(dept!=null){
-			PageRequest pageable = new PageRequest(0, 1);
-			Page<Dept> page = deptDao.findByParentIdOrderByCreateDateDesc(dept.getParentId(), pageable);
-			CalNextNum calNextNum = new CalNextNum();
-			if(page.getTotalElements()>0){
-				Dept currDept = page.getContent().get(0);
-				String nextId = calNextNum.nextNum(currDept.getId());
-				dept.setId(nextId);
-			}else if("0".equals(dept.getParentId())){
-				dept.setId("001");
+			if(StringUtils.isBlank(dept.getId())){
+				PageRequest pageable = new PageRequest(0, 1);
+				Page<Dept> page = deptDao.findByParentIdOrderByCreateDateDesc(dept.getParentId(), pageable);
+				CalNextNum calNextNum = new CalNextNum();
+				if(page.getTotalElements()>0){
+					Dept currDept = page.getContent().get(0);
+					String nextId = calNextNum.nextNum(currDept.getId());
+					dept.setId(nextId);
+				}else if("0".equals(dept.getParentId())){
+					dept.setId("001");
+				}else{
+					dept.setId(dept.getParentId()+"-001");
+				}
+				dept.setCreateDate(new Date());
+				
+				Dept parent = deptDao.findOne(dept.getParentId());
+				if(parent.getLeaf()){
+					parent.setLeaf(false);
+					deptDao.saveAndFlush(parent);
+				}
+				deptDao.saveAndFlush(dept);
 			}else{
-				dept.setId(dept.getParentId()+"-001");
+				Dept oldDept = deptDao.findOne(dept.getId());
+				oldDept.setDeptName(dept.getDeptName());
+				oldDept.setDeptOrder(dept.getDeptOrder());
+				oldDept.setDeptCode(dept.getDeptCode());
+				oldDept.setBz(dept.getBz());
+				deptDao.saveAndFlush(oldDept);
 			}
-			dept.setCreateDate(new Date());
 		}
-		deptDao.save(dept);
 	}
 	@Override
 	public void updateDept(Dept dept) {

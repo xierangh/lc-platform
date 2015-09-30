@@ -58,6 +58,11 @@ public class Dept implements Serializable {
 	 */
 	private String bz;
 
+	/**
+	 * 是否是叶子节点
+	 */
+	protected Boolean leaf;
+
 	public String getId() {
 		return id;
 	}
@@ -138,5 +143,13 @@ public class Dept implements Serializable {
 			return false;
 		return true;
 	}
-	
+
+	public Boolean getLeaf() {
+		return leaf;
+	}
+
+	public void setLeaf(Boolean leaf) {
+		this.leaf = leaf;
+	}
+
 }

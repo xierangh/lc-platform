@@ -32,6 +32,13 @@ public class DictController {
 		for (Dict dict : list) {
 			DictNode node = new DictNode();
 			BeanUtils.copyProperties(node, dict);
+			if(dict.getLeaf()){
+				if(dict.getCodeType()==1){
+					node.setIcon("system/images/system-leaf.gif");
+				}else{
+					node.setIcon("system/images/user-leaf.gif");
+				}
+			}
 			childrenList.add(node);
 		}
 		return childrenList;
