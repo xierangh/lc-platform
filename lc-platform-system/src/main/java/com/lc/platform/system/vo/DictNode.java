@@ -34,6 +34,19 @@ public class DictNode extends NodeInterface {
 	 */
 	protected Boolean defaultVal;
 
+	/**
+	 * 说明
+	 */
+	protected String dictDesc;
+
+	public String getDictDesc() {
+		return dictDesc;
+	}
+
+	public void setDictDesc(String dictDesc) {
+		this.dictDesc = dictDesc;
+	}
+
 	public Integer getDictOrder() {
 		return dictOrder;
 	}

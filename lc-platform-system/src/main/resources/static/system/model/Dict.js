@@ -1,7 +1,8 @@
 Ext.define('system.model.Dict', {
 	extend : 'Ext.ux.data.Model',
 	fields : [{name:'id',type:'string'}, 'codeName', 'numberCode',
-	          'codeType','dictOrder','defaultVal'
+	          'codeType','dictOrder','defaultVal','dictDesc',
+	          {name:'parentName',type:'string',persist:false}
 	],
 	idProperty:'id',
 	proxy:{

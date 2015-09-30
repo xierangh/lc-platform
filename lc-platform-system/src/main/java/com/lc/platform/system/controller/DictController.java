@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.lc.platform.commons.spring.Message;
+import com.lc.platform.commons.spring.MessageUtil;
 import com.lc.platform.system.domain.Dict;
 import com.lc.platform.system.service.DictService;
 import com.lc.platform.system.vo.DictNode;
@@ -35,5 +37,17 @@ public class DictController {
 		return childrenList;
 	}
 	
+	
+	@RequestMapping(value="create",method={RequestMethod.POST})
+	public @ResponseBody Message create(Dict dict){
+		dictService.saveDict(dict);
+		return MessageUtil.message(13001, dict.getId());
+	}
+	
+	@RequestMapping(value="delete",method={RequestMethod.POST})
+	public @ResponseBody Message delete(String id){
+		dictService.deleteDict(id);
+		return MessageUtil.message(13001);
+	}
 	
 }

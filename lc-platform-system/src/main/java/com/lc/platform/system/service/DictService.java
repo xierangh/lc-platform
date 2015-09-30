@@ -8,4 +8,8 @@ public interface DictService {
 
 	List<Dict> findDictByParentId(String parentId);
 
+	void saveDict(Dict dict);
+
+	void deleteDict(String id);
+
 }

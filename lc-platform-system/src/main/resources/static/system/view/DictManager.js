@@ -7,8 +7,8 @@ Ext.define('system.view.DictManager',{
 	initComponent:function(){
 		var me = this;
 		
-		 var store = Ext.create('system.store.Dicts');
-		
+		var store = Ext.create('system.store.Dicts');
+		var currNode;
 		var dictPanel = Ext.create('Ext.tree.Panel', {
 	        flex:1,
 	        loadMask: true,
@@ -35,17 +35,24 @@ Ext.define('system.view.DictManager',{
 	        }],
 	        listeners:{
 	        	itemclick:function( view, record, item, index, e, eOpts ){
+	        		currNode = record;
+	        		currNode.expand();
 	        		addDictBtn.enable();
 	        		if(record.get("parentId")=='0'){
 	        			resetDictBtn.enable();
+	        			saveDictBtn.disable();
 	        		}else{
 	        			resetDictBtn.disable();
+	        			saveDictBtn.enable();
 	        		}
 	        		if(record.get("codeType")==2){
 	        			delDictBtn.enable();
 	        		}else{
 	        			delDictBtn.disable();
 	        		}
+	        		var parentName = record.parentNode.get("codeName");
+	        		record.set("parentName",parentName);
+	        		editForm.loadRecord(record);
 	        	}
 	        }
 	    });
@@ -119,7 +126,11 @@ Ext.define('system.view.DictManager',{
 			iconCls:'icon-add',
 			disabled:true,
 			handler:function(){
-				
+				editForm.getForm().reset(true);
+				parentIdField.setValue(currNode.getId());
+				parentNameField.setValue(currNode.get("codeName"));
+				codeNameField.focus();
+				saveDictBtn.enable();
 			}
 		});
 		
@@ -128,7 +139,19 @@ Ext.define('system.view.DictManager',{
 			disabled:true,
 			iconCls:'icon-remove',
 			handler:function(){
-				
+				Ext.ux.Ajax.request({
+				    url:contextPath+'/system/dicts/delete',
+				    params: {
+				    	id:currNode.getId()
+				    },
+				    success: function(response,opt,result){
+				    	editForm.getForm().reset(true);
+				    	saveDictBtn.disable();
+				    	delDictBtn.disable();
+				    	addDictBtn.disable();
+				    	store.reload(currNode.parentNode);
+				    }
+				});
 			}
 		});
 		
@@ -139,14 +162,37 @@ Ext.define('system.view.DictManager',{
 			}
 		});
 		
+		var saveDictBtn = Ext.create("Ext.button.Button",{
+			text: '保存字典',iconCls:'icon-save',disabled:true,
+			handler:function(button){
+				if(editForm.isValid()){
+					var item = editForm.getValues();
+					Ext.ux.Ajax.request({
+					    url:contextPath+'/system/dicts/create',
+					    params: {
+					    	id:item.id,
+					    	codeName:item.codeName,
+					    	numberCode:item.numberCode,
+					    	dictOrder:item.dictOrder,
+					    	dictDesc:item.dictDesc,
+					    	defaultVal:defaultValField.checked,
+					    	parentId:item.parentId
+					    },
+					    success: function(response,opt,result){
+					    	idField.setValue(result.data);
+					    	store.reload(currNode);
+					    }
+					});
+				}
+			}
+		});
+		
 		var actionBar = Ext.create('Ext.toolbar.Toolbar', {
 			border:0,
 			margin:"5 0 0 0",
 			items: [
 				resetDictBtn,delDictBtn,addDictBtn,
-				{text:'保存信息',iconCls:'icon-save',
-					
-				}
+				saveDictBtn
 			]
 		});
 		
