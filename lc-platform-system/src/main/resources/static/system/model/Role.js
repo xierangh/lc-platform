@@ -5,7 +5,7 @@ Ext.define('system.model.Role', {
       {name:'id'},
       {name:'roleName',type:'string'},
       {name:'roleDesc',type:'string'},
-      {name:'grant'}
+      {name:'grant',persist:false}
     ],
     proxy:{
         type: 'ajax',

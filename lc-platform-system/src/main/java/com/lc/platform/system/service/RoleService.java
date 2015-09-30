@@ -32,5 +32,10 @@ public interface RoleService {
 	 * @return
 	 */
 	List<String> findAllGrantRole(String[] userIds);
+	/**
+	 * 创建角色基本信息
+	 * @param role
+	 */
+	void saveRole(Role role);
 
 }

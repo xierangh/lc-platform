@@ -89,7 +89,6 @@ Ext.define('desktop.view.Desktop', {
         if (wallpaper) {
             me.setWallpaper(wallpaper, me.wallpaperStretch);
         }
-        me.mask = new Ext.LoadMask(Ext.getBody(), {msg:"正在加载模块信息"});
     },
     initTaskToolbar:function(){
     	var me = this;
@@ -342,8 +341,6 @@ Ext.define('desktop.view.Desktop', {
             			html:' <iframe scrolling="auto" frameborder="0" width="100%" height="100%" src="'+record.data.menuVal+'"> </iframe>'
                 	});
             	}
-            	
-            	
             	var height = record.data.showHeight || 600;
             	var width = record.data.showWidth || 800;
             	var bodyHeight = Ext.getBody().getHeight();
@@ -549,6 +546,7 @@ Ext.define('desktop.view.Desktop', {
             win.restore();
             win.toFront();
         } else {
+        	console.log("show item");
         	win.show(null,function(){
         		if(win.items.length>0){
         			var item = win.items.items[0];

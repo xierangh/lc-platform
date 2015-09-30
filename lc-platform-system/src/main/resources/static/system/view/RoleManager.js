@@ -24,6 +24,7 @@ Ext.define('system.view.RoleManager',{
 			getExtraParams:getExtraParams,
 			listeners:{
 				selectionchange:function( record, selected , eOpts ){
+					
 					initDeptTreeView();
 				}
 			}
@@ -56,7 +57,15 @@ Ext.define('system.view.RoleManager',{
 				},{
 					text:"添加",iconCls:'icon-add',
 					handler:function(button){
+						var record = Ext.create("system.model.Role",{
+							roleName:"新角色编辑"
+						});
 						
+				        list.getStore().insert(0, record);
+				        list.cellEditing.startEditByPosition({
+				            row: 0, 
+				            column: 0
+				        });
 					}
 				},{
 					text:"保存",iconCls:'icon-save',
@@ -65,11 +74,7 @@ Ext.define('system.view.RoleManager',{
 							success:function(batch,options,result){
 								var operation = batch.operations[0];
 								var action = operation.action;
-								if(action == 'create'){
-					    			
-					    		}else{
-					    			
-					    		}
+								list.store.reload();
 							}
 						});
 					}

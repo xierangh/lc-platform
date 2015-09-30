@@ -59,7 +59,7 @@ public class RoleController {
 	 */
 	@RequestMapping(value = "update", method = RequestMethod.POST)
 	public @ResponseBody
-	Message updateSystemRole(@RequestBody Role role)
+	Message updateRole(@RequestBody Role role)
 			throws Exception {
 		roleService.updateRole(role);
 		return MessageUtil.message(15001);
@@ -111,4 +111,17 @@ public class RoleController {
 			return MessageUtil.message(15004);
 		}
 	}
+	
+	/**
+	 * 创建角色信息
+	 * @param role
+	 * @return
+	 * @throws Exception 
+	 */
+	@RequestMapping(value="create",method = RequestMethod.POST)
+	public @ResponseBody Message create(@RequestBody Role role) throws Exception {
+		roleService.saveRole(role);
+		return MessageUtil.message(15005, role.getId());
+	}
+	
 }

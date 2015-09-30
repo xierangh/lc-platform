@@ -78,4 +78,10 @@ public class RoleServiceImpl implements RoleService{
 	public List<String> findAllGrantRole(String[] userIds) {
 		return roleDao.findAllGrantRole(userIds,userIds.length);
 	}
+
+	@Override
+	public void saveRole(Role role) {
+		role.setId(UUIDUtil.uuid());
+		roleDao.save(role);
+	}
 }

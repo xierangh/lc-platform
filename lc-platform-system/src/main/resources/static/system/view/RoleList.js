@@ -15,7 +15,7 @@ Ext.define('system.view.RoleList',{
 	initComponent: function() {
 		var me = this;
 		me.cellEditing = new Ext.grid.plugin.CellEditing({
-            clicksToEdit: 2
+            clicksToEdit: 1
         });
 		me.plugins=[me.cellEditing];
 		me.collection=new Ext.util.MixedCollection();

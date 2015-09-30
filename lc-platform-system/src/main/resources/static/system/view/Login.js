@@ -9,22 +9,19 @@ Ext.define('system.view.Login',{
 		var runner = new Ext.util.TaskRunner();
 		me.task = runner.newTask({
 		     run: function () {
-		    	 me.loginView.show();
+		    	 me.loginView.show(null,function(){
+		    			me.loginView.center();
+		    			me.usernameField.focus();
+		    		});
 		     },
-		     interval: 2000,
+		     interval: 1000,
 		     repeat:1
 		 });
     },
     show:function(){
     	var me = this;
-    	if(me.loginView){
-    		me.task.restart();
-    	}else{
-    		me.loginView = me.createLoginView();
-    		me.loginView.show(null,function(){
-    			me.usernameField.focus();
-    		});
-    	}
+		me.loginView = me.createLoginView();
+		me.task.restart();
     },
     createLoginView:function(){
     	var me = this;
@@ -81,7 +78,7 @@ Ext.define('system.view.Login',{
 				},me.usernameField,txtPassword,{
 			        xtype: 'displayfield',
 			        columnWidth:1,
-			        value: '<span style="color:red;">由于长时间没有操作，登陆已经过期。</span>'
+			        value: '<span style="color:red;">由于长时间没有操作，登陆已经过期<br/>请在登陆成功后重新打开窗口</span>'
 			    }
 			]
 		});

@@ -1,5 +1,6 @@
 package com.lc.platform.system.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,10 @@ public class PermServiceImpl implements PermService{
 
 	@Override
 	public List<String> findAllGrantPerm(String[] roleIds) {
-		return permDao.findAllGrantPerm(roleIds,roleIds.length);
+		if(roleIds.length!=0){
+			return permDao.findAllGrantPerm(roleIds,roleIds.length);
+		}
+		return new ArrayList<String>();
 	}
 
 }
