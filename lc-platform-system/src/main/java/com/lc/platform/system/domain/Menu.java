@@ -96,7 +96,12 @@ public class Menu implements Serializable {
 	 * 菜单级别(1:系统级别菜单,2:用户级别菜单)
 	 */
 	protected int menuLevel;
-	
+
+	/**
+	 * 用户id
+	 */
+	protected String userId;
+
 	public Menu() {
 	}
 
@@ -243,6 +248,14 @@ public class Menu implements Serializable {
 
 	public Integer getShowHeight() {
 		return showHeight;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 }

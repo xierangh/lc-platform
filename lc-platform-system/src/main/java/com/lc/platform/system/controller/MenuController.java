@@ -13,9 +13,11 @@ import com.lc.platform.dao.Operation;
 import com.lc.platform.dao.Order;
 import com.lc.platform.dao.OrderType;
 import com.lc.platform.dao.PageBean;
+import com.lc.platform.dao.RelateType;
 import com.lc.platform.extjs.ExtUtil;
 import com.lc.platform.extjs.JsonReader;
 import com.lc.platform.spring.SpringUtil;
+import com.lc.platform.system.SystemUtil;
 import com.lc.platform.system.domain.Menu;
 import com.lc.platform.system.service.MenuService;
 
@@ -37,6 +39,7 @@ public class MenuController {
 		if(menu != null){
 			parentId = menu.getMenuId();
 		}
+		
 		PageBean pageBean = new PageBean();
 		pageBean.setRowsPerPage(Integer.MAX_VALUE);
 		if(desktopNumber!=-1){
@@ -45,6 +48,9 @@ public class MenuController {
 		}else{
 			pageBean.addCondition(new Condition("menuType", "dir", Operation.NE));
 		}
+		pageBean.addCondition(new Condition(true, RelateType.AND, "userId", null, Operation.NU));
+		pageBean.addCondition(new Condition(RelateType.OR, "userId", SystemUtil.getCurrentUser().getUserId()
+				, Operation.EQ, true));
 		pageBean.addOrder(new Order("menuOrder", OrderType.ASC));
 		menuService.readMenusByPageInfo(pageBean);
 		pageBean.getItems().add(createAddMenu(desktopNumber,menuId));
@@ -97,6 +103,7 @@ public class MenuController {
 	 */
 	@RequestMapping(value="create",method={RequestMethod.POST})
 	public @ResponseBody Message create(Menu menu){
+		menu.setUserId(SystemUtil.getCurrentUser().getUserId());
 		menuService.saveMenu(menu);
 		return MessageUtil.message(11002, menu.getMenuId());
 	}
