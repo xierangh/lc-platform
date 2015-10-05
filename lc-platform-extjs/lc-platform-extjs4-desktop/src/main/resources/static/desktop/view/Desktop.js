@@ -50,11 +50,11 @@ Ext.define('desktop.view.Desktop', {
      */
     shortcutTpl: [
         '<tpl for=".">',
-            '<div class="ux-desktop-shortcut" id="shortcut_{menuId}">',
+            '<div class="ux-desktop-shortcut {menuStatus}" id="shortcut_{menuId}">',
                 '<div class="ux-desktop-shortcut-icon">',
                     '<img src="{image48}" width="48" height="48">',
                 '</div>',
-                '<span class="ux-desktop-shortcut-text">{menuName}</span>',
+                '<div class="ux-desktop-shortcut-text">{menuName}</div>',
             '</div>',
         '</tpl>',
         '<div class="x-clear"></div>'
@@ -122,7 +122,7 @@ Ext.define('desktop.view.Desktop', {
         me.el.on('contextmenu', me.onDesktopMenu, me);
     },
     initShortcut : function() {
-    	console.log('initShortcut');
+    	//console.log('initShortcut');
         var btnHeight = 84;
         var btnWidth = 84;
         var btnPadding = 30;
@@ -162,12 +162,19 @@ Ext.define('desktop.view.Desktop', {
 			remove: false,
 			useDisplay: false,
 			callback:function(){
-				me.shortcuts.load({params:{menuId:menuId,desktopNumber:desktopNumber}});
-				if(desktopNumber!=-1){
-					me.shortcutsView.bindDropTarget();
-				}
-		        me.shortcutsView.getEl().fadeOut({opacity: 1,
-					easing: 'easeOut',duration: 500});
+				me.shortcuts.load({
+					params:{menuId:menuId,desktopNumber:desktopNumber},
+					callback: function(records, operation, success) {
+				       if(success){
+				    	   me.parentId = menuId;
+				    	   if(desktopNumber!=-1){
+								me.shortcutsView.bindDropTarget();
+							}
+					        me.shortcutsView.getEl().fadeOut({opacity: 1,
+								easing: 'easeOut',duration: 500});
+				       }
+				    }
+				});
 			}
 		});
     },
@@ -176,6 +183,7 @@ Ext.define('desktop.view.Desktop', {
         me.shortcuts = Ext.create('desktop.store.DesktopMenus',{
         	params:{desktopNumber:"1",menuId:"0"}
         });
+        me.parentId = "0";
         return Ext.create('desktop.view.ImageDataView',{
 			      overItemCls: 'x-view-over',
 			      trackOver: true,
@@ -251,7 +259,6 @@ Ext.define('desktop.view.Desktop', {
 				me.shortcuts.remove(me.shortcutMenu.theRecord);
 				me.shortcuts.sync({
 					success : function (batch,options,result){
-						Ext.ux.Msg.show(result.statusText);
 						me.initShortcut();
 					}
 				}) 
@@ -268,12 +275,58 @@ Ext.define('desktop.view.Desktop', {
         }
 
         ret.items.push(
+        		{ text: '新建文件夹', handler: me.createFolder, scope: me},
                 { text: '平铺窗口', handler: me.tileWindows, scope: me, minWindows: 1 },
                 { text: '级联窗口', handler: me.cascadeWindows, scope: me, minWindows: 1 })
+                
 
         return ret;
     },
-
+    createFolder:function(){
+    	var me = this;
+    	
+    	$(".x-view-over").removeClass("x-view-over");
+    	
+    	var record = Ext.create("desktop.module.DesktopMenu",{
+    		menuName:"新建文件夹",
+    		menuType:"dir",
+    		desktopNumber:me.desktopNumber,
+    		menuOrder:0,
+    		menuStatus:"x-view-over",
+    		image48:contextPath + "desktop/images/folder.png",
+    		parentId:me.parentId
+    	});
+    	me.shortcuts.add(record);
+    	me.initShortcut();
+    	
+    	var shortcut_text = $(".x-view-over .ux-desktop-shortcut-text");
+  	  	var shortcut_input = $('<input class="ux-desktop-shortcut-input" value="新建文件夹"/>');
+  	  	shortcut_text.hide();
+  	  	
+  	  	var updateShortcutText = function(){
+  	  		shortcut_text.html(shortcut_input.val());
+  			shortcut_input.remove();
+  			shortcut_text.show();
+  			//保存到数据库中
+  	  	};
+  	  	
+  	  	shortcut_input.blur(updateShortcutText);
+  	  	shortcut_input.bind('keypress',function(event){
+	         if(event.keyCode == "13"){
+	        	 updateShortcutText();
+	         }
+	     });
+  	  	$(".x-view-over").append(shortcut_input);
+		var runner = new Ext.util.TaskRunner();
+		var task = runner.newTask({
+		     run: function () {
+		    	 shortcut_input.focus().select();
+		     },
+		     interval: 50,
+		     repeat:1
+		 });
+		task.start();
+    },
     createWindowMenu: function () {
     	console.log('Desktop createWindowMenu (9)');
         var me = this;
@@ -318,10 +371,16 @@ Ext.define('desktop.view.Desktop', {
     /**
      * 桌面图标点击处理
      */
-    onShortcutItemClick: function (dataView, record) {
+    onShortcutItemClick: function (dataView, record,item) {
         var me = this;
         var menuId = record.data.menuId;
         var menuType = record.data.menuType;
+//        var shortcut_text = $(item).find(".ux-desktop-shortcut-text");
+        var shortcut_input = $(item).find(".ux-desktop-shortcut-input");
+//        shortcut_text.hide();
+        shortcut_input.show().focus().select();
+        
+        return;
         if(menuType=='dir'){//进入下一级
     		me.switchDesktopMenu(record.data.menuId,record.data.desktopNumber);
     	}else if(menuType=='return'){//返回上一级

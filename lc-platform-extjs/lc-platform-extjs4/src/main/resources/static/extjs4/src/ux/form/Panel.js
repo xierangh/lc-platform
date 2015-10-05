@@ -89,7 +89,9 @@
 					field.focus();
 				}else{
 					if(me.isValid()) {
-						
+						if(me.submitBtn){
+							me.submitBtn.focus();
+						}
 					 }
 				}
 			};

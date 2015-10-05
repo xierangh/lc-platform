@@ -43,7 +43,7 @@ public class Menu implements Serializable {
 	protected String image48;
 
 	/**
-	 * 菜单类型
+	 * 菜单类型(class,dir,add,url,return)
 	 */
 	protected String menuType;
 

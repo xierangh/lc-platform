@@ -4,6 +4,12 @@
 	border-color:white !important;
 }
 
+.ux-desktop-shortcut-input{
+	width: 70px;
+	margin-left:-10px;
+	margin-top: 4px;
+}
+
 .pagelet_search_bar, .pagelet_search_button, .pagelet_search_pointer {
 background-image: url('../images/sprite_main_png.png') !important;
 }
@@ -66,9 +72,9 @@ background-position: -538px -157px;
 .x-view-over {
 	background-color: transparent;
 	background-image: url(../images/appbutton_mouseover_bg3.png) !important;
-	padding: 8px;
+	padding: 8px 8px 8px 8px;
 	margin: 8px;
-	width: 86px;
+	width: 96px;
 	text-decoration: none;
 	background-repeat: no-repeat;
 }
@@ -81,6 +87,7 @@ background-position: -538px -157px;
 	padding: 0px 10px 0px 10px;
 	margin: 4px 0px 0px 0px;
 	height: 20px;
+	left:-5px;
 	line-height: 18px;
 	overflow: hidden;
 	position: relative;

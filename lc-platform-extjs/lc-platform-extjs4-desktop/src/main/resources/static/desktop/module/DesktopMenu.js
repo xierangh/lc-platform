@@ -7,7 +7,8 @@ Ext.define('desktop.module.DesktopMenu', {
        {name:'showWidth',defaultValue:800},
        {name:'showHeight',defaultValue:600},
        {name:'permCode'},{name:'parentId'},
-       {name:'menuVal'},{name:"image48",persist:false},'bz'
+       {name:'menuVal'},{name:"image48",persist:false},'bz',
+       {name:'menuStatus',persist:false,defaultValue:""}
     ],
     proxy:{
         type: 'ajax',
