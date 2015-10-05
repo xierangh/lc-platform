@@ -10,18 +10,31 @@
 		"permCode" : "ROLE_SYSTEM_MENU"
 	},
 	{
-		"menuId" : "01-04",
-		"menuName" : "部门管理",
-		"image48" : "system/images/dept.png",
+		"menuId" : "01-01",
+		"menuName" : "用户管理",
+		"image48" : "system/images/user.png",
 		"menuType" : "viewClass",
-		"menuVal" : "system.view.DeptManager",
+		"menuVal" : "system.view.UserManager",
 		"desktopNumber" : 1,
-		"menuOrder" : 4,
-		"bz" : "部门管理",
-		"showWidth" : 610,
-		"showHeight" : 460,
+		"menuOrder" : 1,
+		"bz" : "用户管理",
+		"showWidth" : 1008,
+		"showHeight" : 600,
 		"parentId" : "01",
-		"permCode" : "ROLE_DEPT_MENU"
+		"permCode" : "ROLE_USER_MENU"
+	},{
+		"menuId" : "01-02",
+		"menuName" : "角色管理",
+		"image48" : "system/images/role.png",
+		"menuType" : "viewClass",
+		"menuVal" : "system.view.RoleManager",
+		"desktopNumber" : 1,
+		"menuOrder" : 2,
+		"bz" : "角色管理",
+		"showWidth" : 920,
+		"showHeight" : 600,
+		"parentId" : "01",
+		"permCode" : "ROLE_ROLE_MENU"
 	},
 	{
 		"menuId" : "01-03",
@@ -38,31 +51,17 @@
 		"permCode" : "ROLE_DIC_MENU"
 	},
 	{
-		"menuId" : "01-02",
-		"menuName" : "角色管理",
-		"image48" : "system/images/role.png",
+		"menuId" : "01-04",
+		"menuName" : "部门管理",
+		"image48" : "system/images/dept.png",
 		"menuType" : "viewClass",
-		"menuVal" : "system.view.RoleManager",
+		"menuVal" : "system.view.DeptManager",
 		"desktopNumber" : 1,
-		"menuOrder" : 2,
-		"bz" : "角色管理",
-		"showWidth" : 920,
-		"showHeight" : 600,
+		"menuOrder" : 4,
+		"bz" : "部门管理",
+		"showWidth" : 610,
+		"showHeight" : 460,
 		"parentId" : "01",
-		"permCode" : "ROLE_ROLE_MENU"
-	},
-	{
-		"menuId" : "01-01",
-		"menuName" : "用户管理",
-		"image48" : "system/images/user.png",
-		"menuType" : "viewClass",
-		"menuVal" : "system.view.UserManager",
-		"desktopNumber" : 1,
-		"menuOrder" : 1,
-		"bz" : "用户管理",
-		"showWidth" : 1008,
-		"showHeight" : 600,
-		"parentId" : "01",
-		"permCode" : "ROLE_USER_MENU"
+		"permCode" : "ROLE_DEPT_MENU"
 	}
 ]

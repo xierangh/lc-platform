@@ -79,7 +79,7 @@ public class Menu implements Serializable {
 	/**
 	 * 创建时间
 	 */
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	protected Date createDate;
 
 	/**
@@ -96,7 +96,7 @@ public class Menu implements Serializable {
 	 * 菜单级别(1:系统级别菜单,2:用户级别菜单)
 	 */
 	protected int menuLevel;
-
+	
 	public Menu() {
 	}
 

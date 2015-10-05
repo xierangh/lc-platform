@@ -24,7 +24,6 @@ Ext.define('system.view.RoleManager',{
 			getExtraParams:getExtraParams,
 			listeners:{
 				selectionchange:function( record, selected , eOpts ){
-					
 					initDeptTreeView();
 				}
 			}

@@ -1,4 +1,4 @@
-Ext.define('desktop.module.DesktopMenu', {
+Ext.define('system.model.Menu', {
     extend: 'Ext.ux.data.Model',
     idProperty:'menuId',
     fields: [
@@ -7,7 +7,7 @@ Ext.define('desktop.module.DesktopMenu', {
        {name:'showWidth',defaultValue:800},
        {name:'showHeight',defaultValue:600},
        {name:'permCode'},{name:'parentId'},
-       {name:'menuVal'},{name:"image48",persist:false},'bz',
+       {name:'menuVal'},{name:"image48",defaultValue:"desktop/images/folder.png"},'bz',
        {name:'menuStatus',persist:false,defaultValue:""}
     ],
     proxy:{

@@ -1,5 +1,8 @@
 package com.lc.platform.system.dao;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import com.lc.platform.dao.jpa.GenericRepository;
 import com.lc.platform.system.domain.Menu;
 
@@ -9,5 +12,8 @@ import com.lc.platform.system.domain.Menu;
  *
  */
 public interface MenuDao extends GenericRepository<Menu, String>{
+
+	Page<Menu> findByParentIdOrderByCreateDateDesc(String parentId,
+			Pageable pageable);
 
 }

@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.lc.platform.commons.spring.Message;
+import com.lc.platform.commons.spring.MessageUtil;
 import com.lc.platform.dao.Condition;
 import com.lc.platform.dao.Operation;
 import com.lc.platform.dao.Order;
@@ -86,6 +88,17 @@ public class MenuController {
 		desktopMenu.setParentId(parentId);
 		desktopMenu.setMenuOrder(Integer.MAX_VALUE);
 		return desktopMenu;
+	}
+	
+	/**
+	 * 创建用户自定义菜单信息
+	 * @param menu 
+	 * @return
+	 */
+	@RequestMapping(value="create",method={RequestMethod.POST})
+	public @ResponseBody Message create(Menu menu){
+		menuService.saveMenu(menu);
+		return MessageUtil.message(11002, menu.getMenuId());
 	}
 	
 }

@@ -56,7 +56,6 @@ Ext.define('desktop.view.ImageDataView', {
     	var me = this;
     	me.store.addListener('load',function(s, records, successful, eOpts){
     		me.bindDropTarget();
-    		
     	}); 
     	me.mixins.dragSelector.init(me);
     	me.mixins.draggable.init(me, {

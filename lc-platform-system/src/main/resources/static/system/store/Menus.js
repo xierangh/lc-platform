@@ -1,6 +1,6 @@
-Ext.define('desktop.store.DesktopMenus', {
+Ext.define('system.store.Menus', {
     extend: 'Ext.ux.data.Store',
-    model: 'desktop.module.DesktopMenu',
+    model: 'system.model.Menu',
     remoteSort:false,
     autoLoad:true,
 	sorters:[{

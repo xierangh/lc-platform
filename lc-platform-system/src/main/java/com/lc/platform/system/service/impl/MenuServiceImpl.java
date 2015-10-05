@@ -3,13 +3,17 @@ package com.lc.platform.system.service.impl;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.domain.Sort.Order;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.lc.platform.commons.CalNextNum;
 import com.lc.platform.dao.PageBean;
 import com.lc.platform.system.dao.MenuDao;
 import com.lc.platform.system.domain.Menu;
@@ -30,7 +34,20 @@ public class MenuServiceImpl implements MenuService {
 	public void saveMenu(Menu menu) {
 		if(menu!=null){
 			menu.setCreateDate(new Date());
-			menuDao.save(menu);
+			menu.setMenuLevel(2);
+			if(StringUtils.isBlank(menu.getMenuId())){
+				PageRequest pageable = new PageRequest(0, 1);
+				Page<Menu> page = menuDao.findByParentIdOrderByCreateDateDesc(menu.getParentId(), pageable);
+				CalNextNum calNextNum = new CalNextNum();
+				if(page.getTotalElements()>0){
+					Menu currMenu = page.getContent().get(0);
+					String nextId = calNextNum.nextNum(currMenu.getMenuId());
+					menu.setMenuId(nextId);
+				}else{
+					menu.setMenuId(menu.getParentId()+"-001");
+				}
+			}
+			menuDao.saveAndFlush(menu);
 		}
 	}
 

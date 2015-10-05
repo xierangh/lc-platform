@@ -33,7 +33,7 @@ Ext.define('desktop.view.Desktop', {
      * @cfg {Array|Store} shortcuts
      * The items to add to the DataView. This can be a {@link Ext.data.Store Store} or a
      * simple array. Items should minimally provide the fields in the
-     * {@link desktop.module.DesktopMenu DesktopMenu}.
+     * {@link system.module.Menu Menu}.
      */
     shortcuts: null,
     /**
@@ -180,7 +180,7 @@ Ext.define('desktop.view.Desktop', {
     },
     createDataView: function () {
         var me = this;
-        me.shortcuts = Ext.create('desktop.store.DesktopMenus',{
+        me.shortcuts = Ext.create('system.store.Menus',{
         	params:{desktopNumber:"1",menuId:"0"}
         });
         me.parentId = "0";
@@ -284,16 +284,13 @@ Ext.define('desktop.view.Desktop', {
     },
     createFolder:function(){
     	var me = this;
-    	
     	$(".x-view-over").removeClass("x-view-over");
-    	
-    	var record = Ext.create("desktop.module.DesktopMenu",{
+    	var record = Ext.create("system.model.Menu",{
     		menuName:"新建文件夹",
     		menuType:"dir",
     		desktopNumber:me.desktopNumber,
     		menuOrder:0,
     		menuStatus:"x-view-over",
-    		image48:contextPath + "desktop/images/folder.png",
     		parentId:me.parentId
     	});
     	me.shortcuts.add(record);
@@ -305,9 +302,24 @@ Ext.define('desktop.view.Desktop', {
   	  	
   	  	var updateShortcutText = function(){
   	  		shortcut_text.html(shortcut_input.val());
+  	  		record.data.menuName = shortcut_input.val();
   			shortcut_input.remove();
   			shortcut_text.show();
-  			//保存到数据库中
+  			Ext.ux.Ajax.request({
+			    url: contextPath + "/system/menus/create",
+			    params: {
+			    	menuName:record.get("menuName"),
+		    		menuType:record.get("menuType"),
+		    		desktopNumber:record.get("desktopNumber"),
+		    		menuOrder:record.get("menuOrder"),
+		    		image48:record.get("image48"),
+		    		parentId:record.get("parentId")
+			    },
+			    success: function(response,opts,result){
+			    	$(".x-view-over").attr("id","shortcut_"+result.data);
+			    	record.data.menuId = result.data;
+			    }
+			});
   	  	};
   	  	
   	  	shortcut_input.blur(updateShortcutText);

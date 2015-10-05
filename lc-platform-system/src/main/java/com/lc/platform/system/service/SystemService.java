@@ -194,13 +194,18 @@ public class SystemService implements InitializingBean {
 		if(menuCount==0){
 			logger.info("------------------system init menu data------------");
 			Resource[] resources = resPatternResolver.getResources("classpath*:data/menus.json");
+			Date createDate = new Date();
+			Calendar calendar = Calendar.getInstance();
+			calendar.setTime(createDate);
 			for (int i = 0; i < resources.length; i++) {
 				URL url = resources[i].getURL();
 				String menus = IOUtils.toString(url);
 				Menu[]list = mapper.readValue(menus, Menu[].class);
 				for (Menu menu : list) {
 					menu.setMenuLevel(1);
-					menuService.saveMenu(menu);
+					menu.setCreateDate(calendar.getTime());
+					calendar.add(Calendar.SECOND, 1);
+					menuDao.save(menu);
 				}
 			}
 		}
