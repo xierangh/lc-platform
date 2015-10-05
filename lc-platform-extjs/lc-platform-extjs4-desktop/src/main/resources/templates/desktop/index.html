@@ -8,8 +8,6 @@ ${static_context}
 ${static_jquery}
 ${static_jqueryui}
 ${static_ztree}
-<link href="${contextPath}/jqueryui-editable/css/jqueryui-editable.css" rel="stylesheet"/>
-<script src="${contextPath}/jqueryui-editable/js/jqueryui-editable.js"></script>
 <script type="text/javascript" src="${contextPath}/extjs4/ext-all-debug.js"></script>
 <script type="text/javascript" src="${contextPath}/extjs4/locale/ext-lang-zh_CN.js"></script>
 <link rel="stylesheet" href="${contextPath}/extjs4/resources/ext-theme-blue/ext-theme-blue-all-debug.css" type="text/css">
@@ -26,7 +24,6 @@ ${static_ztree}
 	var isSuperAdmin = true;
 	var global_xm = "${user.xm}";
 	var userHeadImage24 = "${(user.headImage24)!'${contextPath}/system/images/user_head_120.gif'}";
-	$.fn.editable.defaults.mode = 'inline';
 	Ext.onReady(function () {
 	    Ext.create('desktop.view.PlatformApp');
 	});

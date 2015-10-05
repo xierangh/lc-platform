@@ -375,12 +375,9 @@ Ext.define('desktop.view.Desktop', {
         var me = this;
         var menuId = record.data.menuId;
         var menuType = record.data.menuType;
-//        var shortcut_text = $(item).find(".ux-desktop-shortcut-text");
-        var shortcut_input = $(item).find(".ux-desktop-shortcut-input");
-//        shortcut_text.hide();
-        shortcut_input.show().focus().select();
-        
-        return;
+        if(menuId == undefined){
+        	return;
+        }
         if(menuType=='dir'){//进入下一级
     		me.switchDesktopMenu(record.data.menuId,record.data.desktopNumber);
     	}else if(menuType=='return'){//返回上一级
