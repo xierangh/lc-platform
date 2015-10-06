@@ -10,6 +10,30 @@ Ext.define('system.view.DictManager',{
 		var store = Ext.create('system.store.Dicts');
 		var currNode;
 		var parentNode;
+		
+		var codeNameField = Ext.create('Ext.form.field.Text',{
+			allowBlank: false,
+			name:'codeName',
+			fieldLabel: '字典名称'
+		});
+		
+		var numberCodeField = Ext.create('Ext.form.field.Text',{
+			name:'numberCode',
+			fieldLabel: '字典代码'
+		});
+		
+		var dictOrderField = Ext.create('Ext.form.field.Number',{
+			name:'dictOrder',
+			fieldLabel: '字典排序',
+			value:'0'
+		});
+		
+		var dictDescField = Ext.create('Ext.form.field.TextArea',{
+			 fieldLabel: '字典描述',
+			 name:'dictDesc'
+		});
+		
+		
 		var dictPanel = Ext.create('Ext.tree.Panel', {
 	        flex:1,
 	        useArrows: true,
@@ -48,8 +72,16 @@ Ext.define('system.view.DictManager',{
 	        		}
 	        		if(record.get("codeType")==2){
 	        			delDictBtn.enable();
+	        			codeNameField.enable();
+	        			numberCodeField.enable();
+	        			dictOrderField.enable();
+	        			dictDescField.enable();
 	        		}else{
 	        			delDictBtn.disable();
+	        			codeNameField.disable();
+	        			numberCodeField.disable();
+	        			dictOrderField.disable();
+	        			dictDescField.disable();
 	        		}
 	        		var parentName = record.parentNode.get("codeName");
 	        		record.set("parentName",parentName);
@@ -74,28 +106,6 @@ Ext.define('system.view.DictManager',{
 			xtype : "displayfield",
 			fieldLabel: '上级字典',
 			value:'无'
-		});
-		
-		var codeNameField = Ext.create('Ext.form.field.Text',{
-			allowBlank: false,
-			name:'codeName',
-			fieldLabel: '字典名称'
-		});
-		
-		var numberCodeField = Ext.create('Ext.form.field.Text',{
-			name:'numberCode',
-			fieldLabel: '字典代码'
-		});
-		
-		var dictOrderField = Ext.create('Ext.form.field.Number',{
-			name:'dictOrder',
-			fieldLabel: '字典排序',
-			value:'0'
-		});
-		
-		var dictDescField = Ext.create('Ext.form.field.TextArea',{
-			 fieldLabel: '字典描述',
-			 name:'dictDesc'
 		});
 		
 		var defaultValField = Ext.create('Ext.form.field.Checkbox',{
@@ -130,8 +140,13 @@ Ext.define('system.view.DictManager',{
 				editForm.getForm().reset(true);
 				parentIdField.setValue(currNode.getId());
 				parentNameField.setValue(currNode.get("codeName"));
+				codeNameField.enable();
+    			numberCodeField.enable();
+    			dictOrderField.enable();
+    			dictDescField.enable();
 				codeNameField.focus();
 				saveDictBtn.enable();
+				
 			}
 		});
 		
