@@ -279,7 +279,7 @@ Ext.define('desktop.view.Desktop', {
         }
 
         ret.items.push(
-        		{ text: '新建文件夹', handler: me.createFolder, scope: me},
+        		//{ text: '新建文件夹', handler: me.createFolder, scope: me},
                 { text: '平铺窗口', handler: me.tileWindows, scope: me, minWindows: 1 },
                 { text: '级联窗口', handler: me.cascadeWindows, scope: me, minWindows: 1 })
                 
@@ -619,7 +619,6 @@ Ext.define('desktop.view.Desktop', {
             win.restore();
             win.toFront();
         } else {
-        	console.log("show item");
         	win.show(null,function(){
         		if(win.items.length>0){
         			var item = win.items.items[0];

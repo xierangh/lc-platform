@@ -13,6 +13,9 @@ import javax.persistence.Table;
 @Table(name = "sys_perm")
 public class Perm implements Serializable{
 	private static final long serialVersionUID = 1L;
+	/**
+	 * 权限代码
+	 */
 	@Id
 	protected String id;
 	
@@ -24,10 +27,6 @@ public class Perm implements Serializable{
 	 * 权限名称
 	 */
 	protected String permName;
-	/**
-	 * 权限代码
-	 */
-	protected String permCode;
 	
 	/**
 	 * 权限描述
@@ -58,14 +57,6 @@ public class Perm implements Serializable{
 
 	public void setPermName(String permName) {
 		this.permName = permName;
-	}
-
-	public String getPermCode() {
-		return permCode;
-	}
-
-	public void setPermCode(String permCode) {
-		this.permCode = permCode;
 	}
 
 	public String getPermDesc() {

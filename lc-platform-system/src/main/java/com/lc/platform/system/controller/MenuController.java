@@ -56,7 +56,7 @@ public class MenuController {
 				, Operation.EQ, true));
 		pageBean.addOrder(new Order("menuOrder", OrderType.ASC));
 		menuService.readMenusByPageInfo(pageBean);
-		pageBean.getItems().add(createAddMenu(desktopNumber,menuId));
+		//pageBean.getItems().add(createAddMenu(desktopNumber,menuId));
 		if(!"0".equals(parentId)){
 			pageBean.getItems().add(createReturnMenu(desktopNumber,menu.getParentId()));
 		}
@@ -87,16 +87,18 @@ public class MenuController {
 	 * @return
 	 */
 	public Menu createAddMenu(int desktopNumber,String parentId) {
-		Menu desktopMenu = new Menu();
-		desktopMenu.setImage48(SpringUtil.getContextPath() + "/desktop/images/useadd.png");
-		desktopMenu.setMenuName("添加应用");
-		desktopMenu.setMenuId("-1");
-		desktopMenu.setDesktopNumber(0);
-		desktopMenu.setMenuVal("desktop.comp.DesktopMenuAdd");
-		desktopMenu.setMenuType("add");
-		desktopMenu.setParentId(parentId);
-		desktopMenu.setMenuOrder(Integer.MAX_VALUE);
-		return desktopMenu;
+		Menu menu = new Menu();
+		menu.setImage48(SpringUtil.getContextPath() + "/desktop/images/useadd.png");
+		menu.setMenuName("添加应用");
+		menu.setMenuId("-1");
+		menu.setDesktopNumber(desktopNumber);
+		menu.setMenuVal("desktop.comp.DesktopMenuAdd");
+		menu.setMenuType("add");
+		menu.setParentId(parentId);
+		menu.setShowWidth(465);
+		menu.setShowHeight(320);
+		menu.setMenuOrder(Integer.MAX_VALUE);
+		return menu;
 	}
 	
 	/**

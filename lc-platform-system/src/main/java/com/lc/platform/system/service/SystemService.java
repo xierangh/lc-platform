@@ -62,7 +62,7 @@ public class SystemService implements InitializingBean {
 	public void afterPropertiesSet() throws Exception {
 		initUserData();
 		initMenuData();
-		initPermData();
+		//initPermData();
 		initDictData();
 	}
 
@@ -221,7 +221,22 @@ public class SystemService implements InitializingBean {
 	
 	@SuppressWarnings("unchecked")
 	protected void buildChildMenu(Map<String, Object> parent) throws Exception {
+		String menuId = parent.get("menuId")+"";
 		Object children = parent.get("children");
+		Object perms = parent.get("perms");
+		if(perms instanceof List){
+			List<Map<String, Object>> permsList = (List<Map<String, Object>>)perms;
+			for (int i = 0; i < permsList.size(); i++) {
+				Map<String, Object> item = permsList.get(i);
+				Perm perm = new Perm();
+				perm.setId(item.get("permCode").toString());
+				perm.setMenuId(menuId);
+				perm.setPermName(item.get("permName").toString());
+				perm.setPermDesc(item.get("permDesc").toString());
+				permDao.save(perm);
+			}
+		}
+		
 		if(children instanceof List){
 			List<Map<String, Object>> childrenList = (List<Map<String, Object>>)children;
 			Calendar calendar = Calendar.getInstance();
@@ -233,7 +248,7 @@ public class SystemService implements InitializingBean {
 				menu.setCreateDate(calendar.getTime());
 				calendar.add(Calendar.SECOND, 1);
 				BeanUtils.populate(menu, item);
-				menu.setParentId(parent.get("menuId")+"");
+				menu.setParentId(menuId);
 				menuService.saveMenu(menu);
 				item.put("menuId", menu.getMenuId());
 				buildChildMenu(item);
