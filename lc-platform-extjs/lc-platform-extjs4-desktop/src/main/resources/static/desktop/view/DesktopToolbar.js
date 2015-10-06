@@ -93,7 +93,7 @@ Ext.define('desktop.view.DesktopToolbar',{
 					                id:id,
 					                title:'用户信息',
 					                width:800,
-					                height:600,
+					                height:500,
 					                animCollapse:false,
 					                constrainHeader:true,
 					                layout: 'fit',

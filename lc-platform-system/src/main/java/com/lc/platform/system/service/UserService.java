@@ -81,4 +81,7 @@ public interface UserService extends UserDetailsService{
 	 */
 	public void updateUserHeadImage(String userId, String headImageBase64);
 
+	public void updatePassword(String userId, String oldPassword,
+			String newPassword);
+
 }

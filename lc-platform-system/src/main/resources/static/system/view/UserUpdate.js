@@ -98,6 +98,7 @@ Ext.define('system.view.UserUpdate',{
 			        deptId:treeNode.id,
 			        grant:treeNode.checked
 			    },
+			    tips:false,
 			    success: function(response,opts,result){
 			    	me.list.store.reload();
 			    }
@@ -191,6 +192,7 @@ Ext.define('system.view.UserUpdate',{
 				        roleIds:record.getId(),
 				        grant:checked
 				    },
+				    tips:false,
 				    success: function(response,opts,result){
 				    	me.list.store.reload();
 				    }

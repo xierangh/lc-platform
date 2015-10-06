@@ -46,6 +46,14 @@ public class UserController {
 		return "system/userHeadInfo";
 	}
 	
+	@RequestMapping(value="updatePassword",method =RequestMethod.POST)
+	public @ResponseBody Message updatePassword(String oldPassword,String newPassword){
+		
+		userService.updatePassword(SystemUtil.getCurrentUser().getUserId(),oldPassword,newPassword);
+		
+		return MessageUtil.message(14014);
+	}
+	
 	/**
 	 * 上传用户编辑的头像信息
 	 * @param headImage

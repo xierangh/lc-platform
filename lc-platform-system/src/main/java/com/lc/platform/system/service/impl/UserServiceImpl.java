@@ -279,5 +279,18 @@ public class UserServiceImpl implements UserService{
 	public void updateUserHeadImage(String userId, String headImageBase64) {
 		userDao.updateUserHeadImage(userId,headImageBase64);
 	}
+
+	@Override
+	public void updatePassword(String userId, String oldPassword,
+			String newPassword) {
+		User user = userDao.findOne(userId);
+		if(bCryptPasswordEncoder.matches(oldPassword, user.getPassword())){
+			String encryptPassword = bCryptPasswordEncoder.encode(newPassword);
+			user.setPassword(encryptPassword);
+			userDao.saveAndFlush(user);
+		}else{
+			throw new UserException(14015);
+		}
+	}
 	
 }
