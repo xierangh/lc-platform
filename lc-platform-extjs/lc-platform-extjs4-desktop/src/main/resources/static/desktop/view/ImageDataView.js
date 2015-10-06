@@ -10,12 +10,14 @@ Ext.define('desktop.view.ImageDataView', {
     bindDropTarget:function(){
     	var me = this;
 		var wrapElements = Ext.select(me.itemSelector);
-		Ext.each(wrapElements.elements, function(el) {
-			if('shortcut_-1'!=el.id && 'shortcut_-2'!=el.id){
-				var target = me.createDropTarget(el.id);
-				me.dropTargetList.add(el.id,target);
-			}
-		});
+		if(isSuperAdmin=='true'){
+			Ext.each(wrapElements.elements, function(el) {
+				if('shortcut_-1'!=el.id && 'shortcut_-2'!=el.id){
+					var target = me.createDropTarget(el.id);
+					me.dropTargetList.add(el.id,target);
+				}
+			});
+		}
 		me.desktop.initShortcut();
     },
     dropTargetList : new Ext.util.MixedCollection(),

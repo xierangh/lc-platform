@@ -21,7 +21,7 @@ ${static_ztree}
 <script language="JavaScript" src="${contextPath}/system/view/Login.js"></script>
 
 <script type="text/javascript">
-	var isSuperAdmin = true;
+	var isSuperAdmin = "${user.superAdmin?string('true','false')}";
 	var global_xm = "${user.xm}";
 	var userHeadImage24 = "${(user.headImage24)!'${contextPath}/system/images/user_head_120.gif'}";
 	Ext.onReady(function () {
