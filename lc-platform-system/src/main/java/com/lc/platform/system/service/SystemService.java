@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -116,9 +117,8 @@ public class SystemService implements InitializingBean {
 		if(children instanceof List){
 			parent.put("leaf", false);
 			List<Map<String, Object>> childrenList = (List<Map<String, Object>>)children;
-			Date createDate = new Date();
 			Calendar calendar = Calendar.getInstance();
-			calendar.setTime(createDate);
+			calendar.setTime(new Date());
 			for (int i = 0; i < childrenList.size(); i++) {
 				Map<String, Object> item = childrenList.get(i);
 				String codeName = item.get("codeName").toString();
@@ -189,7 +189,8 @@ public class SystemService implements InitializingBean {
 	 * 初始化菜单信息，检查系统是否有菜单信息，没有就进行初始化
 	 * @throws IOException 
 	 */
-	protected void initMenuData() throws IOException{
+	@SuppressWarnings("unchecked")
+	protected void initMenuData() throws Exception{
 		long menuCount = menuDao.count();
 		if(menuCount==0){
 			logger.info("------------------system init menu data------------");
@@ -200,13 +201,42 @@ public class SystemService implements InitializingBean {
 			for (int i = 0; i < resources.length; i++) {
 				URL url = resources[i].getURL();
 				String menus = IOUtils.toString(url);
-				Menu[]list = mapper.readValue(menus, Menu[].class);
-				for (Menu menu : list) {
+				List<Map<String, Object>> list = mapper.readValue(menus, List.class);
+				for (int j = 0; j < list.size(); j++) {
+					Map<String, Object> item = list.get(j);
+					Menu menu = new Menu();
 					menu.setMenuLevel(1);
+					menu.setParentId("0");
 					menu.setCreateDate(calendar.getTime());
 					calendar.add(Calendar.SECOND, 1);
-					menuDao.save(menu);
+					BeanUtils.populate(menu, item);
+					menuService.saveMenu(menu);
+					item.put("menuId", menu.getMenuId());
+					buildChildMenu(item);
 				}
+			}
+		}
+	}
+	
+	
+	@SuppressWarnings("unchecked")
+	protected void buildChildMenu(Map<String, Object> parent) throws Exception {
+		Object children = parent.get("children");
+		if(children instanceof List){
+			List<Map<String, Object>> childrenList = (List<Map<String, Object>>)children;
+			Calendar calendar = Calendar.getInstance();
+			calendar.setTime(new Date());
+			for (int i = 0; i < childrenList.size(); i++) {
+				Map<String, Object> item = childrenList.get(i);
+				Menu menu = new Menu();
+				menu.setMenuLevel(1);
+				menu.setCreateDate(calendar.getTime());
+				calendar.add(Calendar.SECOND, 1);
+				BeanUtils.populate(menu, item);
+				menu.setParentId(parent.get("menuId")+"");
+				menuService.saveMenu(menu);
+				item.put("menuId", menu.getMenuId());
+				buildChildMenu(item);
 			}
 		}
 	}

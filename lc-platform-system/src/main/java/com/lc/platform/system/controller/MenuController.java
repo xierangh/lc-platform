@@ -1,5 +1,7 @@
 package com.lc.platform.system.controller;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -104,6 +106,8 @@ public class MenuController {
 	@RequestMapping(value="create",method={RequestMethod.POST})
 	public @ResponseBody Message create(Menu menu){
 		menu.setUserId(SystemUtil.getCurrentUser().getUserId());
+		menu.setMenuLevel(2);
+		menu.setCreateDate(new Date());
 		menuService.saveMenu(menu);
 		return MessageUtil.message(11002, menu.getMenuId());
 	}
