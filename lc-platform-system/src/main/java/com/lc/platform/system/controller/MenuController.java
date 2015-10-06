@@ -4,6 +4,7 @@ import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -110,6 +111,31 @@ public class MenuController {
 		menu.setCreateDate(new Date());
 		menuService.saveMenu(menu);
 		return MessageUtil.message(11002, menu.getMenuId());
+	}
+	
+	/**
+	 * 删除用户自定义菜单信息
+	 * @param menuId
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value="delete",method=RequestMethod.POST)
+	public @ResponseBody Message delete(@RequestBody Menu menu)throws Exception{
+		menuService.deleteMenu(menu.getMenuId());
+		return MessageUtil.message(11003);
+	}
+	
+	/**
+	 * 交换菜单的位置
+	 * @param destId
+	 * @param srcId
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value="swapMenuOrder",method=RequestMethod.POST)
+	public @ResponseBody Message swapMenuOrder(String destId,String srcId)throws Exception{
+		menuService.swapMenuOrder(destId,srcId);
+		return MessageUtil.message(11004);
 	}
 	
 }

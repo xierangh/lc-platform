@@ -9,15 +9,13 @@ Ext.define('desktop.view.ImageDataView', {
     dgroupName : 'desktpMenuDD',
     bindDropTarget:function(){
     	var me = this;
-    	if(isSuperAdmin=='true'){
-    		var wrapElements = Ext.select(me.itemSelector);
-    		Ext.each(wrapElements.elements, function(el) {
-    			if('shortcut_DesktopMenuAdd'!=el.id){
-    				var target = me.createDropTarget(el.id);
-    				me.dropTargetList.add(el.id,target);
-    			}
-    		});
-    	}
+		var wrapElements = Ext.select(me.itemSelector);
+		Ext.each(wrapElements.elements, function(el) {
+			if('shortcut_-1'!=el.id && 'shortcut_-2'!=el.id){
+				var target = me.createDropTarget(el.id);
+				me.dropTargetList.add(el.id,target);
+			}
+		});
 		me.desktop.initShortcut();
     },
     dropTargetList : new Ext.util.MixedCollection(),
@@ -26,9 +24,9 @@ Ext.define('desktop.view.ImageDataView', {
 		return new Ext.dd.DropTarget(id,{
 			ddGroup:me.dgroupName,
 			notifyDrop:function( source, e, data ){
-				var destId = this.id.split('_')[1];
-				var srcId = data.records[0].getId();
-				if(destId==srcId || srcId == 'DesktopMenuAdd'){
+				var destId = this.id.split('_')[1];//目标对象
+				var srcId = data.records[0].getId();//拖动对象
+				if(destId==srcId || srcId == '-1' || srcId=='-2'){//自己不能和自己对调
 					return this.dropNotAllowed;
 				}
         		Ext.ux.Ajax.request({
@@ -38,8 +36,8 @@ Ext.define('desktop.view.ImageDataView', {
 				    	destId:destId,
 				    	srcId:srcId
 				    },
+				    tips:false,
 				    success: function(response,opts,result){
-				    	Ext.ux.Msg.show(result.statusText);
 				    	var destRecord = me.getStore().findRecord('menuId',destId);
 						var tempMenuOrder = destRecord.get('menuOrder');
 		        		destRecord.set("menuOrder",data.records[0].get('menuOrder'));

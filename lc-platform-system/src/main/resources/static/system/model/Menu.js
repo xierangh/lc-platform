@@ -4,6 +4,7 @@ Ext.define('system.model.Menu', {
     fields: [
        { name: 'menuName'},{name:'menuType'},{name:'menuOrder',type:'int'},
        { name: 'menuId' },{name:'desktopNumber'},
+       {name:'menuLevel',type:'int'},
        {name:'showWidth',defaultValue:800},
        {name:'showHeight',defaultValue:600},
        {name:'permCode'},{name:'parentId'},

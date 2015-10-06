@@ -208,9 +208,12 @@ Ext.define('desktop.view.Desktop', {
     },
     itemcontextmenu:function( dataview, record, item, index, e, eOpts ){
     	e.stopEvent();
-    	if(record.get('menuType')!='add' && isSuperAdmin==='true'){
-    		this.shortcutMenu.theRecord = record;
-        	this.shortcutMenu.showAt(e.getXY());
+    	var me = this;
+    	var menuType = record.data.menuType;
+    	var menuLevel = record.data.menuLevel;
+    	if((menuType!='add' || menuType!='return') && menuLevel == 2){
+    		me.shortcutMenu.theRecord = record;
+        	me.shortcutMenu.showAt(e.getXY());
     	}
     },
     createShortcutMenu:function(){
@@ -218,8 +221,8 @@ Ext.define('desktop.view.Desktop', {
         return {
             defaultAlign: 'br-tr',
             items: [
-                {iconCls: 'icon-update',text: '编辑菜单',disabled:isSuperAdmin!='true', handler: me.editDesktopMenu, scope: me },
-                {iconCls: 'icon-remove',text: '删除菜单',disabled:isSuperAdmin!='true', handler: me.delDesktopMenu, scope: me }
+                {iconCls: 'icon-update',text: '编辑菜单',handler: me.editDesktopMenu, scope: me },
+                {iconCls: 'icon-remove',text: '删除菜单',handler: me.delDesktopMenu, scope: me }
             ]
         };
     },
@@ -255,13 +258,14 @@ Ext.define('desktop.view.Desktop', {
     	var me = this;
     	Ext.MessageBox.confirm('警告', '确定要进行删除操作?', function(button){
 			if (button == "yes") {  
-				console.log('delete:' ,me.shortcutMenu.theRecord);
-				me.shortcuts.remove(me.shortcutMenu.theRecord);
-				me.shortcuts.sync({
-					success : function (batch,options,result){
-						me.initShortcut();
-					}
-				}) 
+				Ext.ux.Ajax.request({
+				    url: contextPath + "/system/menus/delete",
+				    jsonData:{menuId:me.shortcutMenu.theRecord.getId()},
+				    success: function(response,opts,result){
+				    	me.shortcuts.remove(me.shortcutMenu.theRecord);
+				    	me.initShortcut();
+				    }
+				});
 			}
 		});
     },
@@ -291,7 +295,8 @@ Ext.define('desktop.view.Desktop', {
     		desktopNumber:me.desktopNumber,
     		menuOrder:0,
     		menuStatus:"x-view-over",
-    		parentId:me.parentId
+    		parentId:me.parentId,
+    		menuLevel:2
     	});
     	me.shortcuts.add(record);
     	me.initShortcut();

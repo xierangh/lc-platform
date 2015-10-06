@@ -23,5 +23,14 @@ public interface MenuService {
 	public void readMenusByPageInfo(PageBean pageBean);
 
 	public Menu findMenuById(String menuId);
+
+	public void deleteMenu(String menuId);
+	
+	/**
+	 * 交换菜单位置信息
+	 * @param destId
+	 * @param srcId
+	 */
+	public void swapMenuOrder(String destId, String srcId);
 	
 }

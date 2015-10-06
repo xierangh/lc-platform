@@ -38,6 +38,7 @@ public class MenuServiceImpl implements MenuService {
 				Menu currMenu = page.getContent().get(0);
 				String nextId = calNextNum.nextNum(currMenu.getMenuId());
 				menu.setMenuId(nextId);
+				menu.setMenuOrder(currMenu.getMenuOrder()+1);
 			}else if("0".equals(menu.getParentId())){
 				menu.setMenuId("001");
 			}else{
@@ -57,5 +58,23 @@ public class MenuServiceImpl implements MenuService {
 	public Menu findMenuById(String menuId) {
 		return menuDao.findOne(menuId);
 	}
-	
+
+	@Override
+	public void deleteMenu(String menuId) {
+		Menu menu = menuDao.findOne(menuId);
+		if(menu!=null && menu.getMenuLevel()==2){
+			menuDao.delete(menuId);
+		}
+	}
+
+	@Override
+	public void swapMenuOrder(String destId, String srcId) {
+		Menu destMenu = menuDao.findOne(destId);
+		Menu srcMenu = menuDao.findOne(srcId);
+		Integer tempOrder = destMenu.getMenuOrder();
+		destMenu.setMenuOrder(srcMenu.getMenuOrder());
+		srcMenu.setMenuOrder(tempOrder);
+		menuDao.saveAndFlush(destMenu);
+		menuDao.saveAndFlush(srcMenu);
+	}
 }
