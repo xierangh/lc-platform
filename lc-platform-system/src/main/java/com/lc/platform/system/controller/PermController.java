@@ -24,6 +24,8 @@ public class PermController {
 	
 	@RequestMapping("tree")
 	public @ResponseBody List<TreeNode> tree(String[]roleIds){
+		List<String> permGrantList = permService.findAllGrantPerm(roleIds);
+		
 		List<Menu> menuList = menuService.findAllMenu();
 		List<TreeNode> deptNodes = new ArrayList<TreeNode>();
 		for (Menu menu : menuList) {
@@ -33,10 +35,13 @@ public class PermController {
 			treeNode.setName(menu.getMenuName());
 			treeNode.setIsParent(true);
 			treeNode.setOpen(true);
+			if(permGrantList.contains(menu.getPermCode())){
+				treeNode.setChecked(true);
+			}
 			treeNode.setData(menu);
 			deptNodes.add(treeNode);
 		}
-		List<String> permGrantList = permService.findAllGrantPerm(roleIds);
+		
 		List<Perm> permList = permService.findAllPerm();
 		for (Perm perm : permList) {
 			TreeNode treeNode = new TreeNode();

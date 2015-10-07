@@ -1,6 +1,7 @@
 package com.lc.platform.system;
 
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -48,5 +49,15 @@ public class SystemUtil {
 			return (User)principal;
 		}
 		throw new RuntimeException(MessageUtil.getMessage("14011"));
+	}
+	
+	/**
+	 * 判断当前用户是否有指定的权限代码
+	 * @param permCode 权限代码，系统唯一
+	 * @return
+	 */
+	public static boolean hasPerm(String permCode) {
+		if(isSuperAdmin())return true;
+		return getCurrentUser().getAuthorities().contains(new SimpleGrantedAuthority(permCode));
 	}
 }

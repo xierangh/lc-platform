@@ -1,7 +1,10 @@
 package com.lc.platform.system.controller;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -60,6 +63,15 @@ public class MenuController {
 		if(!"0".equals(parentId)){
 			pageBean.getItems().add(createReturnMenu(desktopNumber,menu.getParentId()));
 		}
+		List<Menu> permMenuList = new ArrayList<Menu>();
+		for (Object data : pageBean.getItems()) {
+			Menu item = (Menu)data;
+			if(StringUtils.isNotBlank(item.getPermCode()) && !SystemUtil.hasPerm(item.getPermCode())){
+				continue;
+			}
+			permMenuList.add(item);
+		}
+		pageBean.setItems(permMenuList);
 		JsonReader jsonReader = ExtUtil.getJsonReader(pageBean);
 		return jsonReader;
 	}

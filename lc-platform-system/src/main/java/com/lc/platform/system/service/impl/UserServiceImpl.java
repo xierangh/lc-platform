@@ -15,6 +15,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -31,6 +32,7 @@ import com.lc.platform.dao.PageBean;
 import com.lc.platform.system.SystemUtil;
 import com.lc.platform.system.dao.DeptDao;
 import com.lc.platform.system.dao.RoleDao;
+import com.lc.platform.system.dao.RolePermDao;
 import com.lc.platform.system.dao.UserDao;
 import com.lc.platform.system.dao.UserDeptDao;
 import com.lc.platform.system.dao.UserRoleDao;
@@ -59,6 +61,9 @@ public class UserServiceImpl implements UserService{
 	@Autowired
 	private RoleDao roleDao;
 	
+	@Autowired
+	private RolePermDao rolePermDao;
+	
 	private BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(4, new SecureRandom());
 	
 	
@@ -78,6 +83,14 @@ public class UserServiceImpl implements UserService{
 			throw new UsernameNotFoundException(msg);
 		}
 		Set<GrantedAuthority> dbAuths = new HashSet<GrantedAuthority>();
+		List<String> roleList = userRoleDao.findRoleByUser(user.getUserId());
+		if(roleList.size()>0){
+			List<String> permList = rolePermDao.findPermByRole(roleList);
+			for (String permCode : permList) {
+				dbAuths.add(new SimpleGrantedAuthority(permCode.trim()
+						.toUpperCase()));
+			}
+		}
 		if (dbAuths.size() == 0) {
 			msg = MessageUtil.getMessage("14004",new Object[] { username });
 			logger.info(msg);

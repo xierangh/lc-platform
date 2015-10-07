@@ -109,9 +109,18 @@ Ext.define('system.view.RoleManager',{
 		    for(var i = 0;i<childNodes.length;i++){
 		    	var childNode = childNodes[i];
 		    	if(!childNode.isParent){
-		    		nodes[i] = childNodes[i].id;
+		    		nodes[i] = childNode.id;
+		    	}else if(childNode.data.permCode!=""){
+		    		nodes[i] = childNode.data.permCode;
 		    	}
 		    }
+		   var parentNode = treeNode.getParentNode();
+		   while(parentNode!=null){
+			   if(parentNode.data.permCode!="" && parentNode.checked == treeNode.checked){
+				   nodes.push(parentNode.data.permCode);
+			   }
+			   parentNode = parentNode.getParentNode();
+		   }
 		    Ext.ux.Ajax.request({
 			    url: contextPath + "/system/roles/perms/update",
 			    params: {
