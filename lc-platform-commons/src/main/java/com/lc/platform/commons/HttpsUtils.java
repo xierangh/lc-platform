@@ -9,6 +9,7 @@ import java.util.Map;
 
 import javax.net.ssl.SSLContext;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -25,44 +26,50 @@ import org.apache.http.util.EntityUtils;
 
 public class HttpsUtils {
 
+	public static String post(String url, Map<String, Object> params) throws Exception {
+		return post(url, params, null);
+	}
 	
-	public static String post(String url,Map<String, Object> params, String jsonStr) throws Exception {
+	public static String post(String url, Map<String, Object> params,
+			String jsonStr) throws Exception {
 		CloseableHttpClient httpClient = createSSLClientDefault();
 		HttpPost post = new HttpPost(url);
 		URIBuilder uriBuilder = new URIBuilder(post.getURI());
 		for (String key : params.keySet()) {
 			Object value = params.get(key);
-			uriBuilder.setParameter(key,value.toString());
+			uriBuilder.setParameter(key, value.toString());
 		}
 		post.setURI(uriBuilder.build());
-		
-		HttpEntity content = new StringEntity(jsonStr,"UTF-8");
-		post.setEntity(content);
+		if(StringUtils.isNotBlank(jsonStr)){
+			HttpEntity content = new StringEntity(jsonStr, "UTF-8");
+			post.setEntity(content);
+		}
 		CloseableHttpResponse response = httpClient.execute(post);
-        HttpEntity entity = response.getEntity();  
-        int statusCode = response.getStatusLine().getStatusCode();  
-        if(statusCode == HttpStatus.SC_OK){
-        	return EntityUtils.toString(entity);
-        }
-        return null;
+		HttpEntity entity = response.getEntity();
+		int statusCode = response.getStatusLine().getStatusCode();
+		if (statusCode == HttpStatus.SC_OK) {
+			return EntityUtils.toString(entity);
+		}
+		return null;
 	}
-	
-	public static String get(String url, Map<String, Object> params) throws Exception {
+
+	public static String get(String url, Map<String, Object> params)
+			throws Exception {
 		CloseableHttpClient httpClient = createSSLClientDefault();
 		HttpGet get = new HttpGet(url);
 		URIBuilder uriBuilder = new URIBuilder(get.getURI());
 		for (String key : params.keySet()) {
 			Object value = params.get(key);
-			uriBuilder.setParameter(key,value.toString());
+			uriBuilder.setParameter(key, value.toString());
 		}
 		get.setURI(uriBuilder.build());
 		CloseableHttpResponse response = httpClient.execute(get);
-        HttpEntity entity = response.getEntity();  
-        int statusCode = response.getStatusLine().getStatusCode();  
-        if(statusCode == HttpStatus.SC_OK){
-        	return EntityUtils.toString(entity);
-        }
-        return null;
+		HttpEntity entity = response.getEntity();
+		int statusCode = response.getStatusLine().getStatusCode();
+		if (statusCode == HttpStatus.SC_OK) {
+			return EntityUtils.toString(entity);
+		}
+		return null;
 	}
 
 	public static CloseableHttpClient createSSLClientDefault() {
