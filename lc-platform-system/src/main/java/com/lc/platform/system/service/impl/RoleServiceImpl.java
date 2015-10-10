@@ -11,8 +11,11 @@ import com.lc.platform.commons.UUIDUtil;
 import com.lc.platform.dao.PageBean;
 import com.lc.platform.system.dao.RoleDao;
 import com.lc.platform.system.dao.RolePermDao;
+import com.lc.platform.system.dao.UserDao;
+import com.lc.platform.system.dao.UserRoleDao;
 import com.lc.platform.system.domain.Role;
 import com.lc.platform.system.domain.RolePerm;
+import com.lc.platform.system.domain.User;
 import com.lc.platform.system.service.RoleService;
 
 
@@ -24,6 +27,10 @@ public class RoleServiceImpl implements RoleService{
 	private RoleDao roleDao;
 	@Autowired
 	private RolePermDao rolePermDao;
+	@Autowired
+	private UserRoleDao userRoleDao;
+	@Autowired
+	private UserDao userDao;
 	
 	@Override
 	public void readRolesByPageInfo(PageBean pageBean) {
@@ -35,13 +42,22 @@ public class RoleServiceImpl implements RoleService{
 		for (Role role : roles) {
 			Role oldRole = roleDao.findOne(role.getId());
 			if(oldRole!=null){
-				if(role.getRoleName()!=null){
-					oldRole.setRoleName(role.getRoleName());
-				}
+				String roleName = role.getRoleName();
+				String oldRoleName = oldRole.getRoleName();
 				if(role.getRoleDesc()!=null){
 					oldRole.setRoleDesc(role.getRoleDesc());
 				}
 				roleDao.saveAndFlush(oldRole);
+				if(roleName!=null && !roleName.equals(oldRoleName)){
+					oldRole.setRoleName(role.getRoleName());
+					List<User> users = userRoleDao.findUserByRole(oldRole.getId());
+					for (User user : users) {
+						List<String> roleInfoList = roleDao.findRoleNameByUserId(user.getUserId());
+						String roleInfo = StringUtils.join(roleInfoList,",");
+						user.setRoleInfo(roleInfo);
+						userDao.saveAndFlush(user);
+					}
+				}
 			}
 		}
 	}

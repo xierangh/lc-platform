@@ -54,12 +54,10 @@ Ext.define('system.view.UserList',{
 			{xtype: 'rownumberer',width:40,header:'序号'},
 			{header: 'ID',  dataIndex: 'userId',align:'center',flex: 1,hidden:true,renderer:renderer},
 			{header: '登录名',  dataIndex: 'username',align:'center',  width: 80,renderer:renderer},
-			{header: '姓名',  dataIndex: 'xm',align:'center',  flex: 1,renderer:renderer},
+			{header: '姓名',  dataIndex: 'xm',align:'center',  width: 100,renderer:renderer},
 			{header: '电子邮箱',  dataIndex: 'email',align:'center',  width:150,renderer:renderer},
 			{header: '部门信息',  dataIndex: 'deptInfo',align:'center',  flex: 1,renderer:renderer},
-			{header: '角色信息',  dataIndex: 'roleInfo',align:'center',  flex: 1,renderer:renderer},
-			{header: '是否锁定',  dataIndex: 'accountLockedStr',align:'center',  width:80,renderer:renderer},
-			{header: '是否删除',  dataIndex: 'delStatusStr',align:'center',  width:80,renderer:renderer}       
+			{header: '角色信息',  dataIndex: 'roleInfo',align:'center',  flex: 1,renderer:renderer}   
          ];
 		
 		var pageSizePager = Ext.create('Ext.ux.PageSizePager');

@@ -30,6 +30,7 @@ public class ExceptionHandler implements HandlerExceptionResolver {
 		}
 		Message message = new Message(status, statusText);
 		try {
+			ex.printStackTrace();
 			String info = objectMapper.writeValueAsString(message);
 			modelAndView.getModel().put("message", info);
 		} catch (JsonProcessingException e) {

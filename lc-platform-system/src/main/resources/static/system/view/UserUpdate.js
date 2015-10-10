@@ -181,7 +181,7 @@ Ext.define('system.view.UserUpdate',{
 		});
 		
 		var roleGrantList = Ext.create("system.view.RoleGrantList",{
-			flex:1,
+			height:280,
 			userIds:me.userIds,
 			checkchange:function(checkColumn, rowIndex, checked, eOpts){
 				var record = roleGrantList.store.getAt(rowIndex);
@@ -223,6 +223,7 @@ Ext.define('system.view.UserUpdate',{
 		me.listeners = {
 				resize:function(panel, width, height, oldWidth, oldHeight, eOpts ){
 					deptTreePanel.setHeight(height-10);
+					roleGrantList.setHeight(height-155);
 				}
 			};
 		

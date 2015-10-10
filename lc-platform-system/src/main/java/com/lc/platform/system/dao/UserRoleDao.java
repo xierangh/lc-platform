@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 import com.lc.platform.dao.jpa.GenericRepository;
+import com.lc.platform.system.domain.User;
 import com.lc.platform.system.domain.UserRole;
 
 /**
@@ -28,5 +29,8 @@ public interface UserRoleDao extends GenericRepository<UserRole, String>{
 	
 	@Query("select ur.role.id from UserRole ur where userId=?1")
 	List<String> findRoleByUser(String userId);
+
+	@Query("select ur.user from UserRole ur where roleId=?1")
+	List<User> findUserByRole(String roleId);
 
 }

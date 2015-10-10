@@ -234,6 +234,7 @@ public class UserServiceImpl implements UserService{
 				try {
 					oldUser.setJianpin(PinYinUtil.hanyuToJpStr(user.getXm()));
 					oldUser.setPinyin(PinYinUtil.hanyuToPyStr(user.getXm()));
+					oldUser.setXm(user.getXm());
 				} catch (Exception e) {
 					logger.warn(MessageUtil.getMessage("14005"));
 				}

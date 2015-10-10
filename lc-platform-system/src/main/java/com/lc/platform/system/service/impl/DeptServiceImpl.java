@@ -18,7 +18,10 @@ import org.springframework.transaction.annotation.Transactional;
 import com.lc.platform.commons.CalNextNum;
 import com.lc.platform.commons.spring.BeanUtils;
 import com.lc.platform.system.dao.DeptDao;
+import com.lc.platform.system.dao.UserDao;
+import com.lc.platform.system.dao.UserDeptDao;
 import com.lc.platform.system.domain.Dept;
+import com.lc.platform.system.domain.User;
 import com.lc.platform.system.service.DeptService;
 
 @Transactional
@@ -28,6 +31,10 @@ public class DeptServiceImpl implements DeptService{
 	protected Log logger = LogFactory.getLog(getClass());
 	@Autowired
 	private DeptDao deptDao;
+	@Autowired
+	private UserDeptDao userDeptDao;
+	@Autowired
+	private UserDao userDao;
 	@Override
 	public List<Dept> getAllDept() {
 		Sort sort = new Sort(new Order(Direction.ASC, "parentId"),new Order(Direction.ASC, "deptOrder"));
@@ -52,10 +59,11 @@ public class DeptServiceImpl implements DeptService{
 				dept.setCreateDate(new Date());
 				
 				Dept parent = deptDao.findOne(dept.getParentId());
-				if(parent.getLeaf()){
+				if(parent!=null && parent.getLeaf()){
 					parent.setLeaf(false);
 					deptDao.saveAndFlush(parent);
 				}
+				dept.setLeaf(true);
 				deptDao.saveAndFlush(dept);
 			}else{
 				Dept oldDept = deptDao.findOne(dept.getId());
@@ -71,8 +79,19 @@ public class DeptServiceImpl implements DeptService{
 	public void updateDept(Dept dept) {
 		Dept oldDept = deptDao.findById(dept.getId());
 		if(oldDept!=null){
+			String deptName = dept.getDeptName();
+			String oldDeptName = oldDept.getDeptName();
 			BeanUtils.copyNotNullProperties(dept, oldDept);
 			deptDao.saveAndFlush(oldDept);
+			if(deptName!=null && !oldDeptName.equals(deptName)){
+				List<User> users = userDeptDao.findUserByDept(dept.getId());
+				for (User user : users) {
+					List<String> deptInfoList = deptDao.findDeptNameByUserId(user.getUserId());
+					String deptInfo = StringUtils.join(deptInfoList, ",");
+					user.setDeptInfo(deptInfo);
+					userDao.saveAndFlush(user);
+				}
+			}
 		}
 	}
 	@Override
