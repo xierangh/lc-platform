@@ -187,7 +187,7 @@ Ext.define('system.view.UserAdd',{
 		});
 		
 		var roleGrantList = Ext.create("system.view.RoleGrantList",{
-			flex:1
+			height:280
 		});
 		
 		var leftPanel = Ext.create("Ext.panel.Panel",{
@@ -206,6 +206,7 @@ Ext.define('system.view.UserAdd',{
 		me.listeners = {
 				resize:function(panel, width, height, oldWidth, oldHeight, eOpts ){
 					deptTreePanel.setHeight(height-10);
+					roleGrantList.setHeight(height-128);
 				}
 			};
 		

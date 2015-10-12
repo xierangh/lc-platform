@@ -43,33 +43,35 @@ public class JqGridUtil {
 		map.put("bt", Operation.BETWEEN);
 	}
 
-	public static <T> PageInfo<T> getPageInfo(QueryParams queryParams){
+	public static <T> PageInfo<T> getPageInfo(QueryParams queryParams) {
 		PageInfo<T> pageInfo = new PageInfo<T>();
-		int page = queryParams.getPage()-1;
+		int page = queryParams.getPage() - 1;
 		int size = queryParams.getRows();
 		PageRequest pageRequest;
 		String sidx = queryParams.getSidx();
 		String sord = queryParams.getSord();
 		if (StringUtils.isNotEmpty(sidx)) {
 			Sort sort = new Sort(Direction.fromString(sord), sidx);
-			pageRequest = new PageRequest(page,size,sort);
-		}else{
-			pageRequest = new PageRequest(page,size);
+			pageRequest = new PageRequest(page, size, sort);
+		} else {
+			pageRequest = new PageRequest(page, size);
 		}
 		pageInfo.setPageable(pageRequest);
 		final String searchField = queryParams.getSearchField();
 		final String searchString = queryParams.getSearchString();
 		final Operation operation = map.get(queryParams.getSearchOper());
 		final String content = queryParams.getFilters();
-		Specification<T> specs =  new JqgridSpecification<T>(searchField, searchString, operation, content);
+		Specification<T> specs = new JqgridSpecification<T>(searchField,
+				searchString, operation, content);
 		pageInfo.setSpecs(specs);
 		return pageInfo;
 	}
-	
+
 	public static PageBean getPageBean(QueryParams queryParams)
 			throws Exception {
 		PageBean pageBean = new PageBean();
-		pageBean.setCurrentPage(queryParams.getPage()).setRowsPerPage(queryParams.getRows());
+		pageBean.setCurrentPage(queryParams.getPage()).setRowsPerPage(
+				queryParams.getRows());
 		String searchField = queryParams.getSearchField();
 		String searchString = queryParams.getSearchString();
 		Operation operation = map.get(queryParams.getSearchOper());
@@ -86,22 +88,88 @@ public class JqGridUtil {
 		String content = queryParams.getFilters();
 		if (StringUtils.isNotEmpty(content)) {
 			Filters filters = objectMapper.readValue(content, Filters.class);
-			String groupOp = filters.getGroupOp();
-			for (RuleItem ruleItem : filters.getRules()) {
-				pageBean.addCondition(new Condition(RelateType.valueOf(groupOp
-						.toUpperCase()), ruleItem.getField(), ruleItem
-						.getData(), map.get(ruleItem.getOp())));
+			if (filters == null)
+				return pageBean;
+			String rootGroupOp = filters.getGroupOp();
+			RelateType rootRelateType = null;
+			if (StringUtils.isNotEmpty(rootGroupOp)) {
+				rootRelateType = RelateType.valueOf(rootGroupOp.toUpperCase());
 			}
+
+			List<GroupItem> groups = filters.getGroups();
+
+			if (groups != null && groups.size() > 0) {
+				int prefixBracketsCount = groups.size();
+				String groupPrefixBrackets = "";
+				for (int i = 0; i < prefixBracketsCount; i++) {
+					groupPrefixBrackets += "(";
+				}
+				for (int i = 0; i < groups.size(); i++) {
+					GroupItem groupItem = groups.get(i);
+					String suGroupOp = groupItem.getGroupOp().toUpperCase();
+					List<RuleItem> subRuleItems = groupItem.getRules();
+
+					for (int j = 0; j < subRuleItems.size(); j++) {
+						RuleItem subRuleItem = subRuleItems.get(j);
+						Condition condition = new Condition(
+								RelateType.valueOf(suGroupOp),
+								subRuleItem.getField(), subRuleItem.getData(),
+								map.get(subRuleItem.getOp().toLowerCase()));
+						if ((groups.size() == 1 || i == groups.size() - 1)
+								&& j == 0) {
+							condition.setRelateType(null);
+						}
+
+						if (i == 0 && j == 0) {
+							condition
+									.setGroupPrefixBrackets(groupPrefixBrackets);
+						}
+						if (j == subRuleItems.size() - 1) {
+							condition.setSuffixBrackets(true);
+						}
+						pageBean.addCondition(condition);
+					}
+				}
+				List<RuleItem> rules = filters.getRules();
+				for (int j = 0; j < rules.size(); j++) {
+					RuleItem ruleItem = rules.get(j);
+					Condition condition = new Condition(rootRelateType,
+							ruleItem.getField(), ruleItem.getData(),
+							map.get(ruleItem.getOp().toLowerCase()));
+					if (j == rules.size() - 1) {
+						condition.setSuffixBrackets(true);
+					}
+					if (groups.size() == 0 && j == 0) {
+						condition.setRelateType(null);
+					}
+					pageBean.addCondition(condition);
+				}
+			} else {
+				List<RuleItem> rules = filters.getRules();
+				for (int i = 0; i < rules.size(); i++) {
+					RuleItem ruleItem = rules.get(i);
+					Condition condition = new Condition(rootRelateType,
+							ruleItem.getField(), ruleItem.getData(),
+							map.get(ruleItem.getOp().toLowerCase()));
+					if (i == 0) {
+						condition.setPrefixBrackets(true);
+					}
+					if (i == rules.size() - 1) {
+						condition.setSuffixBrackets(true);
+					}
+					pageBean.addCondition(condition);
+				}
+			}
+
 		}
 		return pageBean;
 	}
 
 	@SuppressWarnings("unchecked")
-	public static <T> JsonReader getJsonReader(Page<T> page){
+	public static <T> JsonReader getJsonReader(Page<T> page) {
 		JsonReader jsonReader = new JsonReader();
-		jsonReader.setPage(page.getNumber()+1)
-		.setTotal(page.getTotalPages())
-		.setRecords(page.getTotalElements());
+		jsonReader.setPage(page.getNumber() + 1).setTotal(page.getTotalPages())
+				.setRecords(page.getTotalElements());
 		List<?> list = page.getContent();
 		if (list.size() != 0) {
 			Object obj = list.get(0);
@@ -116,7 +184,7 @@ public class JqGridUtil {
 		}
 		return jsonReader;
 	}
-	
+
 	public static JsonReader getJsonReader(PageBean pageBean) {
 		JsonReader jsonReader = new JsonReader();
 		jsonReader.setPage(pageBean.getCurrentPage())
