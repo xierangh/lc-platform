@@ -165,4 +165,10 @@ public class DictServiceImpl implements DictService{
 			parent.put("leaf", true);
 		}
 	}
+
+
+	@Override
+	public List<Dict> findAllDictByParentId(String dictId) {
+		return dictDao.findAllDictByParentId(dictId + "-%");
+	}
 }

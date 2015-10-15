@@ -23,7 +23,11 @@ public class DictController {
 	@Autowired
 	private DictService dictService;
 	
-	
+	@RequestMapping(value="data",method={RequestMethod.GET})
+	public @ResponseBody List<Dict> data(String dictId)throws Exception{
+		List<Dict> list = dictService.findAllDictByParentId(dictId);
+		return list;
+	}
 	
 	@RequestMapping(method={RequestMethod.GET,RequestMethod.POST})
 	public @ResponseBody List<DictNode> readDicts(String parentId) throws Exception{

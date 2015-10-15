@@ -25,4 +25,6 @@ public interface DictService {
 	 */
 	void resetDict(String id)throws Exception;
 
+	List<Dict> findAllDictByParentId(String dictId);
+
 }

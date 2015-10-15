@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>数据字典demo</title>
+${static_context}
+${static_jquery}
+<script type="text/javascript" src="${contextPath}/system/jquery-plugins/dict.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#sexSel').bindDict({
+			dictId:'1001'
+		});
+	});
+</script>
+</head>
+<body>
+
+性别:<select id="sexSel"></select>
+
+</body>
+</html>
