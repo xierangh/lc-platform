@@ -26,6 +26,15 @@ public class SystemUtil {
 	}
 	
 	/**
+	 * 获取当前登陆者的用户ID
+	 * @return
+	 */
+	public static String getUserId(){
+		User user = getCurrentUser();
+		return user == null?null:user.getUserId();
+	}
+	
+	/**
 	 * 当前用户是否是超级管理员
 	 * @return
 	 */
