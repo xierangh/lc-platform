@@ -69,6 +69,9 @@ public class DictServiceImpl implements DictService{
 				oldDict.setDefaultVal(dict.getDefaultVal());
 				oldDict.setDictOrder(dict.getDictOrder());
 				oldDict.setNumberCode(dict.getNumberCode());
+				if(dict.getDefaultVal()){
+					dictDao.updateDefaultStatus(dict.getParentId(),dict.getId());
+				}
 				dictDao.saveAndFlush(oldDict);
 			}
 		}

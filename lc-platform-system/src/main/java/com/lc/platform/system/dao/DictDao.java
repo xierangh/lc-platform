@@ -27,6 +27,10 @@ public interface DictDao extends GenericRepository<Dict, String>{
 	@Query("delete Dict where id like ?1")
 	void deleteChildDict(String dictId);
 
-	@Query("select d from Dict d where id like ?1 order by dictOrder")
+	@Query("select d from Dict d where id like ?1 order by defaultVal desc,dictOrder asc")
 	List<Dict> findAllDictByParentId(String dictId);
+
+	@Modifying
+	@Query("update Dict set defaultVal=false where parentId=?1 and id<>?2")
+	void updateDefaultStatus(String parentId,String dictId);
 }

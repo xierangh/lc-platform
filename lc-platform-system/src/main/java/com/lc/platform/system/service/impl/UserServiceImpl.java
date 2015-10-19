@@ -1,6 +1,7 @@
 package com.lc.platform.system.service.impl;
 
 import java.security.SecureRandom;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
@@ -31,6 +32,7 @@ import com.lc.platform.dao.Operation;
 import com.lc.platform.dao.PageBean;
 import com.lc.platform.system.SystemUtil;
 import com.lc.platform.system.dao.DeptDao;
+import com.lc.platform.system.dao.PermDao;
 import com.lc.platform.system.dao.RoleDao;
 import com.lc.platform.system.dao.RolePermDao;
 import com.lc.platform.system.dao.UserDao;
@@ -60,6 +62,8 @@ public class UserServiceImpl implements UserService{
 	private DeptDao deptDao;
 	@Autowired
 	private RoleDao roleDao;
+	@Autowired
+	private PermDao permDao;
 	
 	@Autowired
 	private RolePermDao rolePermDao;
@@ -83,14 +87,20 @@ public class UserServiceImpl implements UserService{
 			throw new UsernameNotFoundException(msg);
 		}
 		Set<GrantedAuthority> dbAuths = new HashSet<GrantedAuthority>();
-		List<String> roleList = userRoleDao.findRoleByUser(user.getUserId());
-		if(roleList.size()>0){
-			List<String> permList = rolePermDao.findPermByRole(roleList);
-			for (String permCode : permList) {
-				dbAuths.add(new SimpleGrantedAuthority(permCode.trim()
-						.toUpperCase()));
+		List<String> permList = new ArrayList<String>();
+		if(user.getSuperAdmin()){
+			permList = permDao.findAllGrantPerm();
+		}else{
+			List<String> roleList = userRoleDao.findRoleByUser(user.getUserId());
+			if(roleList.size()>0){
+				permList = rolePermDao.findPermByRole(roleList);
 			}
 		}
+		for (String permCode : permList) {
+			dbAuths.add(new SimpleGrantedAuthority(permCode.trim()
+					.toUpperCase()));
+		}
+		
 		if (dbAuths.size() == 0) {
 			msg = MessageUtil.getMessage("14004",new Object[] { username });
 			logger.info(msg);

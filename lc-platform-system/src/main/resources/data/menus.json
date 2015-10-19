@@ -79,21 +79,21 @@
 			"showHeight" : 500,
 			"permCode" : "ROLE_DIC_MENU",
 			"perms":[{
-				 "permName":"添加数据词典",
+				 "permName":"添加数据字典",
 				 "permCode":"ROLE_DICT_ADD",
-				 "permDesc":"添加数据词典"
+				 "permDesc":"添加数据字典"
 			},{
-				 "permName":"修改数据词典",
+				 "permName":"修改数据字典",
 				 "permCode":"ROLE_DICT_UPDATE",
-				 "permDesc":"修改数据词典"
+				 "permDesc":"修改数据字典"
 			},{
-				 "permName":"删除数据词典",
+				 "permName":"删除数据字典",
 				 "permCode":"ROLE_DICT_DELETE",
-				 "permDesc":"删除数据词典"
+				 "permDesc":"删除数据字典"
 			},{
-				 "permName":"阅读数据词典",
+				 "permName":"阅读数据字典",
 				 "permCode":"ROLE_DICT_READ",
-				 "permDesc":"阅读数据词典"
+				 "permDesc":"阅读数据字典"
 			}]
 		},
 		{

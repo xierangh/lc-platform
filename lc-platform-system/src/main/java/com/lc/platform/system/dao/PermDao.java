@@ -17,4 +17,7 @@ public interface PermDao extends JpaRepository<Perm, String>{
 	@Query(nativeQuery=true,value="select permId from (select permId,count(1) permIdCount from sys_role_perm where roleId in ?1 group by permId) t where permIdCount = ?2 ")
 	List<String> findAllGrantPerm(String[] roleIds,int count);
 
+	@Query("select id from Perm")
+	List<String> findAllGrantPerm();
+
 }

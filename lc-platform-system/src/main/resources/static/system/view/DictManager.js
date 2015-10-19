@@ -199,12 +199,12 @@ Ext.define('system.view.DictManager',{
 					    url:contextPath+'/system/dicts/create',
 					    params: {
 					    	id:item.id,
-					    	codeName:item.codeName,
-					    	numberCode:item.numberCode,
-					    	dictOrder:item.dictOrder,
-					    	dictDesc:item.dictDesc,
+					    	codeName:codeNameField.getValue(),
+					    	numberCode:numberCodeField.getValue(),
+					    	dictOrder:dictOrderField.getValue(),
+					    	dictDesc:dictDescField.getValue(),
 					    	defaultVal:defaultValField.checked,
-					    	parentId:item.parentId
+					    	parentId:parentIdField.getValue()
 					    },
 					    success: function(response,opt,result){
 					    	idField.setValue(result.data);

@@ -23,6 +23,12 @@ public class DictController {
 	@Autowired
 	private DictService dictService;
 	
+	/**
+	 * 根据给定的数据字典ID获取该字典下面的所有数据项数据
+	 * @param dictId
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping(value="data",method={RequestMethod.GET})
 	public @ResponseBody List<Dict> data(String dictId)throws Exception{
 		List<Dict> list = dictService.findAllDictByParentId(dictId);

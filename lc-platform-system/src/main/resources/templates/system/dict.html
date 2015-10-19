@@ -1,3 +1,4 @@
+<#assign security=JspTaglibs["http://www.springframework.org/security/tags"] />
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,14 +10,26 @@ ${static_jquery}
 <script type="text/javascript">
 	$(function(){
 		$('#sexSel').bindDict({
-			dictId:'1001'
+			dictId:'1001',
+			value:3
+		});
+		$('#btnGetSexSel').click(function(){
+			var value = $('#sexSel').val();
+			alert(value);
 		});
 	});
 </script>
 </head>
 <body>
 
-性别:<select id="sexSel"></select>
-
+性别:<select id="sexSel">
+</select>
+<button id="btnGetSexSel">获取选中值</button><br/>
+<@security.authorize ifAnyGranted="ROLE_DEPT_DELETE">
+	<button>删除部门</button>
+</@security.authorize>
+<@security.authorize ifAnyGranted="ROLE_DICT_ADD">
+	<button>添加数据字典</button>
+</@security.authorize>
 </body>
 </html>

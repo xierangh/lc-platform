@@ -1,7 +1,13 @@
 package com.lc.platform.spring;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
+
 import org.apache.commons.lang.ArrayUtils;
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration;
 import org.springframework.boot.autoconfigure.freemarker.FreeMarkerProperties;
@@ -17,13 +23,20 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
+import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
 import com.lc.platform.commons.spring.MessageUtil;
 
+import freemarker.ext.jsp.TaglibFactory.ClasspathMetaInfTldSource;
+import freemarker.ext.jsp.TaglibFactory.MetaInfTldSource;
+
 @Configuration
 @AutoConfigureBefore(FreeMarkerAutoConfiguration.class)
-public class SpringAutoConfiguration extends WebMvcConfigurerAdapter{
+public class SpringAutoConfiguration extends WebMvcConfigurerAdapter implements BeanPostProcessor{
 	ResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();
+	
+	public SpringAutoConfiguration(){
+	}
 	
 	@Autowired
 	public void setProperties(FreeMarkerProperties properties) {
@@ -78,5 +91,24 @@ public class SpringAutoConfiguration extends WebMvcConfigurerAdapter{
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(new LocaleChangeInterceptor());
 	}
-	
+
+	@Override
+	public Object postProcessBeforeInitialization(Object bean, String beanName)
+			throws BeansException {
+		return bean;
+	}
+
+	@Override
+	public Object postProcessAfterInitialization(Object bean, String beanName)
+			throws BeansException {
+		if(bean instanceof FreeMarkerConfigurer){
+			FreeMarkerConfigurer freeMarkerConfigurer = (FreeMarkerConfigurer)bean;
+			List<MetaInfTldSource> metaInfTldSources = new ArrayList<MetaInfTldSource>();
+			ClasspathMetaInfTldSource metaInfTldSource = new ClasspathMetaInfTldSource(Pattern.compile(".*", Pattern.DOTALL));
+			metaInfTldSources.add(metaInfTldSource);
+			freeMarkerConfigurer.getTaglibFactory().setMetaInfTldSources(metaInfTldSources);
+		}
+		return bean;
+	}
+
 }

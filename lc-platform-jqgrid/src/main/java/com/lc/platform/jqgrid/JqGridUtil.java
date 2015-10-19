@@ -1,5 +1,6 @@
 package com.lc.platform.jqgrid;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -107,7 +108,7 @@ public class JqGridUtil {
 				for (int i = 0; i < groups.size(); i++) {
 					GroupItem groupItem = groups.get(i);
 					String suGroupOp = groupItem.getGroupOp().toUpperCase();
-					List<RuleItem> subRuleItems = groupItem.getRules();
+					List<RuleItem> subRuleItems = filterRuleItem(groupItem.getRules());
 
 					for (int j = 0; j < subRuleItems.size(); j++) {
 						RuleItem subRuleItem = subRuleItems.get(j);
@@ -130,7 +131,7 @@ public class JqGridUtil {
 						pageBean.addCondition(condition);
 					}
 				}
-				List<RuleItem> rules = filters.getRules();
+				List<RuleItem> rules = filterRuleItem(filters.getRules());
 				for (int j = 0; j < rules.size(); j++) {
 					RuleItem ruleItem = rules.get(j);
 					Condition condition = new Condition(rootRelateType,
@@ -145,7 +146,7 @@ public class JqGridUtil {
 					pageBean.addCondition(condition);
 				}
 			} else {
-				List<RuleItem> rules = filters.getRules();
+				List<RuleItem> rules = filterRuleItem(filters.getRules());
 				for (int i = 0; i < rules.size(); i++) {
 					RuleItem ruleItem = rules.get(i);
 					Condition condition = new Condition(rootRelateType,
@@ -165,6 +166,22 @@ public class JqGridUtil {
 		return pageBean;
 	}
 
+	/**
+	 * 过滤废数据
+	 * @param rules
+	 * @return
+	 */
+	private static List<RuleItem> filterRuleItem(List<RuleItem> rules){
+		List<RuleItem> filterRules = new ArrayList<RuleItem>();
+		for (RuleItem ruleItem : rules) {
+			if(ruleItem.getData()==null){
+				continue;
+			}
+			filterRules.add(ruleItem);
+		}
+		return filterRules;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public static <T> JsonReader getJsonReader(Page<T> page) {
 		JsonReader jsonReader = new JsonReader();
