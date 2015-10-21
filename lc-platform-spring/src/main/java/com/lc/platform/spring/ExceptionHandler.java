@@ -29,6 +29,7 @@ public class ExceptionHandler implements HandlerExceptionResolver {
 			statusText = MessageUtil.getMessage("DataIntegrityViolationException");
 		}
 		Message message = new Message(status, statusText);
+		message.setData("");
 		try {
 			ex.printStackTrace();
 			String info = objectMapper.writeValueAsString(message);

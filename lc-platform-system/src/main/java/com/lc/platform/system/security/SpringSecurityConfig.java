@@ -1,7 +1,10 @@
 package com.lc.platform.system.security;
 
 import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -10,6 +13,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -21,16 +25,17 @@ import com.lc.platform.system.service.UserService;
 
 /**
  * SpringSecurity配置信息
- * @author chenjun
- *
  */
 @Configuration
+@EnableGlobalMethodSecurity(prePostEnabled=true,jsr250Enabled=true)
 @EnableWebMvcSecurity
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter  {
 	@Autowired
 	private UserService userService;
 	@Value("${system.login.url:/system/view/login}")
 	private String loginUrl;
+	@Value("${spring.security.ignoring:}")
+	private String ignoring;
 	@Autowired
 	AuthenticationSuccessHandler authenticationSuccessHandler;
 	
@@ -39,7 +44,17 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter  {
 	 */
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/**/*.css", "/**/*.js", "/**/images/**","/**/authfailure","/**/invalidSession");
+		List<String> list = new ArrayList<String>();
+		if(StringUtils.isNotBlank(ignoring)){
+			for (String item : ignoring.split(",")) {
+				list.add(item);
+			}
+		}
+		list.add("/**/*.css");
+		list.add("/**/images/**");
+		list.add("/**/authfailure");
+		list.add("/**/invalidSession");
+		web.ignoring().antMatchers(list.toArray(new String[list.size()]));
 	}
 	
 	@Bean
@@ -58,17 +73,17 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter  {
 		http.authorizeRequests().anyRequest().authenticated().and()
 				.exceptionHandling().accessDeniedPage("/403");
 		//http.sessionManagement().invalidSessionUrl("/system/invalidSession");
-		http.csrf().disable();//禁用csrf
-		http.logout().logoutSuccessUrl(loginUrl);//登陆设置
+		http.csrf().disable();
+		http.logout().logoutSuccessUrl(loginUrl);
 		http.headers().contentTypeOptions()
-		.xssProtection()//xss设置
-        .cacheControl()//cache设置
+		//.xssProtection()
+        .cacheControl()
         .httpStrictTransportSecurity();
 		 http.formLogin()
 		.loginProcessingUrl("/j_spring_security_check")
-		.successHandler(authenticationSuccessHandler)//认证处理
-		.failureHandler(authenticationFailureHandler)//失败处理
-		.loginPage(loginUrl)//登陆页面
+		.successHandler(authenticationSuccessHandler)
+		.failureHandler(authenticationFailureHandler)
+		.loginPage(loginUrl)
 		.permitAll();
 	}
 

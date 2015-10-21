@@ -1,6 +1,4 @@
-/**
- * 部门管理主界面
- */
+<#assign security=JspTaglibs["http://www.springframework.org/security/tags"] />
 Ext.define('system.view.DeptManager',{
 	extend:'Ext.panel.Panel',
 	layout:'hbox',
@@ -152,6 +150,7 @@ Ext.define('system.view.DeptManager',{
 			}
 		});
 		
+		<@security.authorize ifAnyGranted="ROLE_DEPT_DELETE">
 		var delDeptBtn = Ext.create("Ext.button.Button",{
 			text:"删除部门",
 			disabled:true,
@@ -175,7 +174,7 @@ Ext.define('system.view.DeptManager',{
 				});
 			}
 		});
-		
+		</@security.authorize>
 		var editForm = Ext.create('Ext.ux.form.Panel',{
 			width: 350,
 			border:false,
@@ -198,7 +197,10 @@ Ext.define('system.view.DeptManager',{
 			margin:"5 0 0 0",
 			items: [
 			        "->",
-				delDeptBtn,addDeptBtn,{
+			    <@security.authorize ifAnyGranted="ROLE_DEPT_DELETE">
+				delDeptBtn,
+				</@security.authorize>
+				addDeptBtn,{
 					text:"保存信息",
 					iconCls:'icon-save',
 					handler:function(){

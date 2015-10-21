@@ -23,8 +23,8 @@ public class MessageUtil{
 	static ResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();
  
 	static{
-		addLocation("classpath*:i18n/*");
 		addLocation("classpath*:org/springframework/security/*");
+		addLocation("classpath*:i18n/*");
 	}
 	
 	protected static void initMessageSourceAccessor(){
