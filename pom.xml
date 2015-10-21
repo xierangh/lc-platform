@@ -8,7 +8,7 @@
 	<packaging>pom</packaging>
 	<name>LC Platform Build</name>
 	<description>LC Platform Build</description>
-	<url>https://github.com/lcsp</url>
+	<url>https://github.com/cjjava/lc-platform</url>
 
 	<properties>
 		<encoding>UTF-8</encoding>
