@@ -114,9 +114,10 @@ public class MessageUtil{
 		return new Message(defaultStatus, getMessage(code), data);
 	}
 	
-	public static String getMessage(String code){
-		return accessor.getMessage(code,LocaleContextHolder.getLocale());
+	public static String getMessage(Object code){
+		return accessor.getMessage(code+"",LocaleContextHolder.getLocale());
 	}
+	
 	
 	public static String getMessage(String code,String defaultMessage){
 		return accessor.getMessage(code,defaultMessage,LocaleContextHolder.getLocale());

@@ -24,6 +24,12 @@ public interface DictService {
 	 * @param id
 	 */
 	void resetDict(String id)throws Exception;
+	
+	/**
+	 * 重置所有的数据字典
+	 * @throws Exception
+	 */
+	void resetAllDict()throws Exception;
 
 	List<Dict> findAllDictByParentId(String dictId);
 

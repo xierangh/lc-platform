@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.annotation.security.RolesAllowed;
+
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -150,6 +152,18 @@ public class MenuController {
 	public @ResponseBody Message swapMenuOrder(String destId,String srcId)throws Exception{
 		menuService.swapMenuOrder(destId,srcId);
 		return MessageUtil.message(11004);
+	}
+	
+	/**
+	 * 重置菜单数据
+	 * @return
+	 * @throws Exception
+	 */
+	@RolesAllowed("ROLE_SUPERADMIN")
+	@RequestMapping(value="resetAll",method={RequestMethod.GET,RequestMethod.POST})
+	public @ResponseBody Message resetAll()throws Exception{
+		menuService.resetAllMenu();
+		return MessageUtil.message(11005);
 	}
 	
 }

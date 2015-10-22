@@ -90,6 +90,7 @@ public class UserServiceImpl implements UserService{
 		List<String> permList = new ArrayList<String>();
 		if(user.getSuperAdmin()){
 			permList = permDao.findAllGrantPerm();
+			permList.add("ROLE_SUPERADMIN");
 		}else{
 			List<String> roleList = userRoleDao.findRoleByUser(user.getUserId());
 			if(roleList.size()>0){
@@ -192,8 +193,6 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public void deleteUser(String[] ids) {
-		//userRoleDao.deleteByUserId(ids);
-		//userDeptDao.deleteByUserId(ids);
 		userDao.batchDelete(true,ids);
 	}
 

@@ -19,20 +19,16 @@
 			"permCode" : "ROLE_USER_MENU",
 			"perms":[{
 				"permName":"添加用户",
-				"permCode":"ROLE_USER_ADD",
-				"permDesc":"添加用户"
+				"permCode":"ROLE_USER_ADD"
 			},{
 				"permName":"修改用户",
-				"permCode":"ROLE_USER_UPDATE",
-				"permDesc":"修改用户"
+				"permCode":"ROLE_USER_UPDATE"
 			},{
 				 "permName":"删除用户",
-				 "permCode":"ROLE_USER_DELETE",
-				 "permDesc":"删除用户"
+				 "permCode":"ROLE_USER_DELETE"
 			},{
 				"permName":"阅读用户",
-				"permCode":"ROLE_USER_READ",
-				"permDesc":"阅读用户"
+				"permCode":"ROLE_USER_READ"
 			}]
 		},{
 			"menuName" : "角色管理",
@@ -47,24 +43,19 @@
 			"permCode" : "ROLE_ROLE_MENU",
 			"perms":[{
 				 "permName":"添加角色",
-				 "permCode":"ROLE_ROLE_ADD",
-				 "permDesc":"添加角色"
+				 "permCode":"ROLE_ROLE_ADD"
 			},{
 				 "permName":"修改角色",
-				 "permCode":"ROLE_ROLE_UPDATE",
-				 "permDesc":"修改角色"
+				 "permCode":"ROLE_ROLE_UPDATE"
 			},{
 				 "permName":"删除角色",
-				 "permCode":"ROLE_ROLE_DELETE",
-				 "permDesc":"删除角色"
+				 "permCode":"ROLE_ROLE_DELETE"
 			},{
 				 "permName":"阅读角色",
-				 "permCode":"ROLE_ROLE_READ",
-				 "permDesc":"阅读角色"
+				 "permCode":"ROLE_ROLE_READ"
 			},{
 				 "permName":"角色授权",
-				 "permCode":"ROLE_ROLE_GRANT",
-				 "permDesc":"角色授权"
+				 "permCode":"ROLE_ROLE_GRANT"
 			}]
 		},
 		{
@@ -80,20 +71,16 @@
 			"permCode" : "ROLE_DIC_MENU",
 			"perms":[{
 				 "permName":"添加数据字典",
-				 "permCode":"ROLE_DICT_ADD",
-				 "permDesc":"添加数据字典"
+				 "permCode":"ROLE_DICT_ADD"
 			},{
 				 "permName":"修改数据字典",
-				 "permCode":"ROLE_DICT_UPDATE",
-				 "permDesc":"修改数据字典"
+				 "permCode":"ROLE_DICT_UPDATE"
 			},{
 				 "permName":"删除数据字典",
-				 "permCode":"ROLE_DICT_DELETE",
-				 "permDesc":"删除数据字典"
+				 "permCode":"ROLE_DICT_DELETE"
 			},{
 				 "permName":"阅读数据字典",
-				 "permCode":"ROLE_DICT_READ",
-				 "permDesc":"阅读数据字典"
+				 "permCode":"ROLE_DICT_READ"
 			}]
 		},
 		{
@@ -109,20 +96,16 @@
 			"permCode" : "ROLE_DEPT_MENU",
 			"perms":[{
 				 "permName":"添加部门",
-				 "permCode":"ROLE_DEPT_ADD",
-				 "permDesc":"添加部门"
+				 "permCode":"ROLE_DEPT_ADD"
 			},{
 				 "permName":"修改部门",
-				 "permCode":"ROLE_DEPT_UPDATE",
-				 "permDesc":"修改部门"
+				 "permCode":"ROLE_DEPT_UPDATE"
 			},{
 				 "permName":"删除部门",
-				 "permCode":"ROLE_DEPT_DELETE",
-				 "permDesc":"删除部门"
+				 "permCode":"ROLE_DEPT_DELETE"
 			},{
 				 "permName":"阅读部门",
-				 "permCode":"ROLE_DEPT_READ",
-				 "permDesc":"阅读部门"
+				 "permCode":"ROLE_DEPT_READ"
 			}]		
 		}]
 	}

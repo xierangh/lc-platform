@@ -3,6 +3,8 @@ package com.lc.platform.system.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.security.RolesAllowed;
+
 import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -72,5 +74,17 @@ public class DictController {
 	public @ResponseBody Message reset(String id) throws Exception{
 		dictService.resetDict(id);
 		return MessageUtil.message(13004);
+	}
+	
+	/**
+	 * 重置字典数据
+	 * @return
+	 * @throws Exception
+	 */
+	@RolesAllowed("ROLE_SUPERADMIN")
+	@RequestMapping(value="resetAll",method={RequestMethod.GET,RequestMethod.POST})
+	public @ResponseBody Message resetAll()throws Exception{
+		dictService.resetAllDict();
+		return MessageUtil.message(13005);
 	}
 }

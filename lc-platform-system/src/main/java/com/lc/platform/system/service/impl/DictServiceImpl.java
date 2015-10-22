@@ -8,6 +8,8 @@ import java.util.Map;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
@@ -32,6 +34,8 @@ public class DictServiceImpl implements DictService{
 	private DictDao dictDao;
 	
 	ResourcePatternResolver resPatternResolver = new PathMatchingResourcePatternResolver();
+	ObjectMapper mapper = new ObjectMapper();
+	protected Log logger = LogFactory.getLog(getClass());
 	
 	@Override
 	public List<Dict> findDictByParentId(String parentId) {
@@ -131,6 +135,44 @@ public class DictServiceImpl implements DictService{
 			}
 		}
 	}
+	
+	@SuppressWarnings("unchecked")
+	public void resetAllDict()throws Exception{
+		logger.info("------------------system init dict data------------");
+		Resource[] resources = resPatternResolver.getResources("classpath*:data/dicts.json");
+		for (int i = 0; i < resources.length; i++) {
+			URL url = resources[i].getURL();
+			String dicts = IOUtils.toString(url);
+			List<Map<String, Object>> list = mapper.readValue(dicts, List.class);
+			Date createDate = new Date();
+			Calendar calendar = Calendar.getInstance();
+			calendar.setTime(createDate);
+			for (int j = 0; j < list.size(); j++) {
+				Map<String, Object> item = list.get(j);
+				Dict dict = new Dict();
+				String letterCode = item.get("letterCode").toString();
+				String codeName = item.get("codeName").toString();
+				String dictDesc = item.get("dictDesc").toString();
+				item.put("id", letterCode);
+				dict.setId(letterCode);
+				dict.setLetterCode(letterCode);
+				dict.setCodeName(codeName);
+				dict.setCodeType(1);
+				dict.setCreateDate(calendar.getTime());
+				calendar.add(Calendar.SECOND, 1);
+				dict.setDefaultVal(false);
+				dict.setDictOrder(j);
+				dict.setDictDesc(dictDesc);
+				dict.setNumberCode(letterCode);
+				dict.setParentId("0");
+				buildChildDict(item);
+				Boolean leaf = (Boolean) item.get("leaf");
+				dict.setLeaf(leaf);
+				dictDao.save(dict);
+			}
+		}
+	}
+	
 	
 	@SuppressWarnings("unchecked")
 	protected void buildChildDict(Map<String, Object> parent){

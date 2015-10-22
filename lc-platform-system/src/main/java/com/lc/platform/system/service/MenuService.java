@@ -32,5 +32,11 @@ public interface MenuService {
 	 * @param srcId
 	 */
 	public void swapMenuOrder(String destId, String srcId);
+
+	/**
+	 * 重置菜单信息
+	 * @throws Exception
+	 */
+	public void resetAllMenu()throws Exception;
 	
 }

@@ -2,8 +2,6 @@ package com.lc.platform.system.service;
 
 import java.util.List;
 
-import javax.annotation.security.RolesAllowed;
-
 import com.lc.platform.system.domain.Dept;
 
 /**
@@ -21,7 +19,6 @@ public interface DeptService {
 
 	void moveDept(String deptIds, String targetDeptId);
 
-	@RolesAllowed("ROLE_DEPT_DELETE")
 	public void deleteDept(String deptIds);
 
 	List<String> findAllGrantDept(String[] userIds);

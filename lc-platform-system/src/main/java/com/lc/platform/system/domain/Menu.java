@@ -58,7 +58,7 @@ public class Menu implements Serializable {
 	protected int desktopNumber;
 
 	/**
-	 * 同桌菜单排序
+	 * 同级菜单排序
 	 */
 	protected int menuOrder;
 	/**
