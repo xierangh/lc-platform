@@ -75,6 +75,7 @@ public class SpringController  implements ServletContextAware {
 		StringBuilder context = new StringBuilder();
 		context.append("<script type=\"text/javascript\">").append(crlf)
 		.append("var contextPath = '" + contextPath + "';").append(crlf)
+		.append("var console = console || {log : function(){return false;}};").append(crlf)
 		.append("</script>").append(crlf);
 		servletContext.setAttribute("static_context",context);
 	}

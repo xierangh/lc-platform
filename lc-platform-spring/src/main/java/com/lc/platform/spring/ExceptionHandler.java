@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
@@ -21,6 +22,7 @@ public class ExceptionHandler implements HandlerExceptionResolver {
 	public ModelAndView resolveException(HttpServletRequest request,
 			HttpServletResponse response, Object handler, Exception ex) {
 		ModelAndView modelAndView = new ModelAndView("exception");
+		response.setContentType(MediaType.APPLICATION_JSON_VALUE);
 		String statusText = ex.getMessage();
 		int status = -500;
 		if(ex instanceof PlatformException){

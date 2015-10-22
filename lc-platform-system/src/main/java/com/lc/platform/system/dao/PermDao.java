@@ -20,4 +20,7 @@ public interface PermDao extends JpaRepository<Perm, String>{
 	@Query("select id from Perm")
 	List<String> findAllGrantPerm();
 
+	@Query("select p from Perm p where menuId=?1")
+	List<Perm> findAllPermByMenuId(String menuId);
+
 }

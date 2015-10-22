@@ -37,4 +37,9 @@ public class PermServiceImpl implements PermService{
 		return new ArrayList<String>();
 	}
 
+	@Override
+	public List<Perm> findAllPermByMenuId(String menuId) {
+		return permDao.findAllPermByMenuId(menuId);
+	}
+
 }

@@ -21,4 +21,6 @@ public interface PermService {
 
 	List<String> findAllGrantPerm(String[] roleIds);
 
+	List<Perm> findAllPermByMenuId(String menuId);
+
 }

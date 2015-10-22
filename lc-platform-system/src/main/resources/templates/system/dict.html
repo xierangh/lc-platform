@@ -6,8 +6,36 @@
 <title>数据字典demo</title>
 ${static_context}
 ${static_jquery}
+${static_ztree}
 <script type="text/javascript" src="${contextPath}/system/jquery-plugins/dict.js"></script>
 <script type="text/javascript">
+	var setting = {
+		data: {
+			simpleData: {
+				enable: true
+			}
+		},
+		check: {
+			enable: true
+		},
+		view: {
+			addDiyDom: addDiyDom
+		}
+	};
+		
+	function addDiyDom(treeId, treeNode) {
+		var aObj = $("#" + treeNode.tId + "_a");
+		$.ajax({
+			url:contextPath+"/system/menus/perms",
+			data:{menuId:treeNode.id},
+		 	success: function(list){
+		 		for(var i = 0;i<list.length;i++){
+		 			var perm = list[i];
+		 			aObj.append('　<input type="checkbox" value="'+perm.id+'"/>'+perm.permName);
+		 		}
+		   	}
+		});
+	}
 	$(function(){
 		$('#sexSel').bindDict({
 			dictId:'1001',
@@ -15,8 +43,22 @@ ${static_jquery}
 		});
 		$('#btnGetSexSel').click(function(){
 			var value = $('#sexSel').val();
-			alert(value);
 		});
+		$.ajax({
+			url:contextPath+"/system/menus/tree",
+			async:false,
+		 	success: function(list){
+		 		$.fn.zTree.init($("#treeDemo"), setting, list);
+		   	}
+		});
+		$.ajax({
+			url:contextPath+"/system/menus/resetAll",
+			async:false,
+		 	success: function(result){
+		 		console.log(typeof(result));
+		   	}
+		});
+		
 	});
 </script>
 </head>
@@ -31,5 +73,7 @@ ${static_jquery}
 <@security.authorize ifAnyGranted="ROLE_DICT_ADD">
 	<button>添加数据字典</button>
 </@security.authorize>
+<br/>
+<ul id="treeDemo" class="ztree"></ul>
 </body>
 </html>

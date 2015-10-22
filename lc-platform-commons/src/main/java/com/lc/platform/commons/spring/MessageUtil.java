@@ -98,19 +98,19 @@ public class MessageUtil{
 		return new Message(status,getMessage(status+"",""),data);
 	}
 	
-	public static Message message(String code){
+	public static Message message(Object code){
 		return new Message(defaultStatus, getMessage(code));
 	}
 	
-	public static Message message(String code,Object[] args){
+	public static Message message(Object code,Object[] args){
 		return new Message(defaultStatus, getMessage(code, args));
 	}
 	
-	public static Message message(String code,Object[] args,Object data){
+	public static Message message(Object code,Object[] args,Object data){
 		return new Message(defaultStatus, getMessage(code, args), data);
 	}
 	
-	public static Message message(String code,Object data){
+	public static Message message(Object code,Object data){
 		return new Message(defaultStatus, getMessage(code), data);
 	}
 	
@@ -119,16 +119,16 @@ public class MessageUtil{
 	}
 	
 	
-	public static String getMessage(String code,String defaultMessage){
-		return accessor.getMessage(code,defaultMessage,LocaleContextHolder.getLocale());
+	public static String getMessage(Object code,String defaultMessage){
+		return accessor.getMessage(code.toString(),defaultMessage,LocaleContextHolder.getLocale());
 	}
 	
-	public static String getMessage(String code, Object[] args){
-		return accessor.getMessage(code,args,LocaleContextHolder.getLocale());
+	public static String getMessage(Object code, Object[] args){
+		return accessor.getMessage(code+"",args,LocaleContextHolder.getLocale());
 	}
 	
-	public static String getMessage(String code, Object[] args,String defaultMessage){
-		return accessor.getMessage(code, args, defaultMessage, LocaleContextHolder.getLocale());
+	public static String getMessage(Object code, Object[] args,String defaultMessage){
+		return accessor.getMessage(code+"", args, defaultMessage, LocaleContextHolder.getLocale());
 	}
 
 	public static MessageSource getMessageSource() {

@@ -27,7 +27,10 @@ import com.lc.platform.extjs.JsonReader;
 import com.lc.platform.spring.SpringUtil;
 import com.lc.platform.system.SystemUtil;
 import com.lc.platform.system.domain.Menu;
+import com.lc.platform.system.domain.Perm;
 import com.lc.platform.system.service.MenuService;
+import com.lc.platform.system.service.PermService;
+import com.lc.platform.ztree.TreeNode;
 
 
 @Controller
@@ -35,6 +38,8 @@ import com.lc.platform.system.service.MenuService;
 public class MenuController {
 	@Autowired
 	private MenuService menuService;
+	@Autowired
+	private PermService permService;
 	
 	public MenuController(){
 	}
@@ -61,7 +66,6 @@ public class MenuController {
 				, Operation.EQ, true));
 		pageBean.addOrder(new Order("menuOrder", OrderType.ASC));
 		menuService.readMenusByPageInfo(pageBean);
-		//pageBean.getItems().add(createAddMenu(desktopNumber,menuId));
 		if(!"0".equals(parentId)){
 			pageBean.getItems().add(createReturnMenu(desktopNumber,menu.getParentId()));
 		}
@@ -164,6 +168,30 @@ public class MenuController {
 	public @ResponseBody Message resetAll()throws Exception{
 		menuService.resetAllMenu();
 		return MessageUtil.message(11005);
+	}
+	
+	
+	@RequestMapping("tree")
+	public @ResponseBody List<TreeNode> tree(){
+		List<Menu> menuList = menuService.findAllMenu();
+		List<TreeNode> menuNodes = new ArrayList<TreeNode>();
+		for (Menu menu : menuList) {
+			TreeNode treeNode = new TreeNode();
+			treeNode.setId(menu.getMenuId());
+			treeNode.setpId(menu.getParentId());
+			treeNode.setName(menu.getMenuName());
+			treeNode.setIsParent(true);
+			treeNode.setOpen(true);
+			treeNode.setData(menu);
+			menuNodes.add(treeNode);
+		}
+		return menuNodes;
+	}
+	
+	@RequestMapping("perms")
+	public @ResponseBody List<Perm> perms(String menuId){
+		List<Perm> list = permService.findAllPermByMenuId(menuId);
+		return list;
 	}
 	
 }

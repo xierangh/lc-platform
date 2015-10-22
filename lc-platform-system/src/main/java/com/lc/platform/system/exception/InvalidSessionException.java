@@ -7,7 +7,7 @@ public class InvalidSessionException extends UserException {
 	private static final long serialVersionUID = 8001743932443600101L;
 
 	public InvalidSessionException() {
-		super(MessageUtil.getMessage("14013"));
+		super(MessageUtil.getMessage(14013));
 		this.code = 14013;
 	}
 
